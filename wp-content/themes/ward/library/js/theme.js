@@ -94,68 +94,82 @@
         var width = parseInt(substring) / divider;
         return String(width) + "px"
     }
-//    var middle = jQuery('.categories').offset().left - jQuery('.search-menu').offset().left;
 
-    jQuery('.fa-folder-o').css("top",getHeightOfDiv(jQuery('.home-top'),3));
-
-//    jQuery('.about-menu').css("left",getWidthOfDiv(jQuery('.home-top'),2));
-
-
+//    jQuery('.fa-folder-o').css("top",getHeightOfDiv(jQuery('.home-top'),3));
 
     jQuery('#ernestrc-menu').hover(function(){
-//            jQuery('#ernestrc-fx').css('cursor','pointer');
+            function bannerFxOn(){
 
-            //Change colors to face
-            spectralContinuum(jQuery('#ernestrc-fx'));
-            jQuery('#ernestrc-fx').css('background',colorConfig.backgroundMenu);
+                //Change colors to face
+                spectralContinuum(jQuery('#ernestrc-fx'));
+                jQuery('#ernestrc-fx').css('background',colorConfig.backgroundMenu);
 
 
-            //Move away title
+                //Move away title
 //            jQuery('#blog-title').css('color',colorConfig.backgroundMenu);
+
+                //Open menu options
+                jQuery(this).css('width','120%')
+                    .css('left','auto')
+                    .css('top','-290px')
+                    .css('height','370px');
+
+
+                jQuery('#ernestrc-icons').css('opacity','0');
+
+                //Change background of menu
+                jQuery('.home-top, .sticky-bar').css('background',colorConfig.backgroundMenu)
+
+            }
+            bannerFxOn();
+//
+//          jQuery('#ernestrc-fx').css('cursor','pointer');
 
             //put wrapper in front
             jQuery('.wrapper-top').css('opacity','100');
 
-            //Open menu options
-            jQuery(this).css('width','120%')
-                .css('left','auto')
-                .css('top','-290px')
-                .css('height','370px');
-
             setTimeout(function(){
-                jQuery('#blog-menu').css('visibility','visible').css('top','0');
-            },500);
-            jQuery('#ernestrc-icons').css('opacity','0');
-
-            //Change background of menu
-            jQuery('.home-top, .sticky-bar').css('background',colorConfig.backgroundMenu)
-
-    },function(){
-            if (timer !== null) {
-                clearTimeout(timer);
-            }
-            //return face to initial color
-            jQuery('#ernestrc-fx').css('color','#d9534f').css('background',colorConfig.backgroundTitle);
-            jQuery('#blog-menu').css('visibility','hidden').css('top','-1000px');
-
-            setTimeout(function(){
-
-                jQuery('.wrapper-top').css('opacity','0');
-                jQuery('#ernestrc-icons').css('opacity','100');
+//                jQuery('#blog-menu').css('visibility','visible').css('top','0');//TODO set back to whatever
             },500);
 
-            //title
+
+
+        },function(){
+            function bannerFxOff(){
+
+                if (timer !== null) {
+                    clearTimeout(timer);
+                }
+                //return face to initial color
+                jQuery('#ernestrc-fx').css('color','#d9534f').css('background',colorConfig.backgroundTitle);
+
+
+                setTimeout(function(){
+                    jQuery('#ernestrc-icons').css('opacity','100');
+                },500);
+
+                //title
 //            jQuery('#blog-title').css('color','inherit');
 
-            //close menu options
-            jQuery(this).css('width','120px')
-                .css('left','50%')
-                .css('top','-15px')
-                .css('height','100px');
-            jQuery('#blog-menu').css('opacity','0');
+                //close menu options
+                jQuery(this).css('width','120px')
+                    .css('left','50%')
+                    .css('top','-15px')
+                    .css('height','100px');
 
-            //Change color of menu back
-            jQuery('.home-top, .sticky-bar').css('background',colorConfig.backgroundTitle)
+                //Change color of menu back
+                jQuery('.home-top, .sticky-bar').css('background',colorConfig.backgroundTitle)
+
+
+            }
+            bannerFxOff();
+
+//                        jQuery('#blog-menu').css('visibility','hidden').css('top','-1000px');//TODO SEt back to visib hidden
+            setTimeout(function(){
+//                jQuery('.wrapper-top').css('opacity','0'); //TODO Set back to 0
+            },500);
+
+//                        jQuery('#blog-menu').css('opacity','0'); //TODO set back
 
         }
     )

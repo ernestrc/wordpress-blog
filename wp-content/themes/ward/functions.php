@@ -620,7 +620,58 @@ function bavotasan_jumbotron() {
 <!--		</div>-->
 <!--	</video>-->
         <div class="home-top">
-        <div class="wrapper-top"></div>
+        <div class="wrapper-top">
+            <div id="ernestrc-menu">
+                <div id="blog-menu">
+                    <div class="about-menu col-md-3">
+                        <h2>About Me</h2>
+
+                        TODO: fer una pagina per cada un dels titols. Fer llista de items a dins per poder
+                        fer link des de mobile i deixar nomes els icones en mobile.
+                    </div>
+                    <div class="categories-menu col-md-3">
+<!--                        <i class="fa fa-folder-o"></i>-->
+                        <div class="category-titles">
+                            <h2>Categories</h2>
+                            <?php
+                            $args = array(
+                                'orderby' => 'name'
+                            );
+                            $categories = get_categories( $args );
+                            foreach ( $categories as $category ) {
+                                echo '<li><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></li><br/>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="posts-menu col-md-3">
+                        <h2>Recent Posts</h2>
+                            <?php
+                            $recent_posts = wp_get_recent_posts();
+                            foreach( $recent_posts as $recent ){
+                                echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+                            }
+                            ?>
+<!--                        <i class="fa fa-circle"></i>-->
+<!--                        <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://localhost:8888/wordpress/">-->
+<!--                                <label>-->
+<!--                                    <span class="screen-reader-text">Search for:</span>-->
+<!--                                    <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">-->
+<!--                                </label>-->
+<!--                                <input type="submit" class="search-submit" value="Search">-->
+<!--                            </form></aside>-->
+                    </div>
+                    <div class="archive-menu col-md-3">
+                        <h2>Archive</h2>
+                        <?php wp_get_archives(
+                            array( 'type' => 'monthly',
+                                'limit' => 5,
+                                'show_post_count' => 1
+                            ) ); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
         <img class="blog-background" src='<?php echo BAVOTASAN_THEME_URL; ?>/library/images/background.png'>
     <!--         style="background-image:url('--><?php //echo BAVOTASAN_THEME_URL; ?><!--/library/images/background.png')">-->
             <div class="container">
@@ -640,19 +691,6 @@ function bavotasan_jumbotron() {
     <div id="nav-wrapper">
         <div id="top-ernestrc">
             <div class="sticky-bar">
-                <div id="ernestrc-menu">
-                    <div id="blog-menu">
-                        <div class="categories-menu">
-                            <i class="fa fa-folder-o"></i>
-                        </div>
-                        <div class="about-menu">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="search-menu">
-                            <i class="fa fa-search"></i>
-                        </div>
-                    </div>
-                </div>
                 <div id="ernestrc-icons">
                     <?php if ( is_category() ) : ?>
                         <i class="fa fa-comment"></i>

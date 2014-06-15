@@ -7821,21 +7821,21 @@ a [class*=" ernestrc-"] {
 }
 
 #blog-menu{
-    top:-1000px;
-    visibility:hidden;
+    position:relative;
     opacity:100;
     padding-top:40px;
     height:300px;
-    left:0;
-    /*top:0;*/
-    width:100%;
-    position:absolute;
+    max-width:1000px;
     color:#555555;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     z-index:1000;
+    margin:0px auto;
+    padding:0 20px 0 20px;
+    list-style-type: none !important;
+
 }
 
 #top-ernestrc #ernestrc-menu {
@@ -7846,14 +7846,14 @@ a [class*=" ernestrc-"] {
     border-radius: 80px;
     background: transparent;
     font-size: 60px;
-    height: 100px;
-    width: 120px;
     position: absolute;
     margin-left: -60px;
     z-index: 1000;
     left:50%;
     top:-15px;
-    /*display:none;*/
+    width:100%;
+    height:inherit;
+
 }
 
 .home-top {
@@ -7873,7 +7873,7 @@ a [class*=" ernestrc-"] {
 -------------------------------------------------------------- */
 #archive-header {
     /*padding-bottom: 40px;*/
-    position:absolute;
+    /*position:absolute;*/
 }
 
 .fa-comment {
@@ -7979,65 +7979,155 @@ a [class*=" ernestrc-"] {
     -o-transition: all 0.5s;
     position:absolute;
     display:block;
-    opacity:0;
+    opacity:100;
     width:100%;
     background-color:#FFFFFF;
     z-index:100;
 }
 
 @media screen and (min-width:1068px) {
-    div.categories-menu .fa.fa-folder-o{ font-size:150px ; }
+    div.categories-menu .fa.fa-folder-o{
+        font-size:150px ;
+        left:100px;
+    }
+    div.categories-menu .category-titles{
+        /*left: 115px;*/
+        /*top:160px;*/
+    }
 }
 
 @media screen and (min-width:600px) {
-    .categories-menu .fa{ font-size:120px ; }
+    .categories-menu .fa{
+        font-size:120px ;
+        left:100px;
+
+    }
+    .categories-menu .category-titles{
+        /*left: 115px;*/
+        /*top:160px;*/
+    }
+
 }
 
-.categories-menu{
+.fa-folder-o{
     z-index:4000;
-    cursor: pointer;
+    /*cursor: pointer;*/
     position:absolute;
     left:20px;
     font-size:100px;
 
 }
+.category-titles{
+    line-height: 12px !important;
+    /*position:absolute;*/
+}
+
+.categories-menu{
+
+    padding-top:40px;
+
+}
+
+.categories-menu li{
+    list-style-type: none;
+    text-align:justify;
+    max-width:180px;
+    margin:0px auto;
+}
+
+.categories-menu h2{
+    margin-bottom:15px;
+}
+
+.categories-menu li:first-child{
+    margin-top:15px !important;
+}
 
 @media screen and (min-width:1068px) {
-    div.about-menu .fa.fa-user{
-        font-size:150px ;
+    div.archive-menu .fa.fa-search{
+        font-size:150px;
+        right:100px;
     }
-    .about-menu{left:44% !important;}
+}
+
+@media screen and (min-width:600px) {
+    .archive-menu .fa{
+        font-size:120px ;
+        right:100px;
+    }
+}
+
+.fa-search{
+    z-index:4000;
+    /*cursor: pointer;*/
+    position:absolute;
+    right:20px;
+    font-size:100px;
+}
+
+.archive-menu{
+    padding-top:40px;
+    text-align:right;
+    line-height: 12px !important;
+}
+
+.archive-menu li{
+    list-style-type: none;
+}
+
+@media screen and (min-width:1068px) {
+    div.about-menu .fa.fa-circle{
+        font-size:130px ;
+        left:42.6%;
+        top:52px;
+    }
+
 }
 
 @media screen and (min-width:600px) {
     .about-menu .fa{
-        font-size:120px;
-        left:42%;
+        font-size:100px;
     }
 }
 
+.about-menu {
+    padding-top:40px;
+}
 
-.about-menu{
+
+.fa-circle{
     z-index:4000;
-    cursor: pointer;
+    /*cursor: pointer;*/
     position:absolute;
     left:40%;
     font-size:100px;
 }
 
-
 @media screen and (min-width:1068px) {
-    div.search-menu .fa.fa-search{ font-size:150px; }
+    div.posts-menu .fa.fa-circle{
+        font-size:130px ;
+        left:42.6%;
+        top:52px;
+    }
+
 }
 
 @media screen and (min-width:600px) {
-    .search-menu .fa{ font-size:120px ; }
+    .posts-menu .fa{
+        font-size:100px;
+    }
 }
 
-.search-menu{
-    z-index:4000;
-    cursor: pointer;
-    position:absolute;
-    right:20px;
-    font-size:100px;
+.posts-menu {
+    text-align:right;
+    padding-top:40px;
 }
+
+.posts-menu li{
+    list-style-type: none;
+    text-align:justify;
+    max-width:180px;
+    margin:0px auto;
+    padding-left:50px;
+}
+
