@@ -619,58 +619,75 @@ function bavotasan_jumbotron() {
 <!--			</div>-->
 <!--		</div>-->
 <!--	</video>-->
-        <div class="home-top">
-        <div class="wrapper-top">
-            <div id="ernestrc-menu">
-                <div id="blog-menu">
-                    <div class="about-menu col-md-3">
-                        <h2>About Me</h2>
-
-                        TODO: fer una pagina per cada un dels titols. Fer llista de items a dins per poder
-                        fer link des de mobile i deixar nomes els icones en mobile.
-                    </div>
-                    <div class="categories-menu col-md-3">
-<!--                        <i class="fa fa-folder-o"></i>-->
-                        <div class="category-titles">
-                            <h2>Categories</h2>
-                            <?php
-                            $args = array(
-                                'orderby' => 'name'
-                            );
-                            $categories = get_categories( $args );
-                            foreach ( $categories as $category ) {
-                                echo '<li><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></li><br/>';
-                            }
-                            ?>
+        <div id="ernestrc-menu-bar" class="home-top">
+        <div class="wrapper-top" style="opacity:0; visibility:hidden">
+            <div id="margins" style="opacity:inherit; visibility:inherit">
+                <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">
+                    <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">
+                        <div class="posts-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">
+                            <i class="fa fa-history" style="opacity:inherit; visibility:inherit"></i>
+                        </div>
+                        <div class="categories-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">
+                            <i class="fa fa-list" style="opacity:inherit; visibility:inherit"></i>
+                        </div>
+                        <div class="archive-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">
+                            <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>
+                        </div>
+                        <div class="about-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">
+                            <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>
                         </div>
                     </div>
-                    <div class="posts-menu col-md-3">
-                        <h2>Recent Posts</h2>
+                    <div id="blog-menu" class="row hidden-xs">
+                        <div class="posts-menu col-xs-3 hidden-xs">
+                            <h2><a href="<?php get_home_url(); ?>/index.php">Recent Posts</a></h2>
                             <?php
                             $recent_posts = wp_get_recent_posts();
                             foreach( $recent_posts as $recent ){
                                 echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
                             }
                             ?>
-<!--                        <i class="fa fa-circle"></i>-->
-<!--                        <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://localhost:8888/wordpress/">-->
-<!--                                <label>-->
-<!--                                    <span class="screen-reader-text">Search for:</span>-->
-<!--                                    <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">-->
-<!--                                </label>-->
-<!--                                <input type="submit" class="search-submit" value="Search">-->
-<!--                            </form></aside>-->
-                    </div>
-                    <div class="archive-menu col-md-3">
-                        <h2>Archive</h2>
-                        <?php wp_get_archives(
-                            array( 'type' => 'monthly',
-                                'limit' => 5,
-                                'show_post_count' => 1
-                            ) ); ?>
+                            <!--                        <i class="fa fa-circle"></i>-->
+                            <!--                        <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://localhost:8888/wordpress/">-->
+                            <!--                                <label>-->
+                            <!--                                    <span class="screen-reader-text">Search for:</span>-->
+                            <!--                                    <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">-->
+                            <!--                                </label>-->
+                            <!--                                <input type="submit" class="search-submit" value="Search">-->
+                            <!--                            </form></aside>-->
+                        </div>
+                        <div class="categories-menu col-xs-3 hidden-xs">
+                            <!--                        <i class="fa fa-folder-o"></i>-->
+                            <div class="category-titles">
+                                <h2><a href="<?php get_home_url(); ?>/categories/">Categories</a></h2>
+                                <?php
+                                $args = array(
+                                    'orderby' => 'name'
+                                );
+                                $categories = get_categories( $args );
+                                foreach ( $categories as $category ) {
+                                    echo '<li><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></li><br/>';
+                                }
+                                ?>
+                            </div>
+                        </div>
+                        <div class="archive-menu col-xs-3 hidden-xs">
+                            <h2><a href="<?php echo BAVOTASAN_THEME_URL; ?>/ernestrc-archive.php">Archive</a></h2>
+                            <?php wp_get_archives(
+                                array( 'type' => 'monthly',
+                                    'limit' => 5,
+                                    'show_post_count' => 1
+                                ) ); ?>
+                        </div>
+                        <div class="about-menu col-xs-3 hidden-xs">
+                            <h2><a href="#">About</a></h2>
+
+                            TODO: fer una pagina per cada un dels titols. Fer llista de items a dins per poder
+                            fer link des de mobile i deixar nomes els icones en mobile.
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
         <img class="blog-background" src='<?php echo BAVOTASAN_THEME_URL; ?>/library/images/background.png'>
     <!--         style="background-image:url('--><?php //echo BAVOTASAN_THEME_URL; ?><!--/library/images/background.png')">-->
@@ -686,30 +703,44 @@ function bavotasan_jumbotron() {
                     </div>
                 </div>
             </div>
-        </div>
+
 
     <div id="nav-wrapper">
         <div id="top-ernestrc">
             <div class="sticky-bar">
+
                 <div id="ernestrc-icons">
-                    <?php if ( is_category() ) : ?>
-                        <i class="fa fa-comment"></i>
-                        <div class="ernestrc-icons">
-                            <?php if(single_cat_title( '', false ) == 'Programming') {
-                                ?><i class="category-icon fa fa-code"></i><?php
-                            } else if (single_cat_title( '', false ) == 'Economics') {
-                                ?><i class="category-icon fa fa-eur"></i><?php
-                            } else if (single_cat_title( '', false ) == 'Product Development') {
-                                ?><i class="category-icon fa fa-refresh"></i><?php
-                            } ?>
-                        </div>
-                    <?php endif ?>
+
+<!--                    --><?php //if ( is_category() ) : ?>
+<!--                        <i class="fa fa-comment"></i>-->
+<!--                        <div class="ernestrc-icons">-->
+<!--                            --><?php //if(single_cat_title( '', false ) == 'Random thoughts') {
+//                                ?><!--<i class="category-icon fa fa-code"></i>--><?php
+//                            } else if (single_cat_title( '', false ) == 'Scala') {
+//                                ?><!--<i class="category-icon fa fa-eur"></i>--><?php
+//                            } else if (single_cat_title( '', false ) == 'Journey') {
+//                                ?><!--<i class="category-icon fa fa-refresh"></i>--><?php
+//                            } ?>
+<!--                        </div>-->
+<!--                    --><?php //endif ?>
                 </div>
-                <div id="ernestrc-fx" class="middle-circle ernestrc-face"></div>
+                <div id="ernestrc-fx" class="middle-circle ernestrc-face">
+                    <i class="fa fa-lock"></i>
+                    <div class="search-comment">
+<!--                        --><?php //TODO Finish search results in textbox
+//
+//                        $num = $wp_query->found_posts;
+//                        printf( '%1$s "%2$s"',
+//                            $num . __( ' search results for', 'ward'),
+//                            get_search_query()
+//                        );?>
+                    </div>
+                </div>
                 <div class="ernestrc-about"></div>
             </div>
         </div>
     </div>
+        </div>
 	<?php
 	}
 }

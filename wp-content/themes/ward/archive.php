@@ -18,10 +18,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header id="archive-header">
-
-
-			</header>
+			<header id="archive-header"></header>
 
 			<?php
 			while ( have_posts() ) : the_post();

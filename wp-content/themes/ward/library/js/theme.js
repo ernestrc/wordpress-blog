@@ -52,10 +52,7 @@
             }
         }
     });
-    var colorConfig = {
-        'backgroundTitle':'#FFFFFF',
-        'backgroundMenu':'#FFFFFF'
-    }
+
 
     function getRandomColor() {
         var letters = '0123456789ABCDEF'.split('');
@@ -76,10 +73,6 @@
                 ,100)
     }
 
-    jQuery('#ernestrc-menu').click(function(){
-        jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
-    });
-
     jQuery('.wrapper-top').css("height",jQuery('.home-top').css("height"));
 
     function getHeightOfDiv(div,divider){
@@ -97,81 +90,73 @@
 
 //    jQuery('.fa-folder-o').css("top",getHeightOfDiv(jQuery('.home-top'),3));
 
-    jQuery('#ernestrc-menu').hover(function(){
-            function bannerFxOn(){
+var menu = false;
+var lockedMenu = false;
 
-                //Change colors to face
-                spectralContinuum(jQuery('#ernestrc-fx'));
-                jQuery('#ernestrc-fx').css('background',colorConfig.backgroundMenu);
+    function bannerFxOff(){
 
-
-                //Move away title
-//            jQuery('#blog-title').css('color',colorConfig.backgroundMenu);
-
-                //Open menu options
-                jQuery(this).css('width','120%')
-                    .css('left','auto')
-                    .css('top','-290px')
-                    .css('height','370px');
-
-
-                jQuery('#ernestrc-icons').css('opacity','0');
-
-                //Change background of menu
-                jQuery('.home-top, .sticky-bar').css('background',colorConfig.backgroundMenu)
-
-            }
-            bannerFxOn();
-//
-//          jQuery('#ernestrc-fx').css('cursor','pointer');
-
-            //put wrapper in front
-            jQuery('.wrapper-top').css('opacity','100');
-
-            setTimeout(function(){
-//                jQuery('#blog-menu').css('visibility','visible').css('top','0');//TODO set back to whatever
-            },500);
-
-
-
-        },function(){
-            function bannerFxOff(){
-
-                if (timer !== null) {
-                    clearTimeout(timer);
-                }
-                //return face to initial color
-                jQuery('#ernestrc-fx').css('color','#d9534f').css('background',colorConfig.backgroundTitle);
-
-
-                setTimeout(function(){
-                    jQuery('#ernestrc-icons').css('opacity','100');
-                },500);
-
-                //title
-//            jQuery('#blog-title').css('color','inherit');
-
-                //close menu options
-                jQuery(this).css('width','120px')
-                    .css('left','50%')
-                    .css('top','-15px')
-                    .css('height','100px');
-
-                //Change color of menu back
-                jQuery('.home-top, .sticky-bar').css('background',colorConfig.backgroundTitle)
-
-
-            }
-            bannerFxOff();
-
-//                        jQuery('#blog-menu').css('visibility','hidden').css('top','-1000px');//TODO SEt back to visib hidden
-            setTimeout(function(){
-//                jQuery('.wrapper-top').css('opacity','0'); //TODO Set back to 0
-            },500);
-
-//                        jQuery('#blog-menu').css('opacity','0'); //TODO set back
-
+        if (timer !== null) {
+            clearTimeout(timer);
+            jQuery('#ernestrc-fx').css('color','#d9534f').css('background',colorConfig.backgroundTitle);
+            timer = null
         }
-    )
+
+        if(!lockedMenu==true){
+            if(menu==true){
+                setTimeout(function(){
+                    jQuery('.wrapper-top').css('opacity','0');
+                },500);
+                setTimeout(function(){
+                    jQuery('.wrapper-top').css('visibility','hidden');
+                    menu = false;
+                },700);
+            }
+        }
+    }
+
+    function bannerFxOn(){
+
+        if(menu == false && lockedMenu == false){
+            if(timer == null){
+                console.log("Yuuuuuuuuup!")
+                spectralContinuum(jQuery('#ernestrc-fx'));
+            }
+                jQuery('.wrapper-top').css('visibility','visible');
+            setTimeout(function(){
+                jQuery('.wrapper-top').css('opacity','100');
+                menu = true;
+            },200);
+        }
+    }
+
+    jQuery('#main').hover(function(){
+        bannerFxOff();
+    });
+
+
+    jQuery('#ernestrc-icons').hover(function(){
+            bannerFxOn();
+        });
+
+    jQuery('#ernestrc-icons').click(function(){
+        jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
+        if(lockedMenu){
+            jQuery('.wrapper-top').css('opacity','0');
+            lockedMenu=false
+            jQuery('.fa-lock').css('opacity','0');
+        } else {
+            clearTimeout(timer);
+            jQuery('.fa-lock').css('opacity','50');
+            jQuery('.wrapper-top').css('opacity','100');
+            lockedMenu=true
+        }
+    });
+
+    var colorConfig = {
+        'backgroundTitle':'#FFFFFF',
+        'backgroundMenu':'#FFFFFF'
+    }
+
+
 
 } )( jQuery );
