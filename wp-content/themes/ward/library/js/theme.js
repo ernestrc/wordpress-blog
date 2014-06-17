@@ -46,7 +46,7 @@
 
     jQuery('#top-ernestrc').affix({
         offset: {
-            top: 270
+            top: 370
             , bottom: function () {
                 return (this.bottom = $('.footer').outerHeight(true))
             }
@@ -64,6 +64,7 @@
     }
 
     var timer = null;
+    var timer2 = null;
 
     function spectralContinuum(element) {
             var randomColor=getRandomColor();
@@ -95,21 +96,20 @@ var lockedMenu = false;
 
     function bannerFxOff(){
 
-        if (timer !== null) {
-            clearTimeout(timer);
-            jQuery('#ernestrc-fx').css('color','#d9534f').css('background',colorConfig.backgroundTitle);
-            timer = null
+        if (timer2 !== null) {
+            clearTimeout(timer2);
+            timer2 = null
         }
 
         if(!lockedMenu==true){
             if(menu==true){
-                setTimeout(function(){
+                    jQuery('#ernestrc-fx').css('color','#F06665').css('background',colorConfig.backgroundTitle).css('text-shadow',"0px 0px 2px #FFF");
                     jQuery('.wrapper-top').css('opacity','0');
-                },500);
-                setTimeout(function(){
                     jQuery('.wrapper-top').css('visibility','hidden');
+                    jQuery('.middle-circle').css('background','#FFFFFF');
+                    jQuery('.sticky-bar').css('background','#FFFFFF');
                     menu = false;
-                },700);
+
             }
         }
     }
@@ -118,14 +118,15 @@ var lockedMenu = false;
 
         if(menu == false && lockedMenu == false){
             if(timer == null){
-                console.log("Yuuuuuuuuup!")
-                spectralContinuum(jQuery('#ernestrc-fx'));
+                console.log("Yuuuuuuuuup!");
+                jQuery('#ernestrc-fx').css('color','#FFF').css('background',colorConfig.backgroundTitle).css('text-shadow',"0px 0px 20px #FFF");
+                spectralContinuum2(jQuery('#ernestrc-fx'));
             }
                 jQuery('.wrapper-top').css('visibility','visible');
-            setTimeout(function(){
-                jQuery('.wrapper-top').css('opacity','100');
+                jQuery('.wrapper-top').css('opacity','50');
+                jQuery('.middle-circle').css('background','#F06665');
+                jQuery('.sticky-bar').css('background','#F06665');
                 menu = true;
-            },200);
         }
     }
 
@@ -141,11 +142,15 @@ var lockedMenu = false;
     jQuery('#ernestrc-icons').click(function(){
         jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
         if(lockedMenu){
+            jQuery('.middle-circle').css('background','#FFFFFF');
+            jQuery('.sticky-bar').css('background','#FFFFFF');
             jQuery('.wrapper-top').css('opacity','0');
             lockedMenu=false
             jQuery('.fa-lock').css('opacity','0');
         } else {
             clearTimeout(timer);
+            jQuery('.middle-circle').css('background','#F06665');
+            jQuery('.sticky-bar').css('background','#F06665');
             jQuery('.fa-lock').css('opacity','50');
             jQuery('.wrapper-top').css('opacity','100');
             lockedMenu=true

@@ -619,8 +619,8 @@ function bavotasan_jumbotron() {
 <!--			</div>-->
 <!--		</div>-->
 <!--	</video>-->
-        <div id="ernestrc-menu-bar" class="home-top">
-        <div class="wrapper-top" style="opacity:0; visibility:hidden">
+        <div id="ernestrc-menu-bar" class="home-top" style="background-image: url('<?php echo BAVOTASAN_THEME_URL;?>/library/images/background5.png') !important">
+        <div class="wrapper-top" style="opacity:0; visibility:hidden; background-image: url('<?php echo BAVOTASAN_THEME_URL;?>/library/images/background5s.png') !important">
             <div id="margins" style="opacity:inherit; visibility:inherit">
                 <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">
                     <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">
@@ -689,12 +689,10 @@ function bavotasan_jumbotron() {
             </div>
 
         </div>
-        <img class="blog-background" src='<?php echo BAVOTASAN_THEME_URL; ?>/library/images/background.png'>
     <!--         style="background-image:url('--><?php //echo BAVOTASAN_THEME_URL; ?><!--/library/images/background.png')">-->
             <div class="container">
                 <div class="row">
                     <div class="home-jumbotron jumbotron col-lg-10 col-lg-offset-1 col-sm-12">
-
                         <div id="blog-title">
                             <h1>Unstable Build</h1>
                             <p class="lead">A Blog about product Development</p>
