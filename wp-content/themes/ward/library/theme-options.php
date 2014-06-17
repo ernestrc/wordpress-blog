@@ -9,7 +9,7 @@ function bavotasan_theme_options() {
 	$default_theme_options = array(
 		'width' => '1200',
 		'layout' => '2',
-		'primary' => 'col-md-8',
+		'primary' => 'col-md-12',
 		'display_author' => 'on',
 		'display_date' => 'on',
 		'display_comment_count' => 'on',

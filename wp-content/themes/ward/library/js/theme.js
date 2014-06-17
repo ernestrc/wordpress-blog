@@ -74,6 +74,18 @@
                 ,100)
     }
 
+    function spectralContinuum2(element,counter){
+        if(counter % 2){
+            element.css('text-shadow',"0px 0px 2px #FFF");
+            var ccounter = counter +1
+        }else {
+            element.css('text-shadow',"0px 0px 20px #FFF");
+        }
+        timer2 = setTimeout(function (){
+            spectralContinuum2(element,ccounter)
+        },100);
+    }
+
     jQuery('.wrapper-top').css("height",jQuery('.home-top').css("height"));
 
     function getHeightOfDiv(div,divider){
@@ -95,15 +107,10 @@ var menu = false;
 var lockedMenu = false;
 
     function bannerFxOff(){
-
-        if (timer2 !== null) {
-            clearTimeout(timer2);
-            timer2 = null
-        }
-
         if(!lockedMenu==true){
             if(menu==true){
-                    jQuery('#ernestrc-fx').css('color','#F06665').css('background',colorConfig.backgroundTitle).css('text-shadow',"0px 0px 2px #FFF");
+                    jQuery('#ernestrc-fx').css('text-shadow',"0px 0px 2px #FFF")
+                    jQuery('#ernestrc-fx').css('color','#F06665').css('background',colorConfig.backgroundTitle);
                     jQuery('.wrapper-top').css('opacity','0');
                     jQuery('.wrapper-top').css('visibility','hidden');
                     jQuery('.middle-circle').css('background','#FFFFFF');
@@ -119,9 +126,9 @@ var lockedMenu = false;
         if(menu == false && lockedMenu == false){
             if(timer == null){
                 console.log("Yuuuuuuuuup!");
-                jQuery('#ernestrc-fx').css('color','#FFF').css('background',colorConfig.backgroundTitle).css('text-shadow',"0px 0px 20px #FFF");
-                spectralContinuum2(jQuery('#ernestrc-fx'));
+                jQuery('#ernestrc-fx').css('color','#FFF').css('background',colorConfig.backgroundTitle);
             }
+                jQuery('#ernestrc-fx').css('text-shadow',"0px 0px 10px #FFF");
                 jQuery('.wrapper-top').css('visibility','visible');
                 jQuery('.wrapper-top').css('opacity','50');
                 jQuery('.middle-circle').css('background','#F06665');

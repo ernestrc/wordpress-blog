@@ -6715,18 +6715,15 @@ input, textarea {
 
 /* =Article
 -------------------------------------------------------------- */
-article:first-child {
-  padding: 120px 0 20px;
-}
 
 article {
-    padding: 50px 0 20px;
+    padding: 0 0 70px;
     margin: 0px auto;
     background:#FFF;
 }
 
 .container .entry-content{
-    padding-bottom: 60px;
+    padding-bottom: 30px;
     border-bottom: 1px solid #C4C4C4;
 }
 .container .entry-content:last-child {
@@ -7290,7 +7287,7 @@ article.error404 .entry-content {
 -------------------------------------------------------------- */
 #secondary,
 #tertiary {
-  margin: 70px 0 40px;
+  margin: 30px 0 40px;
 }
 @media (max-width: 480px) {
   #secondary,
@@ -8214,6 +8211,7 @@ i{
 }
 
 #main{
+    margin:0 auto;
     z-index:100;
 }
 
@@ -8272,4 +8270,7 @@ i{
     text-shadow:1px 1px 4px #282828;
 }
 
+#twitter-widget-0{
+    float:right;
+}
 

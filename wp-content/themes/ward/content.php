@@ -23,7 +23,7 @@ $featured_image = ( has_post_thumbnail() ) ? 'featured-image' : 'no-featured-ima
 						</div>
 						<?php
 					} else {
-						$col = 'col-md-8 col-sm-12 col-md-offset-2';
+						$col = 'col-md-8 col-sm-12';
 					}
 				}
 				?>
@@ -45,7 +45,7 @@ $featured_image = ( has_post_thumbnail() ) ? 'featured-image' : 'no-featured-ima
 
 				</div>
 		<?php if ( ! is_single() ) { ?>
-			</div>
+            </div>
 		</div>
 		<?php } ?>
 	</article><!-- #post-<?php the_ID(); ?> -->

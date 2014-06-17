@@ -6,7 +6,7 @@
  */
 get_header(); ?>
 
-	<div id="primary" <?php bavotasan_primary_attr(); ?>>
+	<div id="primary" class="col-md-12" style="margin-top:100px">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -22,12 +22,12 @@ get_header(); ?>
 					<div class="next pull-right"><?php next_post_link( '%link', __( '%title &rarr;', 'ward' ) ); ?></div>
 				<?php } ?>
 			</div><!-- #posts-pagination -->
-
-
 			<?php comments_template( '', true ); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
 	</div>
+
+
 
 <?php get_footer(); ?>
