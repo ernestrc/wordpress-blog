@@ -1,0 +1,22 @@
+Teach yourself programming in 10 years/months/weeks/days?
+
+"Genius is one percent inspiration, ninety-nine percent perspiration"
+
+As someone that wrote his first <html> tag less 9 months ago, this is the first topic that I needed to address. Why the title? Well, this title is a reference to Peter Norvig's "Teach yourself programming in 10 years". In this essay, he tries to explain 
+
+
+What is programming?
+According to wikipedia, programming is "a process that leads from an original formulation of a computing problem to executable programs".
+
+
+
+
+
+
+
+
+
+
+
+References
+Peter Norvig, Teach Yourself Programming in 10 years(http://norvig.com/21-days.html), 2001
