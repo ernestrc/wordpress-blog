@@ -619,8 +619,8 @@ function bavotasan_jumbotron() {
 <!--			</div>-->
 <!--		</div>-->
 <!--	</video>-->
-        <div id="ernestrc-menu-bar" class="home-top" style="background-image: url('<?php echo BAVOTASAN_THEME_URL;?>/library/images/background5.png') !important">
-        <div class="wrapper-top" style="opacity:0; visibility:hidden; background-image: url('<?php echo BAVOTASAN_THEME_URL;?>/library/images/background5s.png') !important">
+        <div id="ernestrc-menu-bar" class="home-top" style="background-image: url('<?php echo BAVOTASAN_THEME_URL;?>/library/images/background6.png') !important">
+        <div class="wrapper-top" style="opacity:0; visibility:hidden; background-image: url('<?php echo BAVOTASAN_THEME_URL;?>/library/images/background6s.png') !important">
             <div id="margins" style="opacity:inherit; visibility:inherit">
                 <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">
                     <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">
@@ -723,7 +723,8 @@ function bavotasan_jumbotron() {
 <!--                        </div>-->
 <!--                    --><?php //endif ?>
                 </div>
-                <div id="ernestrc-fx" class="middle-circle ernestrc-face">
+                <div id="ernestrc-fx" class="middle-circle">
+                    <div class="ernestrc-face"></div>
                     <i class="fa fa-lock"></i>
 
                     <?php

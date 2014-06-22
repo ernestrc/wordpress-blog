@@ -46,7 +46,7 @@
 
     jQuery('#top-ernestrc').affix({
         offset: {
-            top: 350
+            top: 290
             , bottom: function () {
                 return (this.bottom = $('.footer').outerHeight(true))
             }
@@ -110,12 +110,15 @@ var lockedMenu = false;
             if(menu==true){
 
                     jQuery('#search-comment').css('opacity',"50")
-                    jQuery('#ernestrc-fx').css('text-shadow',"0px 0px 2px #FFF")
-                    jQuery('#ernestrc-fx').css('color','#F06665').css('background',colorConfig.backgroundTitle);
+
+                    jQuery('.ernestrc-face').css('color','#5E484E').css('background',colorConfig.backgroundTitle);
                     jQuery('.wrapper-top').css('opacity','0');
                     jQuery('.wrapper-top').css('visibility','hidden');
-                    jQuery('.middle-circle').css('background','#FFFFFF');
-                    jQuery('.sticky-bar').css('background','#FFFFFF');
+                    jQuery('.middle-circle').css('background','#D6A27E');
+                jQuery('#main').append('<style>.middle-circle:before{border-bottom:30px solid #D6A27E !important;}</style>');
+                jQuery('#main').append('<style>.middle-circle:after{border-top:30px solid #D6A27E !important;}</style>');
+
+//                    jQuery('.sticky-bar').css('background','#D6A27E');
                     menu = false;
 
             }
@@ -127,14 +130,16 @@ var lockedMenu = false;
         if(menu == false && lockedMenu == false){
             if(timer == null){
                 console.log("Yuuuuuuuuup!");
-                jQuery('#ernestrc-fx').css('color','#FFF').css('background',colorConfig.backgroundTitle);
+                jQuery('.ernestrc-face').css('color','#5d7056').css('background',colorConfig.backgroundTitle);
             }
                 jQuery('#search-comment').css('opacity',"0");
-                jQuery('#ernestrc-fx').css('text-shadow',"0px 0px 10px #FFF");
+
                 jQuery('.wrapper-top').css('visibility','visible');
                 jQuery('.wrapper-top').css('opacity','50');
-                jQuery('.middle-circle').css('background','#F06665');
-                jQuery('.sticky-bar').css('background','#F06665');
+                jQuery('.middle-circle').css('background','#E6DD97');
+            jQuery('#main').append('<style>.middle-circle:before{border-bottom:30px solid #E6DD97 !important;}</style>');
+            jQuery('#main').append('<style>.middle-circle:after{border-top:30px solid #E6DD97 !important;}</style>');
+//                jQuery('.sticky-bar').css('background','#F06665');
                 menu = true;
         }
     }
@@ -151,15 +156,22 @@ var lockedMenu = false;
     jQuery('#ernestrc-icons').click(function(){
         jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
         if(lockedMenu){
-            jQuery('.middle-circle').css('background','#FFFFFF');
-            jQuery('.sticky-bar').css('background','#FFFFFF');
+            jQuery('.middle-circle').css('background','#D6A27E');
+            jQuery('#main').append('<style>.middle-circle:before{border-bottom:30px solid #D6A27E !important;}</style>');
+            jQuery('#main').append('<style>.middle-circle:after{border-top:30px solid #D6A27E !important;}</style>');
+
+
+//            jQuery('.sticky-bar').css('background','#FFFFFF');
             jQuery('.wrapper-top').css('opacity','0');
             lockedMenu=false
             jQuery('.fa-lock').css('opacity','0');
         } else {
             clearTimeout(timer);
-            jQuery('.middle-circle').css('background','#F06665');
-            jQuery('.sticky-bar').css('background','#F06665');
+            jQuery('.middle-circle').css('background','#E6DD97');
+            jQuery('#main').append('<style>.middle-circle:before{border-bottom:30px solid #E6DD97 !important;}</style>');
+            jQuery('#main').append('<style>.middle-circle:after{border-top:30px solid #E6DD97 !important;}</style>');
+
+//            jQuery('.sticky-bar').css('background','#F06665');
             jQuery('.fa-lock').css('opacity','50');
             jQuery('.wrapper-top').css('opacity','100');
             lockedMenu=true
