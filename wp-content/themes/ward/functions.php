@@ -725,17 +725,19 @@ function bavotasan_jumbotron() {
                 </div>
                 <div id="ernestrc-fx" class="middle-circle ernestrc-face">
                     <i class="fa fa-lock"></i>
-                        <div id="search-comment">
-                            <div class="triangulitus"></div>
+
                     <?php
                     if ( is_search() ) {
+                        ?><div id="search-comment">
+                            <div class="triangulitus"></div><?php
                         $num = $wp_query->found_posts;
                         printf( '%1$s "%2$s"',
                             $num . __( 'Showing Results for ', 'ward'),
                             get_search_query());
-                    }
+                        ?></div><?php
+                        }
                     ?>
-                        </div>
+
                 </div>
                 <div class="ernestrc-about"></div>
             </div>

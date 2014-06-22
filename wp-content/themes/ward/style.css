@@ -417,6 +417,8 @@ p {
   .lead {
     font-size: 21px;
   }
+
+
 }
 small,
 .small {
@@ -8292,6 +8294,8 @@ i{
 
 }
 
+
+
 .triangulitus{
     display:block;
     background:#555555;
@@ -8301,5 +8305,11 @@ i{
     bottom:2px;
     left:2px;
 
+}
+
+@media (max-width: 758px) {
+    #ernestrc-menu-bar {
+        background-size:900px 300px !important;
+    }
 }
 

@@ -86,7 +86,6 @@
         },100);
     }
 
-    jQuery('.wrapper-top').css("height",jQuery('.home-top').css("height"));
 
     function getHeightOfDiv(div,divider){
         var substring = div.css("height").substring(0,3);
