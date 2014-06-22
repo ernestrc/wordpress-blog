@@ -6,7 +6,7 @@
  */
 get_header(); ?>
 
-	<div id="primary" class="col-md-12" style="margin-top:100px">
+	<div id="primary" class="col-md-12" style="padding:100px 100px 0px 100px">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 

@@ -6723,7 +6723,7 @@ article {
 }
 
 .container .entry-content{
-    padding-bottom: 30px;
+    padding-bottom: 60px !important;
     border-bottom: 1px solid #C4C4C4;
 }
 .container .entry-content:last-child {
@@ -7874,21 +7874,6 @@ a [class*=" ernestrc-"] {
     /*position:absolute;*/
 }
 
-.fa-comment {
-    font-size:100px;
-    color:#478BCA;
-    position:inherit;
-    left:-50px;
-    top:90px;
-    -moz-transform: rotate(-180deg);
-    -webkit-transform: rotate(-180deg);
-    transform: rotate(-180deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-}
 
 .page-title {
     margin: auto;
@@ -8212,7 +8197,7 @@ i{
 
 #main{
     margin:0 auto;
-    max-width:1000px
+    max-width:1400px;
     z-index:100;
 }
 
@@ -8273,5 +8258,48 @@ i{
 
 #twitter-widget-0{
     float:right;
+    margin:60px 30px 0 0;
+}
+
+.fa.fa-comment{
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    font-size:100px;
+    position: absolute;
+    left:100px;
+    bottom:70px;
+}
+
+#search-comment{
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    font-family:Lato, sans-serif;
+    width:180px;
+    color:white;
+    position:absolute;
+    font-size:13px;
+    top:10px;
+    left:100px;
+    background:#555555;
+    padding:10px;
+    line-height:14px;
+    border-radius:15px;
+    opacity:50;
+
+}
+
+.triangulitus{
+    display:block;
+    background:#555555;
+    width:10px;
+    position:absolute;
+    height:10px;
+    bottom:2px;
+    left:2px;
+
 }
 

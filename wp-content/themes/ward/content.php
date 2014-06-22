@@ -7,7 +7,6 @@ $featured_image = ( has_post_thumbnail() ) ? 'featured-image' : 'no-featured-ima
 	<article id="post-<?php the_ID(); ?>" <?php post_class( $featured_image ); ?>>
 		<?php if ( ! is_single() ) { ?>
 		<div class="container">
-			<div class="row">
 		<?php } ?>
 				<?php
 				$align = get_post_meta( get_the_ID(), 'bavotasan_home_page_alignment', true );
@@ -45,7 +44,6 @@ $featured_image = ( has_post_thumbnail() ) ? 'featured-image' : 'no-featured-ima
 
 				</div>
 		<?php if ( ! is_single() ) { ?>
-            </div>
 		</div>
 		<?php } ?>
 	</article><!-- #post-<?php the_ID(); ?> -->

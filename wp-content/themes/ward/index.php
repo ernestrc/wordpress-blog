@@ -48,7 +48,7 @@ get_header(); ?>
                 endif;
                 ?>
             </div>
-            <div id="secondary" <?php bavotasan_sidebar_class(); ?> role="complementary">
+            <div id="secondary" class="md-col-4" role="complementary">
                 <a class="twitter-timeline" href="https://twitter.com/ernestrc_" width="300" height="500" data-widget-id="478723011973894145">Tweets by @ernestrc_</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div><!-- #secondary.widget-area -->

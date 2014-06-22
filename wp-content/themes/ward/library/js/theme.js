@@ -46,7 +46,7 @@
 
     jQuery('#top-ernestrc').affix({
         offset: {
-            top: 370
+            top: 350
             , bottom: function () {
                 return (this.bottom = $('.footer').outerHeight(true))
             }
@@ -109,6 +109,8 @@ var lockedMenu = false;
     function bannerFxOff(){
         if(!lockedMenu==true){
             if(menu==true){
+
+                    jQuery('#search-comment').css('opacity',"50")
                     jQuery('#ernestrc-fx').css('text-shadow',"0px 0px 2px #FFF")
                     jQuery('#ernestrc-fx').css('color','#F06665').css('background',colorConfig.backgroundTitle);
                     jQuery('.wrapper-top').css('opacity','0');
@@ -128,6 +130,7 @@ var lockedMenu = false;
                 console.log("Yuuuuuuuuup!");
                 jQuery('#ernestrc-fx').css('color','#FFF').css('background',colorConfig.backgroundTitle);
             }
+                jQuery('#search-comment').css('opacity',"0");
                 jQuery('#ernestrc-fx').css('text-shadow',"0px 0px 10px #FFF");
                 jQuery('.wrapper-top').css('visibility','visible');
                 jQuery('.wrapper-top').css('opacity','50');

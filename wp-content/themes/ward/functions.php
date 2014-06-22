@@ -646,14 +646,15 @@ function bavotasan_jumbotron() {
                                 echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
                             }
                             ?>
-                            <!--                        <i class="fa fa-circle"></i>-->
-                            <!--                        <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://localhost:8888/wordpress/">-->
-                            <!--                                <label>-->
-                            <!--                                    <span class="screen-reader-text">Search for:</span>-->
-                            <!--                                    <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">-->
-                            <!--                                </label>-->
-                            <!--                                <input type="submit" class="search-submit" value="Search">-->
-                            <!--                            </form></aside>-->
+                            <i class="fa fa-circle"></i>
+                            <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://localhost:8888/">
+                                    <label>
+                                        <span class="screen-reader-text">Search for:</span>
+                                        <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+                                    </label>
+                                    <input type="submit" class="search-submit" value="Search">
+                                </form></aside>
+                            <div class="rss-button"><?php bloginfo('rss2_url'); ?></div>
                         </div>
                         <div class="categories-menu col-xs-3 hidden-xs">
                             <!--                        <i class="fa fa-folder-o"></i>-->
@@ -724,15 +725,17 @@ function bavotasan_jumbotron() {
                 </div>
                 <div id="ernestrc-fx" class="middle-circle ernestrc-face">
                     <i class="fa fa-lock"></i>
-                    <div class="search-comment">
-<!--                        --><?php //TODO Finish search results in textbox
-//
-//                        $num = $wp_query->found_posts;
-//                        printf( '%1$s "%2$s"',
-//                            $num . __( ' search results for', 'ward'),
-//                            get_search_query()
-//                        );?>
-                    </div>
+                        <div id="search-comment">
+                            <div class="triangulitus"></div>
+                    <?php
+                    if ( is_search() ) {
+                        $num = $wp_query->found_posts;
+                        printf( '%1$s "%2$s"',
+                            $num . __( 'Showing Results for ', 'ward'),
+                            get_search_query());
+                    }
+                    ?>
+                        </div>
                 </div>
                 <div class="ernestrc-about"></div>
             </div>
