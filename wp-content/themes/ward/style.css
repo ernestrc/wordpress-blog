@@ -8250,11 +8250,6 @@ i{
 
 }
 
-@media (max-width: 758px) {
-    #ernestrc-menu-bar {
-        background-size:900px 300px !important;
-    }
-}
 
 .error404{
     margin-top:100px;
@@ -8374,5 +8369,9 @@ i{
     margin:0 auto;
     z-index:3;
     background-repeat: no-repeat !important;
+}
+
+#ernestrc-menu-bar .container{
+    height:356px !important;
 }
 

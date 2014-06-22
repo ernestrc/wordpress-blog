@@ -100,6 +100,8 @@
         return String(width) + "px"
     }
 
+//    jQuery('#ernestrc-menu-bar').css('background-size',getWidthOfDiv(jQuery('#ernestrc-menu-bar'),1)+' '+getHeightOfDiv(jQuery('#ernestrc-menu-bar'),1));
+
 //    jQuery('.fa-folder-o').css("top",getHeightOfDiv(jQuery('.home-top'),3));
 
 var menu = false;
