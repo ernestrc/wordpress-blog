@@ -8317,3 +8317,8 @@ i{
     margin-top:100px;
 }
 
+.shareaholic-canvas{
+    position:absolute;
+    bottom:5px;
+    left:-15px;
+}
