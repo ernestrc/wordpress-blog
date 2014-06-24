@@ -626,7 +626,7 @@ function bavotasan_jumbotron() {
             <img id="background-leftA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftB.png">
 <!--                        </div>-->
             <div class="wrapper-top" style="opacity:0; visibility:hidden;">
-                <img id="background-rightB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightA.png">
+                <img id="background-rightB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightAS.png">
                 <img id="background-leftB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftA.png">
             <div id="margins" style="opacity:inherit; visibility:inherit">
                 <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">
