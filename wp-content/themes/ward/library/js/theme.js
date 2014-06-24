@@ -53,6 +53,15 @@
         }
     });
 
+    //Hooks into affix events
+//    jQuery('#top-ernestrc').on('affix.bs.affix', function(e){
+//          jQuery('.sticky-bar').css('background','#5E7EDC')
+//          jQuery()
+//    });
+//    jQuery('#top-ernestrc').on('affixed-top.bs.affix', function(e){
+//        jQuery('.sticky-bar').css('background','transparent')
+//    });
+
 
     function getRandomColor() {
         var letters = '0123456789ABCDEF'.split('');
@@ -110,19 +119,15 @@ var lockedMenu = false;
     function bannerFxOff(){
         if(!lockedMenu==true){
             if(menu==true){
-
-                    jQuery('#search-comment').css('opacity',"50")
-
-//                    jQuery('.ernestrc-face').css('color','#5E484E').css('background',colorConfig.backgroundTitle);
-                    jQuery('.wrapper-top').css('opacity','0');
-                    jQuery('.wrapper-top').css('visibility','hidden');
-                    jQuery('.middle-circle').css('background','#89A4CC');
+                jQuery('.middle-circle').css('background','#89A4CC');
+                jQuery('#sticky-background-leftA').css('opacity','0');
+                jQuery('#sticky-background-rightA').css('opacity','0');
                 jQuery('#main').append('<style>.middle-circle:before{border-bottom:35px solid #89A4CC !important;}</style>');
                 jQuery('#main').append('<style>.middle-circle:after{border-top:35px solid #89A4CC !important;}</style>');
-
-//                    jQuery('.sticky-bar').css('background','#D6A27E');
-                    menu = false;
-
+                jQuery('#search-comment').css('opacity',"50");
+                jQuery('.wrapper-top').css('opacity','0');
+                jQuery('.wrapper-top').css('visibility','hidden');
+                menu = false;
             }
         }
     }
@@ -130,19 +135,18 @@ var lockedMenu = false;
     function bannerFxOn(){
 
         if(menu == false && lockedMenu == false){
-            if(timer == null){
-                console.log("Yuuuuuuuuup!");
-//                jQuery('.ernestrc-face').css('color','#5d7056').css('background',colorConfig.backgroundTitle);
-            }
-                jQuery('#search-comment').css('opacity',"0");
-
-                jQuery('.wrapper-top').css('visibility','visible');
-                jQuery('.wrapper-top').css('opacity','50');
-                jQuery('.middle-circle').css('background','#D2B78F');
+            jQuery('.middle-circle').css('background','#D2B78F');
             jQuery('#main').append('<style>.middle-circle:before{border-bottom:35px solid #D2B78F !important;}</style>');
             jQuery('#main').append('<style>.middle-circle:after{border-top:35px solid #D2B78F !important;}</style>');
-//                jQuery('.sticky-bar').css('background','#F06665');
-                menu = true;
+//            if(timer == null){
+//                console.log("Yuuuuuuuuup!");
+//            }
+            jQuery('#search-comment').css('opacity',"0");
+            jQuery('#sticky-background-leftA').css('opacity','100');
+            jQuery('#sticky-background-rightA').css('opacity','100');
+            jQuery('.wrapper-top').css('visibility','visible');
+            jQuery('.wrapper-top').css('opacity','50');
+            menu = true;
         }
     }
 
@@ -159,17 +163,20 @@ var lockedMenu = false;
         jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
         if(lockedMenu){
             jQuery('.middle-circle').css('background','#89A4CC');
+            jQuery('#sticky-background-leftA').css('opacity','0');
+            jQuery('#sticky-background-rightA').css('opacity','0');
             jQuery('#main').append('<style>.middle-circle:before{border-bottom:35px solid #89A4CC !important;}</style>');
             jQuery('#main').append('<style>.middle-circle:after{border-top:35px solid #89A4CC !important;}</style>');
 
 
-//            jQuery('.sticky-bar').css('background','#FFFFFF');
             jQuery('.wrapper-top').css('opacity','0');
             lockedMenu=false
             jQuery('.fa-lock').css('opacity','0');
         } else {
             clearTimeout(timer);
             jQuery('.middle-circle').css('background','#D2B78F');
+            jQuery('#sticky-background-leftA').css('opacity','100');
+            jQuery('#sticky-background-rightA').css('opacity','100');
             jQuery('#main').append('<style>.middle-circle:before{border-bottom:35px solid #D2B78F !important;}</style>');
             jQuery('#main').append('<style>.middle-circle:after{border-top:35px solid #D2B78F !important;}</style>');
 

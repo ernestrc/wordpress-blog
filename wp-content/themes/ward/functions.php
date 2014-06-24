@@ -714,7 +714,10 @@ function bavotasan_jumbotron() {
     <div id="nav-wrapper">
         <div id="top-ernestrc">
             <div class="sticky-bar">
-
+                <img id="sticky-background-rightB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightB.png">
+                <img id="sticky-background-leftB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftB.png">
+                <img id="sticky-background-rightA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightA.png">
+                <img id="sticky-background-leftA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftA.png">
                 <div id="ernestrc-icons">
 
 <!--                    --><?php //if ( is_category() ) : ?>
