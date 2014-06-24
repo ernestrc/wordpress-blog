@@ -619,8 +619,15 @@ function bavotasan_jumbotron() {
 <!--			</div>-->
 <!--		</div>-->
 <!--	</video>-->
-        <div id="ernestrc-menu-bar" class="home-top" style="background-image: url('<?php echo BAVOTASAN_THEME_URL;?>/library/images/background6.png') !important">
-        <div class="wrapper-top" style="opacity:0; visibility:hidden; background-image: url('<?php echo BAVOTASAN_THEME_URL;?>/library/images/background6s.png') !important">
+
+        <div id="ernestrc-menu-bar" class="home-top" style="position:relative;">
+<!--            <div id="img-wrapper">-->
+            <img id="background-rightA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightB.png">
+            <img id="background-leftA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftB.png">
+<!--                        </div>-->
+            <div class="wrapper-top" style="opacity:0; visibility:hidden;">
+                <img id="background-rightB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightA.png">
+                <img id="background-leftB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftA.png">
             <div id="margins" style="opacity:inherit; visibility:inherit">
                 <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">
                     <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">
