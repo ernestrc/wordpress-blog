@@ -619,82 +619,97 @@ function bavotasan_jumbotron() {
 <!--			</div>-->
 <!--		</div>-->
 <!--	</video>-->
-
         <div id="ernestrc-menu-bar" class="home-top" style="position:relative;">
-<!--            <div id="img-wrapper">-->
             <img id="background-rightA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightB.png">
             <img id="background-leftA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftB.png">
-<!--                        </div>-->
             <div class="wrapper-top" style="opacity:0; visibility:hidden;">
+                <div id="icons-menu" class="home-menu" style="opacity:inherit; visibility:inherit">
+                    <i class="fa fa-home" style="opacity:inherit; visibility:inherit"></i>
+                </div>
+                <div id="icons-menu" class="search-menu" style="opacity:inherit; visibility:inherit">
+                    <i class="fa fa-search" style="opacity:inherit; visibility:inherit"></i>
+                </div>
+                <div id="icons-menu" class="tags-menu" style="opacity:inherit; visibility:inherit">
+                    <i class="fa fa-tags" style="opacity:inherit; visibility:inherit"></i>
+                </div>
+                <div id="icons-menu" class="archive-menu" style="opacity:inherit; visibility:inherit">
+                    <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>
+                </div>
+                <div id="icons-menu" class="rss-menu" style="opacity:inherit; visibility:inherit">
+                    <i class="fa fa-rss-square" style="opacity:inherit; visibility:inherit"></i>
+                </div>
+                <div id="icons-menu" class="about-menu" style="opacity:inherit; visibility:inherit">
+                    <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>
+                </div>
                 <img id="background-rightB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightAS.png">
                 <img id="background-leftB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftA.png">
-            <div id="margins" style="opacity:inherit; visibility:inherit">
-                <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">
-                    <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">
-                        <div class="posts-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">
-                            <i class="fa fa-history" style="opacity:inherit; visibility:inherit"></i>
-                        </div>
-                        <div class="categories-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">
-                            <i class="fa fa-list" style="opacity:inherit; visibility:inherit"></i>
-                        </div>
-                        <div class="archive-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">
-                            <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>
-                        </div>
-                        <div class="about-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">
-                            <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>
-                        </div>
-                    </div>
-                    <div id="blog-menu" class="row hidden-xs">
-                        <div class="posts-menu col-xs-3 hidden-xs">
-                            <h2><a href="<?php get_home_url(); ?>/index.php">Recent Posts</a></h2>
-                            <?php
-                            $recent_posts = wp_get_recent_posts();
-                            foreach( $recent_posts as $recent ){
-                                echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-                            }
-                            ?>
-                            <i class="fa fa-circle"></i>
-                            <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://localhost:8888/">
-                                    <label>
-                                        <span class="screen-reader-text">Search for:</span>
-                                        <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
-                                    </label>
-                                    <input type="submit" class="search-submit" value="Search">
-                                </form></aside>
-                            <div class="rss-button"><?php bloginfo('rss2_url'); ?></div>
-                        </div>
-                        <div class="categories-menu col-xs-3 hidden-xs">
-                            <!--                        <i class="fa fa-folder-o"></i>-->
-                            <div class="category-titles">
-                                <h2><a href="<?php get_home_url(); ?>/categories/">Categories</a></h2>
-                                <?php
-                                $args = array(
-                                    'orderby' => 'name'
-                                );
-                                $categories = get_categories( $args );
-                                foreach ( $categories as $category ) {
-                                    echo '<li><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></li><br/>';
-                                }
-                                ?>
-                            </div>
-                        </div>
-                        <div class="archive-menu col-xs-3 hidden-xs">
-                            <h2><a href="<?php echo BAVOTASAN_THEME_URL; ?>/ernestrc-archive.php">Archive</a></h2>
-                            <?php wp_get_archives(
-                                array( 'type' => 'monthly',
-                                    'limit' => 5,
-                                    'show_post_count' => 1
-                                ) ); ?>
-                        </div>
-                        <div class="about-menu col-xs-3 hidden-xs">
-                            <h2><a href="#">About</a></h2>
-
-                            TODO: fer una pagina per cada un dels titols. Fer llista de items a dins per poder
-                            fer link des de mobile i deixar nomes els icones en mobile.
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--            <div id="margins" style="opacity:inherit; visibility:inherit">-->
+<!--                <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">-->
+<!--<!--                    <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">-->-->
+<!--<!--                        <div class="posts-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->-->
+<!--<!--                            <i class="fa fa-history" style="opacity:inherit; visibility:inherit"></i>-->-->
+<!--<!--                        </div>-->-->
+<!--<!--                        <div class="categories-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->-->
+<!--<!--                            <i class="fa fa-list" style="opacity:inherit; visibility:inherit"></i>-->-->
+<!--<!--                        </div>-->-->
+<!--<!--                        <div class="archive-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->-->
+<!--<!--                            <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>-->-->
+<!--<!--                        </div>-->-->
+<!--<!--                        <div class="about-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->-->
+<!--<!--                            <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>-->-->
+<!--<!--                        </div>-->-->
+<!--<!--                    </div>-->-->
+<!--                    <div id="blog-menu" class="row hidden-xs">-->
+<!--                        <div class="posts-menu col-xs-3 hidden-xs">-->
+<!--                            <h2><a href="--><?php //get_home_url(); ?><!--/index.php">Recent Posts</a></h2>-->
+<!--                            --><?php
+//                            $recent_posts = wp_get_recent_posts();
+//                            foreach( $recent_posts as $recent ){
+//                                echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+//                            }
+//                            ?>
+<!--                            <i class="fa fa-circle"></i>-->
+<!--                            <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://localhost:8888/">-->
+<!--                                    <label>-->
+<!--                                        <span class="screen-reader-text">Search for:</span>-->
+<!--                                        <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">-->
+<!--                                    </label>-->
+<!--                                    <input type="submit" class="search-submit" value="Search">-->
+<!--                                </form></aside>-->
+<!--                            <div class="rss-button">--><?php //bloginfo('rss2_url'); ?><!--</div>-->
+<!--                        </div>-->
+<!--                        <div class="categories-menu col-xs-3 hidden-xs">-->
+<!--                            <!--                        <i class="fa fa-folder-o"></i>-->-->
+<!--                            <div class="category-titles">-->
+<!--                                <h2><a href="--><?php //get_home_url(); ?><!--/categories/">Categories</a></h2>-->
+<!--                                --><?php
+//                                $args = array(
+//                                    'orderby' => 'name'
+//                                );
+//                                $categories = get_categories( $args );
+//                                foreach ( $categories as $category ) {
+//                                    echo '<li><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></li><br/>';
+//                                }
+//                                ?>
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="archive-menu col-xs-3 hidden-xs">-->
+<!--                            <h2><a href="--><?php //echo BAVOTASAN_THEME_URL; ?><!--/ernestrc-archive.php">Archive</a></h2>-->
+<!--                            --><?php //wp_get_archives(
+//                                array( 'type' => 'monthly',
+//                                    'limit' => 5,
+//                                    'show_post_count' => 1
+//                                ) ); ?>
+<!--                        </div>-->
+<!--                        <div class="about-menu col-xs-3 hidden-xs">-->
+<!--                            <h2><a href="#">About</a></h2>-->
+<!---->
+<!--                            TODO: fer una pagina per cada un dels titols. Fer llista de items a dins per poder-->
+<!--                            fer link des de mobile i deixar nomes els icones en mobile.-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
         </div>
     <!--         style="background-image:url('--><?php //echo BAVOTASAN_THEME_URL; ?><!--/library/images/background.png')">-->
