@@ -620,17 +620,36 @@ function bavotasan_jumbotron() {
 <!--		</div>-->
 <!--	</video>-->
         <div id="ernestrc-menu-bar" class="home-top" style="position:relative;">
-            <img id="background-rightA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightB.png">
-            <img id="background-leftA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftB.png">
+            <img id="background-rightA" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightB.png">
+            <img id="background-leftA" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftB.png">
             <div class="wrapper-top" style="opacity:0; visibility:hidden;">
                 <div id="icons-menu" class="home-menu" style="opacity:inherit; visibility:inherit">
-                    <i class="fa fa-home" style="opacity:inherit; visibility:inherit"></i>
+                    <a href="<?php get_home_url(); ?>/index.php">
+                        <div id="home-cell">
+                            <i class="fa fa-home" style="opacity:inherit; visibility:inherit"></i>
+                        </div>
+                    </a>
                 </div>
                 <div id="icons-menu" class="search-menu" style="opacity:inherit; visibility:inherit">
-                    <i class="fa fa-search" style="opacity:inherit; visibility:inherit"></i>
+                    <aside id="search-form" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://localhost:8888/">
+                            <label>
+                                <span class="screen-reader-text">Search for:</span>
+                                <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+                            </label>
+                            <input type="submit" class="search-submit" value="Search">
+                        </form></aside>
+                    <div id="search-cell">
+                        <i class="fa fa-search" style="opacity:inherit; visibility:inherit"></i>
+                    </div>
                 </div>
                 <div id="icons-menu" class="tags-menu" style="opacity:inherit; visibility:inherit">
-                    <i class="fa fa-tags" style="opacity:inherit; visibility:inherit"></i>
+                    <div id="tags-cell">
+                        <i class="fa fa-tags" style="opacity:inherit; visibility:inherit"></i>
+                    </div>
+                    <div id="tags-cell1" class="cat" style="opacity:0"><i class="fa fa-database"></i></div>
+                    <div id="tags-cell2" class="cat" style="opacity:0"><i class="fa fa-rebel"></i></i></div>
+                    <div id="tags-cell3" class="cat" style="opacity:0"><i class="fa fa-code"></i></div>
+                    <div id="tags-cell4" class="cat" style="opacity:0"><i class="fa fa-graduation-cap"></i></div>
                 </div>
                 <div id="icons-menu" class="archive-menu" style="opacity:inherit; visibility:inherit">
                     <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>
@@ -641,8 +660,8 @@ function bavotasan_jumbotron() {
                 <div id="icons-menu" class="about-menu" style="opacity:inherit; visibility:inherit">
                     <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>
                 </div>
-                <img id="background-rightB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightAS.png">
-                <img id="background-leftB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftA.png">
+                    <img id="background-rightB" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightAS.png">
+                    <img id="background-leftB" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftA.png">
 <!--            <div id="margins" style="opacity:inherit; visibility:inherit">-->
 <!--                <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">-->
 <!--<!--                    <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">-->-->
@@ -669,13 +688,7 @@ function bavotasan_jumbotron() {
 //                            }
 //                            ?>
 <!--                            <i class="fa fa-circle"></i>-->
-<!--                            <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://localhost:8888/">-->
-<!--                                    <label>-->
-<!--                                        <span class="screen-reader-text">Search for:</span>-->
-<!--                                        <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">-->
-<!--                                    </label>-->
-<!--                                    <input type="submit" class="search-submit" value="Search">-->
-<!--                                </form></aside>-->
+
 <!--                            <div class="rss-button">--><?php //bloginfo('rss2_url'); ?><!--</div>-->
 <!--                        </div>-->
 <!--                        <div class="categories-menu col-xs-3 hidden-xs">-->
