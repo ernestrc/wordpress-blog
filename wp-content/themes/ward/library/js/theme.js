@@ -112,7 +112,11 @@ var lockedMenu = false;
     function bannerFxOff(){
         if(!lockedMenu==true){
             if(menu==true){
-                changeHexagonBackground(".middle-circle",'#89A4CC');
+                setTimeout(function(){
+                jQuery('#title').css('opacity','100');
+                jQuery('#subtitle').css('opacity','100');
+                },300);
+                changeHexagonBackground(".middle-circle",'#80A2D0');
                 jQuery('#search-comment').css('opacity',"50");
                 jQuery('#sticky-background-leftA').css('opacity','0');
                 jQuery('#sticky-background-rightA').css('opacity','0');
@@ -126,16 +130,20 @@ var lockedMenu = false;
     function bannerFxOn(){
 
         if(menu == false && lockedMenu == false){
-            changeHexagonBackground(".middle-circle",'#D58381');
-            jQuery('#search-comment').css('opacity',"0");
-            jQuery('#sticky-background-leftA').css('opacity','100');
-            jQuery('#sticky-background-rightA').css('opacity','100');
-            jQuery('.wrapper-top').css('visibility','visible');
-            jQuery('.wrapper-top').css('opacity','50');
-//            if(timer == null){
-//                console.log("Yuuuuuuuuup!");
-//            }
             menu = true;
+            jQuery('#title').css('opacity','0');
+            jQuery('#subtitle').css('opacity','0');
+
+            setTimeout(function(){
+                jQuery('.wrapper-top').css('visibility','visible');
+                jQuery('.wrapper-top').css('opacity','100');
+                jQuery('#sticky-background-leftA').css('opacity','100');
+                jQuery('#sticky-background-rightA').css('opacity','100');
+                changeHexagonBackground(".middle-circle",'#D58381');
+                jQuery('#search-comment').css('opacity',"0");
+
+            },300);
+
         }
     }
 
@@ -160,7 +168,7 @@ var lockedMenu = false;
         if(lockedMenu){
             jQuery('#sticky-background-leftA').css('opacity','0');
             jQuery('#sticky-background-rightA').css('opacity','0');
-            changeHexagonBackground(".middle-circle","#89A4CC");
+            changeHexagonBackground(".middle-circle","#80A2D0");
             jQuery('.wrapper-top').css('opacity','0');
             lockedMenu=false
             jQuery('.fa-lock').css('opacity','0');
@@ -183,15 +191,21 @@ var lockedMenu = false;
      * Menu Commons
      */
     jQuery('.bakground').hover(function(){
-        changeHexagonBackground("#search-cell","#F9C3BA");
-        changeHexagonBackground("#home-cell","#F4AD9C");
-        changeHexagonBackground("#tags-cell","#F4C9BF");
+        changeHexagonBackground("#search-cell","transparent");
+        changeHexagonBackground("#home-cell","transparent");
+        changeHexagonBackground("#tags-cell","transparent");
         setTimeout(function(){
             jQuery('#search-form').css('opacity','0');
             jQuery('#tags-cell1').css('opacity','0');
             jQuery('#tags-cell2').css('opacity','0');
             jQuery('#tags-cell3').css('opacity','0');
             jQuery('#tags-cell4').css('opacity','0');
+            jQuery('#inbox-cell1').css('opacity','0');
+            jQuery('#inbox-cell2').css('opacity','0');
+            jQuery('#inbox-cell3').css('opacity','0');
+            jQuery('#inbox-cell4').css('opacity','0');
+
+
         },300);
 
     });
@@ -200,37 +214,123 @@ var lockedMenu = false;
      * Search Cell
      */
     jQuery('#search-cell').hover(function(){
-        changeHexagonBackground("#search-cell","#FADCD5");
+        changeHexagonBackground(".middle-circle","#D6A987");
+        jQuery('#background-rightE').css('opacity','100');
+        jQuery('#background-leftE').css('opacity','100');
+        jQuery('#sticky-background-leftE').css('opacity','100');
+        jQuery('#sticky-background-rightE').css('opacity','100');
 
         setTimeout(function(){
             jQuery('#search-form').css('opacity','100');
         },300);
+    },function(){
+        changeHexagonBackground(".middle-circle","#D58381");
+        jQuery('#background-rightE').css('opacity','0');
+        jQuery('#background-leftE').css('opacity','0');
+        jQuery('#sticky-background-leftE').css('opacity','0');
+        jQuery('#sticky-background-rightE').css('opacity','0');
     });
 
     /**
      * Home Cell
      */
     jQuery('#home-cell').hover(function(){
-        changeHexagonBackground("#home-cell","#F7D1C5");
+        changeHexagonBackground(".middle-circle","#D281CD");
+        jQuery('#background-rightD').css('opacity','100');
+        jQuery('#background-leftD').css('opacity','100');
+        jQuery('#sticky-background-leftD').css('opacity','100');
+        jQuery('#sticky-background-rightD').css('opacity','100');
+
+    },function(){
+        changeHexagonBackground(".middle-circle","#D58381");
+        jQuery('#background-rightD').css('opacity','0');
+        jQuery('#background-leftD').css('opacity','0');
+        jQuery('#sticky-background-leftD').css('opacity','0');
+        jQuery('#sticky-background-rightD').css('opacity','0');
     });
 
     /**
      * Tags Cell
      */
     jQuery('#tags-cell').hover(function(){
-        changeHexagonBackground("#tags-cell","#F7DFD8");
+        changeHexagonBackground(".middle-circle","#AFD18C");
+        jQuery('#background-rightF').css('opacity','100');
+        jQuery('#background-leftF').css('opacity','100');
+        jQuery('#sticky-background-leftF').css('opacity','100');
+        jQuery('#sticky-background-rightF').css('opacity','100');
         setTimeout(function(){
             jQuery('#tags-cell1').css('opacity','100');
             jQuery('#tags-cell2').css('opacity','100');
             jQuery('#tags-cell3').css('opacity','100');
             jQuery('#tags-cell4').css('opacity','100');
         },300);
+    },function(){
+        changeHexagonBackground(".middle-circle","#D58381");
+        jQuery('#background-rightF').css('opacity','0');
+        jQuery('#background-leftF').css('opacity','0');
+        jQuery('#sticky-background-leftF').css('opacity','0');
+        jQuery('#sticky-background-rightF').css('opacity','0');
+    });
+
+    /**
+     * Archive Cell
+     */
+    function colorLoop(elem,newCounter){
+        var counter = newCounter;
+        if(counter % 2){
+            changeHexagonBackground(elem,"#D9F6FA");
+        } else {
+            changeHexagonBackground(elem,"#A3E7F0");
+        }
+            counter = counter + 1;
+        archive = setTimeout(function(){
+            colorLoop(elem,counter)
+        },750);
+    }
+    var archive;
+    jQuery('#archive-cell').hover(function(){
+        changeHexagonBackground(".middle-circle","#7CD1D3");
+        jQuery('#background-rightC').css('opacity','100');
+        jQuery('#background-leftC').css('opacity','100');
+        jQuery('#sticky-background-leftC').css('opacity','100');
+        jQuery('#sticky-background-rightC').css('opacity','100');
+    },function(){
+        changeHexagonBackground(".middle-circle","#D58381");
+        jQuery('#background-rightC').css('opacity','0');
+        jQuery('#background-leftC').css('opacity','0');
+        jQuery('#sticky-background-leftC').css('opacity','0');
+        jQuery('#sticky-background-rightC').css('opacity','0');
+        changeHexagonBackground("#archive-cell","transparent");
+    });
+
+    /**
+     * Inbox Cell
+     */
+    jQuery('#inbox-cell').hover(function(){
+        changeHexagonBackground(".middle-circle","#A683CE");
+        jQuery('#background-rightG').css('opacity','100');
+        jQuery('#background-leftG').css('opacity','100');
+        jQuery('#sticky-background-leftG').css('opacity','100');
+        jQuery('#sticky-background-rightG').css('opacity','100');
+        setTimeout(function(){
+            jQuery('#inbox-cell1').css('opacity','100');
+            jQuery('#inbox-cell2').css('opacity','100');
+            jQuery('#inbox-cell3').css('opacity','100');
+            jQuery('#inbox-cell4').css('opacity','100');
+        },300);
+    },function(){
+        changeHexagonBackground(".middle-circle","#D58381");
+        jQuery('#background-rightG').css('opacity','0');
+        jQuery('#background-leftG').css('opacity','0');
+        jQuery('#sticky-background-leftG').css('opacity','0');
+        jQuery('#sticky-background-rightG').css('opacity','0');
     });
 
 
 
-
     jQuery( document ).ready(function() {
+        jQuery('[id=icons-menu]').css('background','transparent !important')
+
         outdatedBrowser({
             bgColor: '#f25648',
             color: '#ffffff',

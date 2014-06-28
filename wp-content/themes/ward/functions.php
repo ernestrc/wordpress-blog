@@ -631,7 +631,7 @@ function bavotasan_jumbotron() {
                     </a>
                 </div>
                 <div id="icons-menu" class="search-menu" style="opacity:inherit; visibility:inherit">
-                    <aside id="search-form" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://localhost:8888/">
+                    <aside id="search-form" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://unstable.build/">
                             <label>
                                 <span class="screen-reader-text">Search for:</span>
                                 <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
@@ -652,17 +652,32 @@ function bavotasan_jumbotron() {
                     <div id="tags-cell4" class="cat" style="opacity:0"><i class="fa fa-graduation-cap"></i></div>
                 </div>
                 <div id="icons-menu" class="archive-menu" style="opacity:inherit; visibility:inherit">
-                    <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>
-                </div>
-                <div id="icons-menu" class="rss-menu" style="opacity:inherit; visibility:inherit">
-                    <i class="fa fa-rss-square" style="opacity:inherit; visibility:inherit"></i>
+                    <div id="archive-cell">
+                        <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>
+                    </div>
                 </div>
                 <div id="icons-menu" class="about-menu" style="opacity:inherit; visibility:inherit">
-                    <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>
+                    <div id="inbox-cell">
+                        <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>
+                    </div>
+                    <div id="inbox-cell4" class="cat" style="opacity:0"><a href="http://twitter.com/ernestrc_"><i class="fa fa-twitter"></i></a></div>
+                    <div id="inbox-cell1" class="cat" style="opacity:0"><a href="http://uk.linkedin.com/in/ernestromero/"><i class="fa fa-linkedin"></i></a></div>
+                    <div id="inbox-cell3" class="cat" style="opacity:0"><a href="mailto:ernest@unstable.build"><i class="fa fa-envelope"></i></a></div>
+                    <div id="inbox-cell2" class="cat" style="opacity:0"><i class="ernestrc-everreach"></i></div>
                 </div>
-                    <img id="background-rightB" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightAS.png">
-                    <img id="background-leftB" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftA.png">
-<!--            <div id="margins" style="opacity:inherit; visibility:inherit">-->
+                <img id="background-leftB" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftA.png">
+                <img id="background-rightB" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightAS.png">
+                <img id="background-leftC" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftC.png" style="opacity:0">
+                <img id="background-rightC" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightC.png"style="opacity:0">
+                <img id="background-leftD" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftD.png" style="opacity:0">
+                <img id="background-rightD" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightD.png"style="opacity:0">
+                <img id="background-leftE" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftE.png" style="opacity:0">
+                <img id="background-rightE" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightE.png"style="opacity:0">
+                <img id="background-leftF" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftF.png" style="opacity:0">
+                <img id="background-rightF" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightF.png"style="opacity:0">
+                <img id="background-leftG" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftG.png" style="opacity:0">
+                <img id="background-rightG" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightG.png"style="opacity:0">
+                <!--            <div id="margins" style="opacity:inherit; visibility:inherit">-->
 <!--                <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">-->
 <!--<!--                    <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">-->-->
 <!--<!--                        <div class="posts-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->-->
@@ -730,8 +745,8 @@ function bavotasan_jumbotron() {
                 <div class="row">
                     <div class="home-jumbotron jumbotron col-lg-10 col-lg-offset-1 col-sm-12">
                         <div id="blog-title">
-                            <h1>Unstable Build</h1>
-                            <p class="lead">A Blog about product Development</p>
+                                <h1 id="title">Unstable Build</h1>
+                                <p id="subtitle" class="lead">A Blog about product Development</p>
                         </div>
 
                     </div>
@@ -744,8 +759,18 @@ function bavotasan_jumbotron() {
             <div class="sticky-bar">
                 <img id="sticky-background-rightB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightB.png">
                 <img id="sticky-background-leftB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftB.png">
-                <img id="sticky-background-rightA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightA.png">
                 <img id="sticky-background-leftA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftA.png">
+                <img id="sticky-background-rightA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightA.png">
+                <img id="sticky-background-rightF" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightF.png" style="opacity:0">
+                <img id="sticky-background-leftF" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftF.png" style="opacity:0">
+                <img id="sticky-background-rightD" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightD.png" style="opacity:0">
+                <img id="sticky-background-leftD" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftD.png" style="opacity:0">
+                <img id="sticky-background-rightE" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightE.png" style="opacity:0">
+                <img id="sticky-background-leftE" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftE.png" style="opacity:0">
+                <img id="sticky-background-rightC" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightC.png" style="opacity:0">
+                <img id="sticky-background-leftC" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftC.png" style="opacity:0">
+                <img id="sticky-background-rightG" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightG.png" style="opacity:0">
+                <img id="sticky-background-leftG" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftG.png" style="opacity:0">
                 <div id="ernestrc-icons">
 
 <!--                    --><?php //if ( is_category() ) : ?>
