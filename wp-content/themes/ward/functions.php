@@ -620,79 +620,67 @@ function bavotasan_jumbotron() {
 <!--		</div>-->
 <!--	</video>-->
         <div id="ernestrc-menu-bar" class="home-top" style="position:relative;">
-            <img id="background-rightA" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightB.png">
-            <img id="background-leftA" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftB.png">
-            <div class="wrapper-top" style="opacity:0; visibility:hidden;">
-                <div id="icons-menu" class="home-menu" style="opacity:inherit; visibility:inherit">
-                    <a href="<?php get_home_url(); ?>/index.php">
-                        <div id="home-cell">
-                            <i class="fa fa-home" style="opacity:inherit; visibility:inherit"></i>
-                        </div>
-                    </a>
-                </div>
-                <div id="icons-menu" class="search-menu" style="opacity:inherit; visibility:inherit">
-                    <aside id="search-form" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://unstable.build/">
-                            <label>
-                                <span class="screen-reader-text">Search for:</span>
-                                <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
-                            </label>
-                            <input type="submit" class="search-submit" value="Search">
-                        </form></aside>
-                    <div id="search-cell">
-                        <i class="fa fa-search" style="opacity:inherit; visibility:inherit"></i>
-                    </div>
-                </div>
-                <div id="icons-menu" class="tags-menu" style="opacity:inherit; visibility:inherit">
-                    <div id="tags-cell">
-                        <i class="fa fa-tags" style="opacity:inherit; visibility:inherit"></i>
-                    </div>
-                    <div id="tags-cell1" class="cat" style="opacity:0"><i class="fa fa-database"></i></div>
-                    <div id="tags-cell2" class="cat" style="opacity:0"><i class="fa fa-rebel"></i></i></div>
-                    <div id="tags-cell3" class="cat" style="opacity:0"><i class="fa fa-code"></i></div>
-                    <div id="tags-cell4" class="cat" style="opacity:0"><i class="fa fa-graduation-cap"></i></div>
-                </div>
-                <div id="icons-menu" class="archive-menu" style="opacity:inherit; visibility:inherit">
-                    <div id="archive-cell">
-                        <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>
-                    </div>
-                </div>
-                <div id="icons-menu" class="about-menu" style="opacity:inherit; visibility:inherit">
-                    <div id="inbox-cell">
-                        <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>
-                    </div>
-                    <div id="inbox-cell4" class="cat" style="opacity:0"><a href="http://twitter.com/ernestrc_"><i class="fa fa-twitter"></i></a></div>
-                    <div id="inbox-cell1" class="cat" style="opacity:0"><a href="http://uk.linkedin.com/in/ernestromero/"><i class="fa fa-linkedin"></i></a></div>
-                    <div id="inbox-cell3" class="cat" style="opacity:0"><a href="mailto:ernest@unstable.build"><i class="fa fa-envelope"></i></a></div>
-                    <div id="inbox-cell2" class="cat" style="opacity:0"><i class="ernestrc-everreach"></i></div>
-                </div>
-                <img id="background-leftB" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftA.png">
-                <img id="background-rightB" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightAS.png">
-                <img id="background-leftC" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftC.png" style="opacity:0">
-                <img id="background-rightC" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightC.png"style="opacity:0">
-                <img id="background-leftD" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftD.png" style="opacity:0">
-                <img id="background-rightD" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightD.png"style="opacity:0">
-                <img id="background-leftE" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftE.png" style="opacity:0">
-                <img id="background-rightE" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightE.png"style="opacity:0">
-                <img id="background-leftF" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftF.png" style="opacity:0">
-                <img id="background-rightF" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightF.png"style="opacity:0">
-                <img id="background-leftG" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-leftG.png" style="opacity:0">
-                <img id="background-rightG" class="bakground" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/background-rightG.png"style="opacity:0">
-                <!--            <div id="margins" style="opacity:inherit; visibility:inherit">-->
+<!--            <div class="wrapper-top" style="opacity:0; visibility:hidden;">-->
+<!--                <div id="icons-menu" class="home-menu" style="opacity:inherit; visibility:inherit">-->
+<!--                    <a href="--><?php //get_home_url(); ?><!--/index.php">-->
+<!--                        <div id="home-cell">-->
+<!--                            <i class="fa fa-home" style="opacity:inherit; visibility:inherit"></i>-->
+<!--                        </div>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div id="icons-menu" class="search-menu" style="opacity:inherit; visibility:inherit">-->
+<!--                    <aside id="search-form" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://unstable.build/">-->
+<!--                            <label>-->
+<!--                                <span class="screen-reader-text">Search for:</span>-->
+<!--                                <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">-->
+<!--                            </label>-->
+<!--                            <input type="submit" class="search-submit" value="Search">-->
+<!--                        </form></aside>-->
+<!--                    <div id="search-cell">-->
+<!--                        <i class="fa fa-search" style="opacity:inherit; visibility:inherit"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div id="icons-menu" class="tags-menu" style="opacity:inherit; visibility:inherit">-->
+<!--                    <div id="tags-cell">-->
+<!--                        <i class="fa fa-tags" style="opacity:inherit; visibility:inherit"></i>-->
+<!--                    </div>-->
+<!--                    <div id="tags-cell1" class="cat" style="opacity:0"><i class="fa fa-database"></i></div>-->
+<!--                    <div id="tags-cell2" class="cat" style="opacity:0"><i class="fa fa-rebel"></i></i></div>-->
+<!--                    <div id="tags-cell3" class="cat" style="opacity:0"><i class="fa fa-code"></i></div>-->
+<!--                    <div id="tags-cell4" class="cat" style="opacity:0"><i class="fa fa-graduation-cap"></i></div>-->
+<!--                </div>-->
+<!--                <div id="icons-menu" class="archive-menu" style="opacity:inherit; visibility:inherit">-->
+<!--                    <div id="archive-cell">-->
+<!--                        <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div id="icons-menu" class="about-menu" style="opacity:inherit; visibility:inherit">-->
+<!--                    <div id="inbox-cell">-->
+<!--                        <div class="ernestrc-face"></div>-->
+<!--                    </div>-->
+<!--                    <div id="inbox-cell4" class="cat" style="opacity:0"><a href="http://twitter.com/ernestrc_"><i class="fa fa-twitter"></i></a></div>-->
+<!--                    <div id="inbox-cell1" class="cat" style="opacity:0"><a href="http://uk.linkedin.com/in/ernestromero/"><i class="fa fa-linkedin"></i></a></div>-->
+<!--                    <div id="inbox-cell3" class="cat" style="opacity:0"><a href="mailto:ernest@unstable.build"><i class="fa fa-envelope"></i></a></div>-->
+<!--                    <div id="inbox-cell2" class="cat" style="opacity:0"><i class="ernestrc-everreach"></i></div>-->
+<!--                </div>-->
+
+<!--                 CELLS -->
+<!--                            <div id="margins" style="opacity:inherit; visibility:inherit">-->
 <!--                <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">-->
-<!--<!--                    <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">-->-->
-<!--<!--                        <div class="posts-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->-->
-<!--<!--                            <i class="fa fa-history" style="opacity:inherit; visibility:inherit"></i>-->-->
-<!--<!--                        </div>-->-->
-<!--<!--                        <div class="categories-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->-->
-<!--<!--                            <i class="fa fa-list" style="opacity:inherit; visibility:inherit"></i>-->-->
-<!--<!--                        </div>-->-->
-<!--<!--                        <div class="archive-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->-->
-<!--<!--                            <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>-->-->
-<!--<!--                        </div>-->-->
-<!--<!--                        <div class="about-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->-->
-<!--<!--                            <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>-->-->
-<!--<!--                        </div>-->-->
-<!--<!--                    </div>-->-->
+<!--                    <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">-->
+<!--                        <div class="posts-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->
+<!--                            <i class="fa fa-history" style="opacity:inherit; visibility:inherit"></i>-->
+<!--                        </div>-->
+<!--                        <div class="categories-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->
+<!--                            <i class="fa fa-list" style="opacity:inherit; visibility:inherit"></i>-->
+<!--                        </div>-->
+<!--                        <div class="archive-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->
+<!--                            <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>-->
+<!--                        </div>-->
+<!--                        <div class="about-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->
+<!--                            <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>-->
+<!--                        </div>-->
+<!--                    </div>-->
 <!--                    <div id="blog-menu" class="row hidden-xs">-->
 <!--                        <div class="posts-menu col-xs-3 hidden-xs">-->
 <!--                            <h2><a href="--><?php //get_home_url(); ?><!--/index.php">Recent Posts</a></h2>-->
@@ -703,11 +691,11 @@ function bavotasan_jumbotron() {
 //                            }
 //                            ?>
 <!--                            <i class="fa fa-circle"></i>-->
-
+<!---->
 <!--                            <div class="rss-button">--><?php //bloginfo('rss2_url'); ?><!--</div>-->
 <!--                        </div>-->
 <!--                        <div class="categories-menu col-xs-3 hidden-xs">-->
-<!--                            <!--                        <i class="fa fa-folder-o"></i>-->-->
+                            <!--                        <i class="fa fa-folder-o"></i>-->
 <!--                            <div class="category-titles">-->
 <!--                                <h2><a href="--><?php //get_home_url(); ?><!--/categories/">Categories</a></h2>-->
 <!--                                --><?php
@@ -739,13 +727,13 @@ function bavotasan_jumbotron() {
 <!--                </div>-->
 <!--            </div>-->
 
-        </div>
+<!--        </div>-->
     <!--         style="background-image:url('--><?php //echo BAVOTASAN_THEME_URL; ?><!--/library/images/background.png')">-->
             <div class="container">
                 <div class="row">
                     <div class="home-jumbotron jumbotron col-lg-10 col-lg-offset-1 col-sm-12">
                         <div id="blog-title">
-                                <h1 id="title">Unstable Build</h1>
+                                <h1 id="title" style="z-index:100;position:relative;">Unstable Build</h1>
                                 <p id="subtitle" class="lead">A Blog about product Development</p>
                         </div>
 
@@ -757,39 +745,10 @@ function bavotasan_jumbotron() {
     <div id="nav-wrapper">
         <div id="top-ernestrc">
             <div class="sticky-bar">
-                <img id="sticky-background-rightB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightB.png">
-                <img id="sticky-background-leftB" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftB.png">
-                <img id="sticky-background-leftA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftA.png">
-                <img id="sticky-background-rightA" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightA.png">
-                <img id="sticky-background-rightF" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightF.png" style="opacity:0">
-                <img id="sticky-background-leftF" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftF.png" style="opacity:0">
-                <img id="sticky-background-rightD" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightD.png" style="opacity:0">
-                <img id="sticky-background-leftD" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftD.png" style="opacity:0">
-                <img id="sticky-background-rightE" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightE.png" style="opacity:0">
-                <img id="sticky-background-leftE" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftE.png" style="opacity:0">
-                <img id="sticky-background-rightC" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightC.png" style="opacity:0">
-                <img id="sticky-background-leftC" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftC.png" style="opacity:0">
-                <img id="sticky-background-rightG" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-rightG.png" style="opacity:0">
-                <img id="sticky-background-leftG" src="<?php echo BAVOTASAN_THEME_URL;?>/library/images/sticky-background-leftG.png" style="opacity:0">
-                <div id="ernestrc-icons">
+                 <!-- STICKY BAR CELLS -->
 
-<!--                    --><?php //if ( is_category() ) : ?>
-<!--                        <i class="fa fa-comment"></i>-->
-<!--                        <div class="ernestrc-icons">-->
-<!--                            --><?php //if(single_cat_title( '', false ) == 'Random thoughts') {
-//                                ?><!--<i class="category-icon fa fa-code"></i>--><?php
-//                            } else if (single_cat_title( '', false ) == 'Scala') {
-//                                ?><!--<i class="category-icon fa fa-eur"></i>--><?php
-//                            } else if (single_cat_title( '', false ) == 'Journey') {
-//                                ?><!--<i class="category-icon fa fa-refresh"></i>--><?php
-//                            } ?>
-<!--                        </div>-->
-<!--                    --><?php //endif ?>
-                </div>
                 <div id="ernestrc-fx" class="middle-circle">
-                    <div class="ernestrc-face"></div>
                     <i class="fa fa-lock"></i>
-
                     <?php
                     if ( is_search() ) {
                         ?><div id="search-comment">
