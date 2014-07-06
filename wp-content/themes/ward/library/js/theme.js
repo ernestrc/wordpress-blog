@@ -232,10 +232,6 @@
 //    });
 
 
-    /**
-     * Main Menu function
-     */
-
     var background1 = {
         "row0" : ["#D25E52","#D27255","#CC7D58","#D69D6D","#E1BC7B","#E7CF84","#E8D984","#E3DA82","#DBD880","#CFD47C","#C5D27F","#C2D384","#C7D78A","#CBDB8E","#CBDC8D"],
         "row1" : ["#C1514E","#BF6151","#BC6E58","#CE996E","#D8B377","#DBC37D","#DACD7E","#D6D17D","#CDCF7B","#BCC77A","#B1C479","#B7CA80","#C0D488","#C1D78A"],
@@ -259,37 +255,50 @@
         "row4" : ["#944C77","#85426D","#65365A","#5E3B57","#6E4A60","#A87374","#AF7368","#AF7B67","#BD8A6A","#C2966B","#BE9C68","#BFA466","#D0B16B","#E1BC73","#F1C67B"]
     };
     var background4 = {
-        "row0" : ["D25E52","D27255","CC7D58","D69D6D","E1BC7B","E7CF84","E8D984","E3DA82","DBD880","CFD47C","C5D27F","C2D384","C7D78A","CBDB8E","CBDC8D"],
-        "row1" : ["C1514E","BF6151","BC6E58","CE996E","D8B377","DBC37D","DACD7E","D6D17D","CDCF7B","BCC77A","B1C479","B7CA80","C0D488","C1D78A"],
-        "row2" : ["C85356","AD454C","AB534F","AA6458","C28E6B","CCA975","CCB677","CBBF7A","C5C179","B6BE78","A7B774","A1B977","ACC47E","B7CE84","BDD489"],
-        "row3" : ["B64C56","9A3F4C","95484F","975957","B5856A","BD9B71","BDA874","BEB478","B4B678","A4B074","91A972","93AF75","A1BD7C","B4CC85"],
-        "row4" : ["B14E5A","A44554","86384A","7C3D4C","834C54","A97C68","B08F6E","B09E73","AFA876","A3A875","8C9E6F","7D996C","8AA872","9BB87B","B2CB85"]
+        "row0" : ["#7E5B9D","#763683","#6F2678","#6C2572","#712672","#7B4481","#805889","#825D87","#855F80","#885B72","#862C4A","#802840","#81373F","#905A4B","#976E58"],
+        "row1" : ["#7F5F9F","#753F89","#712B7C","#702A78","#744184","#7C5F94","#80719C","#837397","#857591","#896E7F","#864859","#814B4F","#814F45","#91775A"],
+        "row2" : ["#8270AD","#7D64A3","#775094","#723F87","#71468A","#76619A","#858AB3","#8797B8","#879CB5","#8C9CAD","#8C8A93","#836368","#7C675C","#806B52","#9BA86D"],
+        "row3" : ["#8378B3","#8276B0","#7B63A1","#745999","#756AA4","#7F9BC6","#7DB2D4","#80BED7","#89BDC6","#8AB6B8","#8BA09F","#7C7F77","#7D8C72","#7D8C72"],
+        "row4" : ["#949BCC","#969DCB","#8D8EC1","#817CB4","#8489BB","#7DA0CC","#7DBEE0","#83CADA","#87D0DC","#8DD1D5","#89CEC7","#85B3A8","#709F89","#6FAF84","#89BB7E"]
     };
 
     var background5 = {
-        "row0" : ["565892","755E93","835F8F","A5719A","C47EA3","D985A7","DF84A1","E2829C","E47F97","E47A8E","E67C8A","E8818C","EC8791","EE8B95","F18A93"],
-        "row1" : ["4A5588","5D5686","736088","A27397","BE7A9C","D07F9F","D77D98","DE7B93","DF7A8E","DD7784","DD767E","E37D84","EB858C","EE878D"],
-        "row2" : ["475D91","3C547F","4E557D","645C7F","987091","B67796","C57893","CC798F","D2788B","D47582","D27178","D77275","E07A7D","E98085","ED868A"],
-        "row3" : ["405E89","345475","425673","585C75","8F6F8A","A9738D","B9758B","C47789","CA7683","CA7177","C86E6D","D0706E","DC7777","E78184"],
-        "row4" : ["426288","375C80","2B536B","345365","4A5A6A","856D83","9E7186","AE7484","BB7581","BF737A","BB6C6B","BB6761","CA6D69","D97774","E78183"]
+        "row4" : ["#E47865","#DE8A69","#C6906D","#DAB086","#FFD396","#FFE19F","#FFE99E","#FCE89C","#DADD99","#ACCC95","#84C097","#7CC09D","#8EC7A4","#9ECEA9","#9ACFA8"],
+        "row3" : ["#AF6562","#A67166","#957B6E","#BCA688","#DBC291","#E5D197","#DDD696","#C8D395","#A5C794","#65B291","#3EAA90","#53B198","#74BEA1","#77C1A3"],
+        "row2" : ["#C2696C","#805460","#775F64","#6A6C6F","#979685","#ACAF8F","#AAB790","#A1BB93","#8BB792","#55A98F","#009D8B","#009C8D","#1DA795","#51B49C","#68BCA1"],
+        "row1" : ["#8D5C6D","#594B60","#4C5164","#425D6D","#738783","#7C9A8A","#77A28E","#71A991","#4FA390","#00978B","#008F88","#00938B","#009E92","#46B19D"],
+        "row0" : ["#7F5D71","#68516A","#35425E","#1C4461","#15506A","#557C81","#588B87","#50948C","#43998E","#00938D","#008885","#008780","#008F88","#009A91","E78183"]
     };
-    var background6 = {
-        "row0" : ["565892","755E93","835F8F","A5719A","C47EA3","D985A7","DF84A1","E2829C","E47F97","E47A8E","E67C8A","E8818C","EC8791","EE8B95","F18A93"],
-        "row1" : ["4A5588","5D5686","736088","A27397","BE7A9C","D07F9F","D77D98","DE7B93","DF7A8E","DD7784","DD767E","E37D84","EB858C","EE878D"],
-        "row2" : ["475D91","3C547F","4E557D","645C7F","987091","B67796","C57893","CC798F","D2788B","D47582","D27178","D77275","E07A7D","E98085","ED868A"],
-        "row3" : ["405E89","345475","425673","585C75","8F6F8A","A9738D","B9758B","C47789","CA7683","CA7177","C86E6D","D0706E","DC7777","E78184"],
-        "row4" : ["426288","375C80","2B536B","345365","4A5A6A","856D83","9E7186","AE7484","BB7581","BF737A","BB6C6B","BB6761","CA6D69","D97774","E78183"]
-    };
-
-    var background7 = {
-        "row0" : ["565892","755E93","835F8F","A5719A","C47EA3","D985A7","DF84A1","E2829C","E47F97","E47A8E","E67C8A","E8818C","EC8791","EE8B95","F18A93"],
-        "row1" : ["4A5588","5D5686","736088","A27397","BE7A9C","D07F9F","D77D98","DE7B93","DF7A8E","DD7784","DD767E","E37D84","EB858C","EE878D"],
-        "row2" : ["475D91","3C547F","4E557D","645C7F","987091","B67796","C57893","CC798F","D2788B","D47582","D27178","D77275","E07A7D","E98085","ED868A"],
-        "row3" : ["405E89","345475","425673","585C75","8F6F8A","A9738D","B9758B","C47789","CA7683","CA7177","C86E6D","D0706E","DC7777","E78184"],
-        "row4" : ["426288","375C80","2B536B","345365","4A5A6A","856D83","9E7186","AE7484","BB7581","BF737A","BB6C6B","BB6761","CA6D69","D97774","E78183"]
+    var backgroundBW = {
+        "row0" : ["#A79A96","#A99C98","#9C8E8A","#AFA39F","#C3B8B5","#C5BBB8","#C4BAB6","#C0B5B2","#BBB0AD","#B8ADA9","#B9AEAB","#B8ADA9","#C0B5B2","#C7BDBA","#C6BCB9"],
+        "row1" : ["#877975","#8C7D7A","#887976","#A39592","#B2A6A2","#B7ACA8","#B7ABA7","#B7ABA7","#B7ABA7","#A99C98","#9C8D89","#A59793","#B6AAA6","#B7ACA8"],
+        "row2" : ["#928380","#6C5F5C","#726461","#766865","#9A8C88","#A99C98","#ADA09C","#B1A5A1","#B1A5A1","#9F918D","#8D7D7A","#8A7A77","#978884","#A89A96","#B0A4A0"],
+        "row3" : ["#776966","#685C58","#665A57","#675A57","#8B7C79","#9A8C88","#9F918E","#A39592","#998B87","#877774","#796A67","#7D6E6A","#8A7B77","#A39592"],
+        "row4" : ["#7C6E6A","#726561","#5B504D","#544A47","#594E4B","#7B6D69","#877875","#8D7E7A","#8E7F7B","#847572","#736562","#726461","#796A66","#857672","#A1928F"]
     };
 
-    function Virus(){
+    var backgroundSepia = {
+        "row0" : ["#BC7467","#BF816C","#BA856E","#C49D7F","#CCB28C","#D1BD93","#D0C394","#CDC393","#CAC391","#C2BF8E","#BCBF90","#BCC194","#C2C69A","#C4C89D","#C4C99D"],
+        "row1" : ["#AC6760","#AE7164","#AD7A6A","#BE9A7F","#C6AA88","#C8B48C","#C6B98C","#C4BD8D","#C0BC8C","#B5B68A","#B0B489","#B4BA8F","#BCC298","#BEC599"],
+        "row2" : ["#B26A67","#9B5C5B","#9B645E","#9E7066","#B4907A","#BCA183","#BAA884","#BBAF88","#B8B187","#B0AF86","#A5AA83","#A3AC85","#ADB68D","#B6BF94","#BBC398"],
+        "row3" : ["#A36162","#8A5256","#895858","#8E6461","#AB8977","#B0977D","#AF9D7F","#B3A784","#ADA985","#A2A481","#979F7E","#9BA582","#A6B18A","#B4BD95"],
+        "row4" : ["#A06265","#94595E","#794950","#734B51","#7B5759","#A18274","#A68E79","#A6967D","#A89E80","#A19F80","#92967A","#889377","#929F7F","#A2AD89","#B3BD95"]
+    };
+
+
+    var ColorScheme = {
+        "main" : backgroundBW,
+        "sub": backgroundSepia,
+        "tags":background1,
+        "home":background1,
+        "search":background1,
+        "archive":background1,
+        "inbox":background1
+    };
+
+
+
+    function Spread(){
         this.spread = {
             "row0" : [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
             "row1" : [false,false,false,false,false,false,false,false,false,false,false,false,false,false],
@@ -391,7 +400,7 @@
         var initialTop = 0;
         var i;
         for(i = 0;i < 5;i ++){
-            var array = background1["row"+i];
+            var array = ColorScheme.main["row"+i];
             if(i != 4){
                 if(i % 2){
                     newRow(i,initialTop,50,array,false);
@@ -405,17 +414,16 @@
         }
     }
 
-    function stopVirus(){
-        clearTimeout(virus);
-    }
-
     jQuery.fn.exists = function () {
         return this.length !== 0;
     };
 
-    function threatStarted(startRow,startColumn,backgroundMap){
+    var delay = 40;
+    var VIRUZ;
+    function threatStarted(startRow,startColumn,backgroundMap,timeout){
+        clearTimeout(VIRUZ);
         var elem = jQuery('#row'+startRow+"column"+startColumn);
-        var viral = new Virus;
+        var viral = new Spread;
         function spreadOrNot(elem,row,column){
             if (elem.exists()) {
                 var rowNow = "row"+row;
@@ -438,7 +446,7 @@
 
             changeHexagonColor(elemId,color);
 
-            setTimeout(function(){
+            VIRUZ = setTimeout(function(){
                 var targetOnecolumn = column+1;
                 var targetOne = jQuery('#row'+row+"column"+targetOnecolumn);
                 spreadOrNot(targetOne,row,targetOnecolumn);
@@ -459,7 +467,7 @@
                 var target6row = row - 1;
                 var target6 = jQuery('#row'+target6row+"column"+column);
                 spreadOrNot(target6,target6row,column);
-            },10);
+            },timeout);
         }
         spreadVirus(elem);
     }
@@ -473,10 +481,16 @@
             if(menu==true){
                 jQuery('#search-comment').css('opacity',"50");
                 jQuery('.submenu').css('opacity',"0");
-                threatStarted(4,7,background1);
+                threatStarted(4,7,ColorScheme["main"],delay);
+                jQuery('.subtitles').css('top','-120px');
+                jQuery('.subsubtitles').css('top','-120px');
+                jQuery('#search-form').css('visibility','hidden').css('opacity','0');
+                jQuery('.subsubmenuTag').css('opacity','0');
+                jQuery('.subsubmenuInbox').css('opacity','0');
                 menu = false;
                 setTimeout(function(){
                 jQuery('#title').css('opacity','100').css('visibility','visible');
+                jQuery('#beta').css('opacity','100').css('visibility','visible');
                 jQuery('#subtitle').css('opacity','100').css('visibility','visible');
                 },300);
 
@@ -488,8 +502,9 @@
         if(menu == false && lockedMenu == false){
             menu = true;
             jQuery('#title').css('opacity','0').css('visibility','hidden');
+            jQuery('#beta').css('opacity','0').css('visibility','hidden');
             jQuery('#subtitle').css('opacity','0').css('visibility','hidden');
-            threatStarted(4,7,background2);
+            threatStarted(4,7,ColorScheme["sub"],delay);
             jQuery('.submenu').css('opacity',"100");
             setTimeout(function(){
                 jQuery('#search-comment').css('opacity',"0");
@@ -534,13 +549,14 @@
 
     function appendSearchButton(row,column){
         var div = "<i id=\"search-menu\" class=\"fa fa-search submenu\"></i>"
-        jQuery('#row'+row+'column'+column).append(div).css('cursor','pointer').hover(function(){
+        jQuery('#row'+row+'column'+column).append(div).css('z-index','99').css('cursor','pointer').hover(function(){
             jQuery('#search-form').css('visibility','visible').css('opacity','100');
             jQuery('#title-search').css('top','0px');
-            threatStarted(row,column,background1);
+            threatStarted(row,column,ColorScheme["search"],delay);
         });
         var hexagons = findAllHexagons(row,column);
         hexagons.hover(function(){
+            threatStarted(row,column,ColorScheme["sub"],delay);
             jQuery('#title-search').css('top','-120px');
             jQuery('#search-form').css('visibility','hidden').css('opacity','0')
         })
@@ -548,10 +564,11 @@
 
     function appendHomeButton(row,column){
         var div = "<a href=\"http://unstable.build\"><i id=\"home-menu\" class=\"fa fa-home submenu\"></i></a>"
-        jQuery('#row'+row+'column'+column).append(div).css('cursor','pointer').hover(function(){
+        jQuery('#row'+row+'column'+column).append(div).css('cursor','pointer').css('z-index','99').hover(function(){
             jQuery('#title-home').css('top','0px');
-            threatStarted(row,column,background2);
+            setTimeout(function(){threatStarted(row,column,ColorScheme["home"],delay);},100);
         },function(){
+            threatStarted(row,column,ColorScheme["sub"],delay);
             jQuery('#title-home').css('top','-120px');
         });
     }
@@ -578,10 +595,11 @@
         jQuery('#row'+row+'column'+column).append(div).css('cursor','pointer').hover(function(){
             jQuery('#title-categories').css('top','0px');
             jQuery('.subsubmenuTag').css('opacity','100');
-            threatStarted(row,column,background3);
+            threatStarted(row,column,ColorScheme["tags"],delay);
         });
         var hexagons = findSquareOfHexagonsAround(row,column);
         hexagons.hover(function(){
+            threatStarted(row,column,ColorScheme["sub"],delay);
             jQuery('#title-categories').css('top','-120px');
             jQuery('.subsubmenuTag').css('opacity','0');
 
@@ -591,9 +609,10 @@
     function appendArchiveButton(row,column){
         var div = "<a href=\"http://unstable.build/archive\"><i id=\"archive-menu\" class=\"fa fa-archive submenu\"></i></a>"
         jQuery('#row'+row+'column'+column).append(div).css('cursor','pointer').hover(function(){
-            threatStarted(row,column,background2);
+            setTimeout(function(){threatStarted(row,column,ColorScheme["archive"],delay);},100);
             jQuery('#title-archive').css('top','0px');
         },function(){
+            threatStarted(row,column,ColorScheme["sub"],delay);
             jQuery('#title-archive').css('top','-120px');
         });
     }
@@ -609,26 +628,53 @@
 
         jQuery('#row'+row+'column'+column).append(div).css('cursor','pointer').hover(function(){
             jQuery('.subsubmenuInbox').css('opacity','100');
-            threatStarted(row,column,background1);
+            threatStarted(row,column,ColorScheme["inbox"],delay);
             jQuery('#title-contact').css('top','0px');
         });
         var hexagons = findSquareOfHexagonsAround(row,column);
         hexagons.hover(function(){
+            threatStarted(row,column,ColorScheme["sub"],delay);
             jQuery('#title-contact').css('top','-120px');
             jQuery('.subsubmenuInbox').css('opacity','0');
 
         })
     }
 
-
+    function loadSubSubMenu(){
+        jQuery('#rebel-menu').hover(function(){
+            jQuery('#title-random').css('top','60px');
+        },function(){
+            jQuery('#title-random').css('top','-120px');
+            jQuery('#title-categories').css('top','0px');
+        });
+        jQuery('#graduation-cap-menu').hover(function(){
+            jQuery('#title-learn').css('top','60px');
+        },function(){
+            jQuery('#title-learn').css('top','-120px');
+            jQuery('#title-categories').css('top','0px');
+        });
+        jQuery('#code-menu').hover(function(){
+            jQuery('#title-code').css('top','60px');
+        },function(){
+            jQuery('#title-code').css('top','-120px');
+            jQuery('#title-categories').css('top','0px');
+        });
+        jQuery('#database-menu').hover(function(){
+            jQuery('#title-data').css('top','60px');
+        },function(){
+            jQuery('#title-data').css('top','-120px');
+            jQuery('#title-categories').css('top','0px');
+        });
+    }
 
     function loadSubMenu() {
         if(jQuery(window).width() > 900){
-        appendSearchButton(2,7);
-        appendHomeButton(2,5);
-        appendTagsButton(2,3);
-        appendArchiveButton(2,9);
-        appendInboxButton(2,11);
+            appendSearchButton(2,7);
+            appendHomeButton(2,5);
+            appendTagsButton(2,3);
+            appendArchiveButton(2,9);
+            appendInboxButton(2,11);
+
 
 
 
@@ -650,11 +696,11 @@
         }).click(function(){
             jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
             if(lockedMenu){
-                threatStarted(4,7,background1);
+                threatStarted(4,7,ColorScheme["main"],delay);
                 lockedMenu=false
                 jQuery('.fa-lock').css('opacity','0');
             } else {
-                threatStarted(4,7,background2);
+                threatStarted(4,7,ColorScheme["sub"],delay);
                 clearTimeout(timer);
                 jQuery('.fa-lock').css('opacity','50');
                 lockedMenu=true
@@ -670,6 +716,7 @@
     jQuery( document ).ready(function() {
         loadMainMenu();
         loadSubMenu();
+        loadSubSubMenu();
         jQuery('[id=icons-menu]').css('background','transparent !important');
 
         outdatedBrowser({

@@ -633,6 +633,11 @@ function bavotasan_jumbotron() {
             <div id="title-search" class="subtitles">Search</div>
             <div id="title-archive" class="subtitles">Archive</div>
             <div id="title-home" class="subtitles">Home</div>
+            <div id="title-menu" class="subtitles">Menu</div>
+            <div id="title-code" class="subtitles subsubtitles">Programming in Scala</div>
+            <div id="title-learn" class="subtitles subsubtitles">Learning to Code</div>
+            <div id="title-data" class="subtitles subsubtitles">Data Analytics</div>
+            <div id="title-random" class="subtitles subsubtitles">Random</div>
 <!--            <div class="wrapper-top" style="opacity:0; visibility:hidden;">-->
 <!--                <div id="icons-menu" class="home-menu" style="opacity:inherit; visibility:inherit">-->
 <!--                    <a href="--><?php //get_home_url(); ?><!--/index.php">-->
@@ -735,7 +740,8 @@ function bavotasan_jumbotron() {
                     <div class="home-jumbotron jumbotron col-lg-10 col-lg-offset-1 col-sm-12">
                         <div id="blog-title">
                                 <h1 id="title" style="z-index:100;position:relative;">Unstable Build</h1>
-                                <p id="subtitle" class="lead">Ernest Romero</p>
+                                <p id="subtitle" class="lead">Make it work, then make it better</p>
+                                <h4 id="beta" class="lead">BETA</h4>
                         </div>
 
                     </div>

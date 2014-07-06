@@ -7986,7 +7986,7 @@ i{
 
 
 .error404{
-    margin-top:100px;
+
 }
 
 .shareaholic-canvas{
@@ -8502,6 +8502,7 @@ i{
 }
 
 #subtitle{
+    z-index:100;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -9341,18 +9342,32 @@ i.fa-lock{
     margin-left:-120px;
 }
 #title-contact{
-    margin-left:-120px;
+    margin-left:-90px;
 }
 #title-archive{
-    margin-left:-120px;
+    margin-left:-90px;
 }
 #title-search{
-    margin-left:-120px;
+    margin-left:-75px;
 }
 #title-home{
+    margin-left:-70px;
+}
+#title-menu{
     margin-left:-120px;
 }
-
+#title-random{
+    margin-left:-75px;
+}
+#title-scala{
+    margin-left:-75px;
+}
+#title-learn{
+    margin-left:-75px;
+}
+#title-data{
+    margin-left:-75px;
+}
 .subtitles{
     top:-120px;
     left:50%;
@@ -9366,5 +9381,21 @@ i.fa-lock{
     font-size:50px;
     position:absolute;
     color:white;
+}
+.subsubtitles{
+    font-size:30px;
+}
+#beta{
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    color:white;
+    font-size:20px;
+    position:absolute;
+    left:50%;
+    margin-left:310px;
+    font-family:consolas;
+    top:110px;
 }
 
