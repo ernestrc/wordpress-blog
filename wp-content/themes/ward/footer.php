@@ -30,7 +30,7 @@ $bavotasan_theme_options = bavotasan_theme_options();
 			<div class="col-lg-12">
 				<?php $class = ( is_active_sidebar( 'extended-footer' ) ) ? ' active' : ''; ?>
 				<span class="line<?php echo $class; ?>"></span>
-				<span class="pull-left">Copyright &copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a>. All Rights Reserved.</span>
+				<span class="pull-left">Unstable Build v0.1 - Copyright &copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a>. All Rights Reserved.</span>
 			</div><!-- .col-lg-12 -->
 		</div><!-- .row -->
 	</div><!-- #footer-content.container -->
