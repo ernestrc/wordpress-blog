@@ -601,24 +601,6 @@ function bavotasan_jumbotron() {
 	$bavotasan_theme_options = bavotasan_theme_options();
 	if ( ! empty( $bavotasan_theme_options['jumbo_headline_title'] ) ) {
 	?>
-<!--	<video class="home-top">-->
-<!--            <source src="--><?php //echo BAVOTASAN_THEME_URL; ?><!--/library/videos/large.mp4" type="video/mp4">-->
-<!--            <p>Your browser does not support H.264/MP4.</p>-->
-<!---->
-<!--		<div class="container">-->
-<!--			<div class="row">-->
-<!--                <div class="home-jumbotron jumbotron col-lg-10 col-lg-offset-1 col-sm-12">-->
-<!--					<div id="blog-title">-->
-<!--                        <h1>Unstable Build</h1>-->
-<!--                        <p class="lead">A Blog about product Development</p>-->
-<!--                    </div>-->
-<!--                    <div id="blog-menu">-->
-<!--                        <h1>Hi!</h1>-->
-<!--                    </div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</video>-->
         <div id="ernestrc-menu-bar" class="home-top" style="position:relative;">
                 <aside id="search-form" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://unstable.build/">
                         <div class="search-bak"></div>
@@ -628,7 +610,7 @@ function bavotasan_jumbotron() {
                         </label>
                         <input type="submit" class="search-submit" value="Search">
                     </form></aside>
-            <div id="title-categories" class="subtitles">Categories</div>
+            <div id="title-categories" class="subtitles">Topics</div>
             <div id="title-contact" class="subtitles">Contact</div>
             <div id="title-search" class="subtitles">Search</div>
             <div id="title-archive" class="subtitles">Archive</div>
@@ -638,103 +620,16 @@ function bavotasan_jumbotron() {
             <div id="title-learn" class="subtitles subsubtitles">Learning to Code</div>
             <div id="title-data" class="subtitles subsubtitles">Data Analytics</div>
             <div id="title-random" class="subtitles subsubtitles">Random</div>
-<!--            <div class="wrapper-top" style="opacity:0; visibility:hidden;">-->
-<!--                <div id="icons-menu" class="home-menu" style="opacity:inherit; visibility:inherit">-->
-<!--                    <a href="--><?php //get_home_url(); ?><!--/index.php">-->
-<!--                        <div id="home-cell">-->
-<!--                            <i class="fa fa-home" style="opacity:inherit; visibility:inherit"></i>-->
+            <div id="title-everreach" class="subtitles subsubtitles">+44 20 3582 1468</div>
+            <div id="archive-beta">Coming Soon!</div>
+<!--                        <div class="archive-menu col-xs-3 hidden-xs">-->
+<!--                            <h2><a href="--><?php //echo BAVOTASAN_THEME_URL; ?><!--/ernestrc-archive.php">Archive</a></h2>-->
+<!--                            --><?php //wp_get_archives(
+//                                array( 'type' => 'monthly',
+//                                    'limit' => 5,
+//                                    'show_post_count' => 1
+//                                ) ); ?>
 <!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-
-<!--                <div id="icons-menu" class="tags-menu" style="opacity:inherit; visibility:inherit">-->
-<!--                    <div id="tags-cell">-->
-<!--                        <i class="fa fa-tags" style="opacity:inherit; visibility:inherit"></i>-->
-<!--                    </div>-->
-<!--                    <div id="tags-cell1" class="cat" style="opacity:0"><i class="fa fa-database"></i></div>-->
-<!--                    <div id="tags-cell2" class="cat" style="opacity:0"><i class="fa fa-rebel"></i></i></div>-->
-<!--                    <div id="tags-cell3" class="cat" style="opacity:0"><i class="fa fa-code"></i></div>-->
-<!--                    <div id="tags-cell4" class="cat" style="opacity:0"><i class="fa fa-graduation-cap"></i></div>-->
-<!--                </div>-->
-<!--                <div id="icons-menu" class="archive-menu" style="opacity:inherit; visibility:inherit">-->
-<!--                    <div id="archive-cell">-->
-<!--                        <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div id="icons-menu" class="about-menu" style="opacity:inherit; visibility:inherit">-->
-<!--                    <div id="inbox-cell">-->
-<!--                        <div class="ernestrc-face"></div>-->
-<!--                    </div>-->
-<!--                    <div id="inbox-cell4" class="cat" style="opacity:0"><a href="http://twitter.com/ernestrc_"><i class="fa fa-twitter"></i></a></div>-->
-<!--                    <div id="inbox-cell1" class="cat" style="opacity:0"><a href="http://uk.linkedin.com/in/ernestromero/"><i class="fa fa-linkedin"></i></a></div>-->
-<!--                    <div id="inbox-cell3" class="cat" style="opacity:0"><a href="mailto:ernest@unstable.build"><i class="fa fa-envelope"></i></a></div>-->
-<!--                    <div id="inbox-cell2" class="cat" style="opacity:0"><i class="ernestrc-everreach"></i></div>-->
-<!--                </div>-->
-
-<!--                 CELLS-->
-<!--                            <div id="margins" style="opacity:inherit; visibility:inherit">-->
-<!--                <div id="margins-container" class="container-fluid"  style="opacity:inherit; visibility:inherit">-->
-<!--                    <div id="icons-menu" class="row" style="opacity:inherit; visibility:inherit">-->
-<!--                        <div class="posts-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->
-<!--                            <i class="fa fa-history" style="opacity:inherit; visibility:inherit"></i>-->
-<!--                        </div>-->
-<!--                        <div class="categories-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->
-<!--                            <i class="fa fa-list" style="opacity:inherit; visibility:inherit"></i>-->
-<!--                        </div>-->
-<!--                        <div class="archive-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->
-<!--                            <i class="fa fa-archive" style="opacity:inherit; visibility:inherit"></i>-->
-<!--                        </div>-->
-<!--                        <div class="about-menu col-xs-6 col-sm-3" style="opacity:inherit; visibility:inherit">-->
-<!--                            <i class="fa fa-inbox" style="opacity:inherit; visibility:inherit"></i>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--<!--                    <div id="blog-menu" class="row hidden-xs">-->
-<!--<!--                        <div class="posts-menu col-xs-3 hidden-xs">-->
-<!--<!--                            <h2><a href="--><?php ////get_home_url(); ?><!--<!--/index.php">Recent Posts</a></h2>-->
-<!--<!--                            --><?php
-////                            $recent_posts = wp_get_recent_posts();
-////                            foreach( $recent_posts as $recent ){
-////                                echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-////                            }
-////                            ?>
-<!--<!--                            <i class="fa fa-circle"></i>-->
-<!--<!---->
-<!--<!--                            <div class="rss-button">--><?php ////bloginfo('rss2_url'); ?><!--<!--</div>-->
-<!--<!--                        </div>-->
-<!--<!--                        <div class="categories-menu col-xs-3 hidden-xs">-->
-<!--<!--                                                    <i class="fa fa-folder-o"></i>-->
-<!--<!--                            <div class="category-titles">-->
-<!--<!--                                <h2><a href="--><?php ////get_home_url(); ?><!--<!--/categories/">Categories</a></h2>-->
-<!--<!--                                --><?php
-////                                $args = array(
-////                                    'orderby' => 'name'
-////                                );
-////                                $categories = get_categories( $args );
-////                                foreach ( $categories as $category ) {
-////                                    echo '<li><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></li><br/>';
-////                                }
-////                                ?>
-<!--<!--                            </div>-->
-<!--<!--                        </div>--
-<!--<!--                        <div class="archive-menu col-xs-3 hidden-xs">-->
-<!--<!--                            <h2><a href="--><?php ////echo BAVOTASAN_THEME_URL; ?><!--<!--/ernestrc-archive.php">Archive</a></h2>-->
-<!--<!--                            --><?php ////wp_get_archives(
-////                                array( 'type' => 'monthly',
-////                                    'limit' => 5,
-////                                    'show_post_count' => 1
-////                                ) ); ?>
-<!--<!--                        </div>-->
-<!--<!--                        <div class="about-menu col-xs-3 hidden-xs">-->
-<!--<!--                            <h2><a href="#">About</a></h2>-->
-<!--<!---->
-<!--<!--                            TODO: fer una pagina per cada un dels titols. Fer llista de items a dins per poder-->
-<!--<!--                            fer link des de mobile i deixar nomes els icones en mobile.-->
-<!--<!--                        </div>-->
-<!--<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--        </div>-->
             <div class="container">
                 <div class="row">
                     <div class="home-jumbotron jumbotron col-lg-10 col-lg-offset-1 col-sm-12">

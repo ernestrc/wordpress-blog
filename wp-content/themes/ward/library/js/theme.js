@@ -231,7 +231,6 @@
 //        jQuery('#sticky-background-rightG').css('opacity','0');
 //    });
 
-
     var background1 = {
         "row0" : ["#D25E52","#D27255","#CC7D58","#D69D6D","#E1BC7B","#E7CF84","#E8D984","#E3DA82","#DBD880","#CFD47C","#C5D27F","#C2D384","#C7D78A","#CBDB8E","#CBDC8D"],
         "row1" : ["#C1514E","#BF6151","#BC6E58","#CE996E","#D8B377","#DBC37D","#DACD7E","#D6D17D","#CDCF7B","#BCC77A","#B1C479","#B7CA80","#C0D488","#C1D78A"],
@@ -479,6 +478,7 @@
     function menuOff(){
         if(!lockedMenu==true){
             if(menu==true){
+                jQuery('.submenu').css('visibility','hidden');
                 jQuery('#search-comment').css('opacity',"50");
                 jQuery('.submenu').css('opacity',"0");
                 threatStarted(4,7,ColorScheme["main"],delay);
@@ -489,6 +489,7 @@
                 jQuery('.subsubmenuInbox').css('opacity','0');
                 menu = false;
                 setTimeout(function(){
+                threatStarted(4,7,ColorScheme["main"],delay);
                 jQuery('#title').css('opacity','100').css('visibility','visible');
                 jQuery('#beta').css('opacity','100').css('visibility','visible');
                 jQuery('#subtitle').css('opacity','100').css('visibility','visible');
@@ -500,6 +501,7 @@
 
     function menuOn(){
         if(menu == false && lockedMenu == false){
+          jQuery('.submenu').css('visibility','visible');
             menu = true;
             jQuery('#title').css('opacity','0').css('visibility','hidden');
             jQuery('#beta').css('opacity','0').css('visibility','hidden');
@@ -549,27 +551,36 @@
 
     function appendSearchButton(row,column){
         var div = "<i id=\"search-menu\" class=\"fa fa-search submenu\"></i>"
-        jQuery('#row'+row+'column'+column).append(div).css('z-index','99').css('cursor','pointer').hover(function(){
-            jQuery('#search-form').css('visibility','visible').css('opacity','100');
-            jQuery('#title-search').css('top','0px');
-            threatStarted(row,column,ColorScheme["search"],delay);
+        jQuery('#row'+row+'column'+column).append(div).css('z-index','99').hover(function(){
+            if(menu){
+                jQuery('#search-form').css('visibility','visible').css('opacity','100');
+                jQuery('#title-search').css('top','0px');
+                threatStarted(row,column,ColorScheme["search"],delay);
+            }
+
         });
         var hexagons = findAllHexagons(row,column);
         hexagons.hover(function(){
-            threatStarted(row,column,ColorScheme["sub"],delay);
-            jQuery('#title-search').css('top','-120px');
-            jQuery('#search-form').css('visibility','hidden').css('opacity','0')
+            if(menu){
+                threatStarted(row,column,ColorScheme["sub"],delay);
+                jQuery('#title-search').css('top','-120px');
+                jQuery('#search-form').css('visibility','hidden').css('opacity','0')
+            }
         })
     }
 
     function appendHomeButton(row,column){
         var div = "<a href=\"http://unstable.build\"><i id=\"home-menu\" class=\"fa fa-home submenu\"></i></a>"
-        jQuery('#row'+row+'column'+column).append(div).css('cursor','pointer').css('z-index','99').hover(function(){
-            jQuery('#title-home').css('top','0px');
-            setTimeout(function(){threatStarted(row,column,ColorScheme["home"],delay);},100);
+        jQuery('#row'+row+'column'+column).append(div).css('z-index','99').hover(function(){
+            if(menu){
+                jQuery('#title-home').css('top','0px');
+                setTimeout(function(){threatStarted(row,column,ColorScheme["home"],delay);},100);
+            }
         },function(){
-            threatStarted(row,column,ColorScheme["sub"],delay);
-            jQuery('#title-home').css('top','-120px');
+            if(menu){
+                threatStarted(row,column,ColorScheme["sub"],delay);
+                jQuery('#title-home').css('top','-120px');
+            }
         });
     }
 
@@ -592,28 +603,37 @@
         appendSubTag(row+1,column,"graduation-cap","learn");
         appendSubTag(row,column+1,"rebel","random");
         appendSubTag(row,column-1,"database","data");
-        jQuery('#row'+row+'column'+column).append(div).css('cursor','pointer').hover(function(){
-            jQuery('#title-categories').css('top','0px');
-            jQuery('.subsubmenuTag').css('opacity','100');
-            threatStarted(row,column,ColorScheme["tags"],delay);
+        jQuery('#row'+row+'column'+column).append(div).hover(function(){
+            if(menu){
+                jQuery('#title-categories').css('top','0px');
+                jQuery('.subsubmenuTag').css('opacity','100').css('visibility','visible');
+                threatStarted(row,column,ColorScheme["tags"],delay);
+            }
         });
         var hexagons = findSquareOfHexagonsAround(row,column);
         hexagons.hover(function(){
-            threatStarted(row,column,ColorScheme["sub"],delay);
-            jQuery('#title-categories').css('top','-120px');
-            jQuery('.subsubmenuTag').css('opacity','0');
-
+            if(menu){
+                threatStarted(row,column,ColorScheme["sub"],delay);
+                jQuery('#title-categories').css('top','-120px');
+                jQuery('.subsubmenuTag').css('opacity','0').css('visibility','hidden');
+            }
         })
     }
 
     function appendArchiveButton(row,column){
-        var div = "<a href=\"http://unstable.build/archive\"><i id=\"archive-menu\" class=\"fa fa-archive submenu\"></i></a>"
-        jQuery('#row'+row+'column'+column).append(div).css('cursor','pointer').hover(function(){
-            setTimeout(function(){threatStarted(row,column,ColorScheme["archive"],delay);},100);
-            jQuery('#title-archive').css('top','0px');
+        var div = "<i id=\"archive-menu\" class=\"fa fa-archive submenu\"></i>"
+        jQuery('#row'+row+'column'+column).append(div).hover(function(){
+            if(menu){
+                setTimeout(function(){threatStarted(row,column,ColorScheme["main"],delay);},100);
+                jQuery('#title-archive').css('top','0px');
+                jQuery('#archive-beta').css('opacity','100');
+            }
         },function(){
+            if(menu){
+            jQuery('#archive-beta').css('opacity','0');
             threatStarted(row,column,ColorScheme["sub"],delay);
             jQuery('#title-archive').css('top','-120px');
+            }
         });
     }
 
@@ -623,47 +643,76 @@
         appendSubInbox(row+1,column,"linkedin","http://uk.linkedin.com/in/ernestromero");
         appendSubInbox(row,column+1,"envelope","mailto:ernest@unstable.build?Subject=Hello%20again\" target=\"_top");
         var everreachCell = '#row'+(row)+'column'+(column-1);
-        var everreach = "<i id=\"everreach-menu\" class=\"ernestrc-everreach subsubmenuInbox\"></i>"
+        var everreach = "<a href=\"http://www.everreach.co.uk\"><i id=\"everreach-menu\" class=\"ernestrc-everreach subsubmenuInbox\"></i></a>"
         jQuery(everreachCell).append(everreach);
 
-        jQuery('#row'+row+'column'+column).append(div).css('cursor','pointer').hover(function(){
-            jQuery('.subsubmenuInbox').css('opacity','100');
-            threatStarted(row,column,ColorScheme["inbox"],delay);
-            jQuery('#title-contact').css('top','0px');
+        jQuery('#row'+row+'column'+column).append(div).hover(function(){
+            if(menu){
+                jQuery('.subsubmenuInbox').css('opacity','100').css('visibility','visible');
+                threatStarted(row,column,ColorScheme["inbox"],delay);
+                jQuery('#title-contact').css('top','0px');
+            }
         });
         var hexagons = findSquareOfHexagonsAround(row,column);
         hexagons.hover(function(){
-            threatStarted(row,column,ColorScheme["sub"],delay);
-            jQuery('#title-contact').css('top','-120px');
-            jQuery('.subsubmenuInbox').css('opacity','0');
-
+            if(menu){
+                threatStarted(row,column,ColorScheme["sub"],delay);
+                jQuery('#title-contact').css('top','-120px');
+                jQuery('.subsubmenuInbox').css('opacity','0').css('visibility','hidden');
+            }
         })
     }
 
     function loadSubSubMenu(){
         jQuery('#rebel-menu').hover(function(){
-            jQuery('#title-random').css('top','60px');
+            if(menu){
+                jQuery('#title-random').css('top','60px');
+            }
         },function(){
-            jQuery('#title-random').css('top','-120px');
-            jQuery('#title-categories').css('top','0px');
+            if(menu){
+                jQuery('#title-random').css('top','-120px');
+                jQuery('#title-categories').css('top','0px');
+            }
         });
         jQuery('#graduation-cap-menu').hover(function(){
+            if(menu){
             jQuery('#title-learn').css('top','60px');
+            }
         },function(){
+            if(menu){
             jQuery('#title-learn').css('top','-120px');
             jQuery('#title-categories').css('top','0px');
+            }
         });
         jQuery('#code-menu').hover(function(){
+            if(menu){
             jQuery('#title-code').css('top','60px');
+            }
         },function(){
+            if(menu){
             jQuery('#title-code').css('top','-120px');
             jQuery('#title-categories').css('top','0px');
+            }
         });
         jQuery('#database-menu').hover(function(){
+            if(menu){
             jQuery('#title-data').css('top','60px');
+            }
         },function(){
+            if(menu){
             jQuery('#title-data').css('top','-120px');
             jQuery('#title-categories').css('top','0px');
+            }
+        });
+        jQuery('#everreach-menu').hover(function(){
+            if(menu){
+            jQuery('#title-everreach').css('top','60px');
+            }
+        },function(){
+            if(menu){
+            jQuery('#title-everreach').css('top','-120px');
+            jQuery('#title-contact').css('top','0px');
+            }
         });
     }
 
@@ -674,14 +723,19 @@
             appendTagsButton(2,3);
             appendArchiveButton(2,9);
             appendInboxButton(2,11);
-
-
-
-
-        } else if (jQuery(window).width() > 405) {
-
+            jQuery('#secondary').css('visibility','visible');
+        } else if (jQuery(window).width() > 675) {
+            appendSearchButton(2,7);
+            appendHomeButton(1,6);
+            appendTagsButton(2,5);
+            appendArchiveButton(1,7);
+            appendInboxButton(2,9);
         } else {
-
+          appendSearchButton(2,7);
+          appendHomeButton(2,6);
+          appendTagsButton(3,6);
+          appendArchiveButton(2,8);
+          appendInboxButton(3,7);
         }
 
     }
