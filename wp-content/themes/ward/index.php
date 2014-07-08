@@ -16,7 +16,7 @@ get_header(); ?>
 	<?php if ( ( $bavotasan_theme_options['home_posts'] && is_front_page() ) || ! is_front_page() ) { ?>
 	<div class="container">
         <div class="row" style="margin-top:100px;">
-            <div id="primary" class="col-md-6 col-sm-12">
+            <div id="primary" class="col-md-8 col-sm-12">
                 <?php
                 if ( have_posts() ) :
                     while ( have_posts() ) : the_post();
