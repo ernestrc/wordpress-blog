@@ -9453,11 +9453,11 @@ i.fa-lock{
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     color:white;
-    font-size:20px;
+    font-size:15px;
     position: absolute;
     top:15px;
     margin-left:3px;
-    font-family:consolas;
+    font-family:Lato;
 }
 
 @media (max-width: 675px){
@@ -9466,6 +9466,12 @@ i.fa-lock{
         font-size:10px !important;
     }
 }
+@media (max-width: 380px){
+    #beta{
+        visibility:hidden !important;
+    }
+}
+
 
 #secondary{
     visibility:hidden;

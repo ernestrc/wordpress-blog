@@ -636,17 +636,17 @@ function bavotasan_jumbotron() {
             <div class="sticky-bar">
                 <i class="fa fa-lock"></i>
                 <div id="ernestrc-fx" class="middle-circle">
-                    <?php
-                    if ( is_search() ) {
-                        ?><div id="search-comment">
-                            <div class="triangulitus"></div><?php
-                        $num = $wp_query->found_posts;
-                        printf( '%1$s "%2$s"',
-                            $num . __( 'Showing Results for ', 'ward'),
-                            get_search_query());
-                        ?></div><?php
-                        }
-                    ?>
+<!--                    --><?php
+//                    if ( is_search() ) {
+//                        ?><!--<div id="search-comment">-->
+<!--                            <div class="triangulitus"></div>--><?php
+//                        $num = $wp_query->found_posts;
+//                        printf( '%1$s "%2$s"',
+//                            $num . __( 'Showing Results for ', 'ward'),
+//                            get_search_query());
+//                        ?><!--</div>--><?php
+//                        }
+//                    ?>
 
                 </div>
                 <div class="ernestrc-about"></div>
