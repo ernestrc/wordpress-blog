@@ -23,6 +23,8 @@
 			.removeAttr( 'width' );
 	} );
 
+    var is_touch_device = 'ontouchstart' in document.documentElement;
+
 	// Footer height
 	$(window)
 		.resize( function() {
@@ -594,7 +596,9 @@
                 if(menu){
                     jQuery('#search-form').css('visibility','visible').css('opacity','100');
                     jQuery('#title-search').css('top','0px');
-                    threatStarted(row,column,ColorScheme["search"],delay);
+                    if(!is_touch_device) {
+                        threatStarted(row, column, ColorScheme["search"], delay);
+                    }
                 }
             },0)
         });
@@ -605,7 +609,9 @@
                 clearTimeout(search);
                 search = setTimeout(function () {
                     if (menu) {
+
                         threatStarted(row, column, ColorScheme["sub"], delay);
+
                         jQuery('#title-search').css('top', '-120px');
                         jQuery('#search-form').css('visibility', 'hidden').css('opacity', '0')
                     }
@@ -623,7 +629,9 @@
             home = setTimeout(function(){
             if(menu){
                 jQuery('#title-home').css('top','0px');
-                threatStarted(row,column,ColorScheme["home"],delay);
+                if(!is_touch_device) {
+                    threatStarted(row, column, ColorScheme["home"], delay);
+                }
             }
         },0)
         },function(){
@@ -666,7 +674,9 @@
                     if (menu) {
                         jQuery('#title-categories').css('top', '0px');
                         jQuery('.subsubmenuTag').css('opacity', '100').css('visibility', 'visible');
-                        threatStarted(row, column, ColorScheme["tags"], delay);
+                        if(!is_touch_device) {
+                            threatStarted(row, column, ColorScheme["tags"], delay);
+                        }
                     }
                 }, 0)
             });
@@ -691,7 +701,9 @@
         jQuery('#row'+row+'column'+column).append(div).hover(function(){
             if (menu) {
                 archive = setTimeout(function () {
-                    threatStarted(row, column, ColorScheme["main"], delay);
+                    if(!is_touch_device) {
+                        threatStarted(row, column, ColorScheme["main"], delay);
+                    }
                     jQuery('#title-archive').css('top', '0px');
                     jQuery('#archive-beta').css('opacity', '100');
                 },0);
@@ -731,7 +743,9 @@
             inbox = setTimeout(function() {
                 if (menu) {
                     jQuery('.subsubmenuInbox').css('opacity', '100').css('visibility', 'visible');
-                    threatStarted(row, column, ColorScheme["inbox"], delay);
+                    if(!is_touch_device) {
+                        threatStarted(row, column, ColorScheme["inbox"], delay);
+                    }
                     jQuery('#title-contact').css('top', '0px');
                 }
             },0)
