@@ -542,9 +542,6 @@
             jQuery('#subtitle').css('opacity','0').css('visibility','hidden');
             threatStarted(4,7,ColorScheme["sub"],delay);
             jQuery('.submenu').css('opacity',"100");
-            setTimeout(function(){
-                jQuery('#search-comment').css('opacity',"0");
-            },300);
         }
     }
 
@@ -587,6 +584,11 @@
     var archive;
     var inbox;
     var search;
+    if(is_touch_device) {
+        var touchDelay = 150;
+    } else {
+        var touchDelay = 0;
+    }
 
     function appendSearchButton(row,column){
         var div = "<i id=\"search-menu\" class=\"fa fa-search submenu\"></i>"
@@ -600,7 +602,7 @@
                         threatStarted(row, column, ColorScheme["search"], delay);
                     }
                 }
-            },150)
+            },touchDelay)
         });
         if(jQuery(window).width() > 900) {
             var hexagons = findAllHexagons(row, column);
@@ -704,7 +706,7 @@
                     threatStarted(row, column, ColorScheme["main"], delay);
                     jQuery('#title-archive').css('top', '0px');
                     jQuery('#archive-beta').css('opacity', '100');
-                },250);
+                },touchDelay);
             }
         },function(){
             clearTimeout(archive);
