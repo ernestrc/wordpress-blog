@@ -596,9 +596,7 @@
                 if(menu){
                     jQuery('#search-form').css('visibility','visible').css('opacity','100');
                     jQuery('#title-search').css('top','0px');
-                    if(!is_touch_device) {
-                        threatStarted(row, column, ColorScheme["search"], delay);
-                    }
+                    threatStarted(row, column, ColorScheme["search"], delay);
                 }
             },0)
         });
@@ -701,9 +699,7 @@
         jQuery('#row'+row+'column'+column).append(div).hover(function(){
             if (menu) {
                 archive = setTimeout(function () {
-                    if(!is_touch_device) {
-                        threatStarted(row, column, ColorScheme["main"], delay);
-                    }
+                    threatStarted(row, column, ColorScheme["main"], delay);
                     jQuery('#title-archive').css('top', '0px');
                     jQuery('#archive-beta').css('opacity', '100');
                 },0);
