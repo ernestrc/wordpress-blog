@@ -508,7 +508,7 @@
     var title;
 
     function menuOff(){
-        if(!lockedMenu==true){
+        if(lockedMenu==false){
             if(menu==true){
                 jQuery('.submenu').css('visibility','hidden');
                 jQuery('#search-comment').css('opacity',"50");
@@ -857,13 +857,28 @@
         jQuery('#row4column7').hover(function(){
             menuOn();
         }).click(function(){
-
             jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
             if(lockedMenu){
+                jQuery('.submenu').css('visibility','hidden');
+                jQuery('#search-comment').css('opacity',"50");
+                jQuery('.submenu').css('opacity',"0");
+                threatStarted(4,7,ColorScheme["main"],delay);
+                jQuery('.subtitles').css('top','-120px');
+                jQuery('.subsubtitles').css('top','-120px');
+                jQuery('#search-form').css('visibility','hidden').css('opacity','0');
+                jQuery('.subsubmenuTag').css('opacity','0');
+                jQuery('.subsubmenuInbox').css('opacity','0');
+                menu = false;
+                title = setTimeout(function(){
+                    jQuery('#title').css('opacity','100').css('visibility','visible');
+                    jQuery('#beta').css('opacity','100').css('visibility','visible');
+                    jQuery('#subtitle').css('opacity','100').css('visibility','visible');
+                },300);
                 threatStarted(4,7,ColorScheme["main"],delay);
                 lockedMenu=false
                 jQuery('.fa-lock').css('opacity','0');
             } else {
+                menuOn();
                 threatStarted(4,7,ColorScheme["sub"],delay);
                 clearTimeout(timer);
                 jQuery('.fa-lock').css('opacity','50');
