@@ -596,9 +596,11 @@
                 if(menu){
                     jQuery('#search-form').css('visibility','visible').css('opacity','100');
                     jQuery('#title-search').css('top','0px');
-                    threatStarted(row, column, ColorScheme["search"], delay);
+                    if(!is_touch_device) {
+                        threatStarted(row, column, ColorScheme["search"], delay);
+                    }
                 }
-            },0)
+            },150)
         });
         if(jQuery(window).width() > 900) {
             var hexagons = findAllHexagons(row, column);
@@ -702,7 +704,7 @@
                     threatStarted(row, column, ColorScheme["main"], delay);
                     jQuery('#title-archive').css('top', '0px');
                     jQuery('#archive-beta').css('opacity', '100');
-                },0);
+                },250);
             }
         },function(){
             clearTimeout(archive);
@@ -739,9 +741,7 @@
             inbox = setTimeout(function() {
                 if (menu) {
                     jQuery('.subsubmenuInbox').css('opacity', '100').css('visibility', 'visible');
-                    if(!is_touch_device) {
-                        threatStarted(row, column, ColorScheme["inbox"], delay);
-                    }
+                    threatStarted(row, column, ColorScheme["inbox"], delay);
                     jQuery('#title-contact').css('top', '0px');
                 }
             },0)
@@ -817,11 +817,18 @@
         });
     }
 
+    function appendNecesaryTitles(){
+        var arc = "<div id=\"title-archive\" class=\"subtitles\">Archive</div>";
+        var bet = "<div id=\"archive-beta\">Coming Soon!</div>";
+        var sea = "<div id=\"title-search\" class=\"subtitles\">Search</div>";
+
+        jQuery('#ernestrc-menu-bar').append(bet).append(sea).append(arc)
+    }
+
+
     function appendTitles() {
         var cat = "<div id=\"title-categories\" class=\"subtitles\">Topics</div>";
         var con = "<div id=\"title-contact\" class=\"subtitles\">Contact</div>";
-        var sea = "<div id=\"title-search\" class=\"subtitles\">Search</div>";
-        var arc = "<div id=\"title-archive\" class=\"subtitles\">Archive</div>";
         var hom = "<div id=\"title-home\" class=\"subtitles\">Home</div>";
         var men = "<div id=\"title-menu\" class=\"subtitles\">Menu</div>";
         var cod = "<div id=\"title-code\" class=\"subtitles subsubtitles\">Programming in Scala</div>";
@@ -829,14 +836,15 @@
         var dat = "<div id=\"title-data\" class=\"subtitles subsubtitles\">Data Analytics</div>";
         var ran = "<div id=\"title-random\" class=\"subtitles subsubtitles\">Random</div>";
         var eve = "<div id=\"title-everreach\" class=\"subtitles subsubtitles\">+44 20 3582 1468</div>";
-        var bet = "<div id=\"archive-beta\">Coming Soon!</div>";
-        jQuery('#ernestrc-menu-bar').append(cat).append(con).append(sea).append(arc).append(hom).append(men).append(cod).append(lea)
-            .append(dat).append(ran).append(eve).append(bet);
+
+        jQuery('#ernestrc-menu-bar').append(cat).append(con).append(hom).append(men).append(cod).append(lea)
+            .append(dat).append(ran).append(eve);
     }
 
     function loadSubMenu() {
         if(jQuery(window).width() > 900){
             appendTitles();
+            appendNecesaryTitles();
             appendSearchButton(2,7);
             appendHomeButton(2,5);
             appendTagsButton(2,3);
@@ -844,12 +852,14 @@
             appendInboxButton(2,11);
             jQuery('#secondary').css('visibility','visible');
         } else if (jQuery(window).width() > 675) {
+            appendNecesaryTitles();
             appendSearchButton(2,7);
             appendHomeButton(2,5);
             appendTagsButton(1,6);
             appendArchiveButton(2,9);
             appendInboxButton(1,7);
         } else {
+            appendNecesaryTitles();
           appendSearchButton(2,7);
           appendHomeButton(2,6);
           appendTagsButton(3,6);
