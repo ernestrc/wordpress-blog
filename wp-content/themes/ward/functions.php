@@ -610,18 +610,6 @@ function bavotasan_jumbotron() {
                         </label>
                         <input type="submit" class="search-submit" value="Search">
                     </form></aside>
-            <div id="title-categories" class="subtitles">Topics</div>
-            <div id="title-contact" class="subtitles">Contact</div>
-            <div id="title-search" class="subtitles">Search</div>
-            <div id="title-archive" class="subtitles">Archive</div>
-            <div id="title-home" class="subtitles">Home</div>
-            <div id="title-menu" class="subtitles">Menu</div>
-            <div id="title-code" class="subtitles subsubtitles">Programming in Scala</div>
-            <div id="title-learn" class="subtitles subsubtitles">Learning to Code</div>
-            <div id="title-data" class="subtitles subsubtitles">Data Analytics</div>
-            <div id="title-random" class="subtitles subsubtitles">Random</div>
-            <div id="title-everreach" class="subtitles subsubtitles">+44 20 3582 1468</div>
-            <div id="archive-beta">Coming Soon!</div>
 <!--                        <div class="archive-menu col-xs-3 hidden-xs">-->
 <!--                            <h2><a href="--><?php //echo BAVOTASAN_THEME_URL; ?><!--/ernestrc-archive.php">Archive</a></h2>-->
 <!--                            --><?php //wp_get_archives(
@@ -634,9 +622,8 @@ function bavotasan_jumbotron() {
                 <div class="row">
                     <div class="home-jumbotron jumbotron col-lg-10 col-lg-offset-1 col-sm-12">
                         <div id="blog-title">
-                                <h1 id="title" style="z-index:100;position:relative;">Unstable Build</h1>
+                                <h1 id="title" style="z-index:100;position:relative;">Unstable Build <span id="beta">BETA</span></h1>
                                 <p id="subtitle" class="lead">Make it work, then make it better</p>
-                                <h4 id="beta" class="lead">BETA</h4>
                         </div>
 
                     </div>

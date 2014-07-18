@@ -11,13 +11,13 @@
  */
 get_header();
 ?>
-    <div id="primary" <?php bavotasan_primary_attr(); ?>>
+    <div id="primary" <?php bavotasan_primary_attr(); ?> style="margin-top:50px;">
         <?php
         while ( have_posts() ) : the_post();
             ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <?php if ( ! is_front_page() ) { ?>
-                    <h1 class="entry-title"><?php the_title(); ?></h1>
+                    <h1 class="entry-title" style="text-align:center;"><?php the_title(); ?></h1>
                 <?php } ?>
 
                 <div class="entry-content">

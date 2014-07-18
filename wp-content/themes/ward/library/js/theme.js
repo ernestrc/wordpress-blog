@@ -262,11 +262,11 @@
     };
 
     var background5 = {
-        "row4" : ["#E47865","#DE8A69","#C6906D","#DAB086","#FFD396","#FFE19F","#FFE99E","#FCE89C","#DADD99","#ACCC95","#84C097","#7CC09D","#8EC7A4","#9ECEA9","#9ACFA8"],
-        "row3" : ["#AF6562","#A67166","#957B6E","#BCA688","#DBC291","#E5D197","#DDD696","#C8D395","#A5C794","#65B291","#3EAA90","#53B198","#74BEA1","#77C1A3"],
+        "row0" : ["#E47865","#DE8A69","#C6906D","#DAB086","#FFD396","#FFE19F","#FFE99E","#FCE89C","#DADD99","#ACCC95","#84C097","#7CC09D","#8EC7A4","#9ECEA9","#9ACFA8"],
+        "row1" : ["#AF6562","#A67166","#957B6E","#BCA688","#DBC291","#E5D197","#DDD696","#C8D395","#A5C794","#65B291","#3EAA90","#53B198","#74BEA1","#77C1A3"],
         "row2" : ["#C2696C","#805460","#775F64","#6A6C6F","#979685","#ACAF8F","#AAB790","#A1BB93","#8BB792","#55A98F","#009D8B","#009C8D","#1DA795","#51B49C","#68BCA1"],
-        "row1" : ["#8D5C6D","#594B60","#4C5164","#425D6D","#738783","#7C9A8A","#77A28E","#71A991","#4FA390","#00978B","#008F88","#00938B","#009E92","#46B19D"],
-        "row0" : ["#7F5D71","#68516A","#35425E","#1C4461","#15506A","#557C81","#588B87","#50948C","#43998E","#00938D","#008885","#008780","#008F88","#009A91","E78183"]
+        "row3" : ["#8D5C6D","#594B60","#4C5164","#425D6D","#738783","#7C9A8A","#77A28E","#71A991","#4FA390","#00978B","#008F88","#00938B","#009E92","#46B19D"],
+        "row4" : ["#7F5D71","#68516A","#35425E","#1C4461","#15506A","#557C81","#588B87","#50948C","#43998E","#00938D","#008885","#008780","#008F88","#009A91","#009A91"]
     };
     var backgroundBW = {
         "row0" : ["#A79A96","#A99C98","#9C8E8A","#AFA39F","#C3B8B5","#C5BBB8","#C4BAB6","#C0B5B2","#BBB0AD","#B8ADA9","#B9AEAB","#B8ADA9","#C0B5B2","#C7BDBA","#C6BCB9"],
@@ -351,6 +351,16 @@
                 .data("row",row)
                 .append(core).append(up);
             jQuery('.sticky-bar').append(div);
+            jQuery(div).click(function(){
+                var actualColor = jQuery("#"+name).data("color");
+                changeHexagonColor(name,"white");
+                jQuery("#square-"+name).css("transition", "all 0.3s");
+                jQuery("#top-"+name).css("transition", "all 0.3s");
+                jQuery("#bottom-"+name).css("transition", "all 0.3s");
+                setTimeout(function(){
+                    changeHexagonColor(name,actualColor);
+                },100)
+            })
         } else {
             var up = new Triangle(row,column,true);
             var core = new Square(row,column);
@@ -364,12 +374,23 @@
                 .data("row",row)
                 .append(down).append(core).append(up);
             jQuery('#ernestrc-menu-bar').append(div);
+            jQuery(div).click(function(){
+                var actualColor = jQuery("#"+name).data("color");
+                changeHexagonColor(name,"white");
+                jQuery("#square-"+name).css("transition", "all 0.3s");
+                jQuery("#top-"+name).css("transition", "all 0.3s");
+                jQuery("#bottom-"+name).css("transition", "all 0.3s");
+                setTimeout(function(){
+                    changeHexagonColor(name,actualColor);
+                },100)
+            })
         }
         changeHexagonColor(name,color);
     }
 
 
     function changeHexagonColor(className,color){
+        jQuery('#'+className).data('color',color);
         function changeSquareColor(className,color){
             jQuery("#square-"+className).css('background',color)
         }
@@ -503,7 +524,6 @@
                     jQuery('#title').css('opacity','100').css('visibility','visible');
                     jQuery('#beta').css('opacity','100').css('visibility','visible');
                     jQuery('#subtitle').css('opacity','100').css('visibility','visible');
-                    threatStarted(4,7,ColorScheme["main"],delay);
                 },300);
 
             }
@@ -578,21 +598,22 @@
                 }
             },0)
         });
-        var hexagons = findAllHexagons(row,column);
-        hexagons.hover(function(){
+        if(jQuery(window).width() > 900) {
+            var hexagons = findAllHexagons(row, column);
+            hexagons.hover(function () {
 
-            clearTimeout(search);
-            search = setTimeout(function() {
-                if (menu) {
-                    threatStarted(row, column, ColorScheme["sub"], delay);
-                    jQuery('#title-search').css('top', '-120px');
-                    jQuery('#search-form').css('visibility', 'hidden').css('opacity', '0')
-                }
-            },0)
-        },function(){
+                clearTimeout(search);
+                search = setTimeout(function () {
+                    if (menu) {
+                        threatStarted(row, column, ColorScheme["sub"], delay);
+                        jQuery('#title-search').css('top', '-120px');
+                        jQuery('#search-form').css('visibility', 'hidden').css('opacity', '0')
+                    }
+                }, 0)
+            }, function () {
 //            clearAllTimeouts();
-        })
-
+            })
+        }
     }
 
     function appendHomeButton(row,column){
@@ -617,46 +638,52 @@
     }
 
     function appendSubTag(row,column,tag,section){
-        var cell = '#row'+(row)+'column'+(column);
-        var div = "<a href=\"http://unstable.build/topics/"+section+"/\"><i id=\""+tag+"-menu\" class=\"fa fa-"+tag+" subsubmenuTag\"></i></a>"
-        jQuery(cell).append(div)
+        if(jQuery(window).width() > 900) {
+            var cell = '#row' + (row) + 'column' + (column);
+            var div = "<a href=\"http://unstable.build/topics/" + section + "/\"><i id=\"" + tag + "-menu\" class=\"fa fa-" + tag + " subsubmenuTag\"></i></a>"
+            jQuery(cell).append(div)
+        }
     }
 
     function appendSubInbox(row,column,tag,url){
-        var cell = '#row'+(row)+'column'+(column);
-        var div = "<a href=\""+url+"/\"><i id=\""+tag+"-menu\" class=\"fa fa-"+tag+" subsubmenuInbox\"></i></a>"
-        jQuery(cell).append(div)
+        if(jQuery(window).width() > 900) {
+            var cell = '#row' + (row) + 'column' + (column);
+            var div = "<a href=\"" + url + "/\" target=\"_blank\"><i id=\"" + tag + "-menu\" class=\"fa fa-" + tag + " subsubmenuInbox\"></i></a>";
+            jQuery(cell).append(div)
+        }
     }
 
 
     function appendTagsButton(row,column){
-        var div = "<i id=\"tags-menu\" class=\"fa fa-tags submenu\"></i>"
-        appendSubTag(row+1,column-1,"code","programming");
-        appendSubTag(row+1,column,"graduation-cap","learn");
-        appendSubTag(row-1,column-1,"rebel","random");
-        appendSubTag(row-1,column,"database","data");
-        jQuery('#row'+row+'column'+column).append(div).hover(function(){
+        var div = "<a href=\"http://unstable.build/topics/\"><i id=\"tags-menu\" class=\"fa fa-tags submenu\"></i></a>";
+            appendSubTag(row + 1, column - 1, "code", "programming");
+            appendSubTag(row + 1, column, "graduation-cap", "learn");
+            appendSubTag(row - 1, column - 1, "rebel", "random");
+            appendSubTag(row - 1, column, "database", "data");
+            jQuery('#row' + row + 'column' + column).append(div).hover(function () {
 
-            tags = setTimeout(function() {
-                if (menu) {
-                    jQuery('#title-categories').css('top', '0px');
-                    jQuery('.subsubmenuTag').css('opacity', '100').css('visibility', 'visible');
-                    threatStarted(row, column, ColorScheme["tags"], delay);
-                }
-            },0)
-        });
-        var hexagons = findSquareOfHexagonsAround(row,column);
-        hexagons.hover(function(){
-            tags = setTimeout(function() {
-                if (menu) {
-                    threatStarted(row, column, ColorScheme["sub"], delay);
-                    jQuery('#title-categories').css('top', '-120px');
-                    jQuery('.subsubmenuTag').css('opacity', '0').css('visibility', 'hidden');
-                }
-            },0)
-        },function(){
-            clearAllTimeouts();
-        })
+                tags = setTimeout(function () {
+                    if (menu) {
+                        jQuery('#title-categories').css('top', '0px');
+                        jQuery('.subsubmenuTag').css('opacity', '100').css('visibility', 'visible');
+                        threatStarted(row, column, ColorScheme["tags"], delay);
+                    }
+                }, 0)
+            });
+        if(jQuery(window).width() > 900) {
+            var hexagons = findSquareOfHexagonsAround(row, column);
+            hexagons.hover(function () {
+                tags = setTimeout(function () {
+                    if (menu) {
+                        threatStarted(row, column, ColorScheme["sub"], delay);
+                        jQuery('#title-categories').css('top', '-120px');
+                        jQuery('.subsubmenuTag').css('opacity', '0').css('visibility', 'hidden');
+                    }
+                }, 0)
+            }, function () {
+                clearAllTimeouts();
+            })
+        }
     }
 
     function appendArchiveButton(row,column){
@@ -690,14 +717,15 @@
     }
 
     function appendInboxButton(row,column){
-        var div = "<i id=\"inbox-menu\" class=\"ernestrc-face submenu\"></i>"
+        var div = "<a href=\"http://unstable.build/contact/\"><i id=\"inbox-menu\" class=\"ernestrc-face submenu\"></i></a>"
         appendSubInbox(row+1,column-1,"twitter","http://twitter.com/ernestrc_");
         appendSubInbox(row+1,column,"linkedin","http://uk.linkedin.com/in/ernestromero");
-        appendSubInbox(row-1,column-1,"envelope","mailto:ernest@unstable.build?Subject=Hello%20again\" target=\"_top");
-        var everreachCell = '#row'+(row-1)+'column'+(column);
-        var everreach = "<a href=\"http://www.everreach.co.uk\"><i id=\"everreach-menu\" class=\"ernestrc-everreach subsubmenuInbox\"></i></a>"
-        jQuery(everreachCell).append(everreach);
-
+        appendSubInbox(row-1,column-1,"envelope","mailto:info@unstable.build?Subject=Hello%20again\" target=\"_top");
+        if(jQuery(window).width() > 900) {
+            var everreachCell = '#row' + (row - 1) + 'column' + (column);
+            var everreach = "<a href=\"http://www.everreach.co.uk\"><i id=\"everreach-menu\" class=\"ernestrc-everreach subsubmenuInbox\"></i></a>"
+            jQuery(everreachCell).append(everreach);
+        }
         jQuery('#row'+row+'column'+column).append(div).hover(function(){
 
             inbox = setTimeout(function() {
@@ -708,19 +736,22 @@
                 }
             },0)
         });
-        var hexagons = findSquareOfHexagonsAround(row,column);
-        hexagons.hover(function(){
 
-            inbox = setTimeout(function() {
-                if (menu) {
-                    threatStarted(row, column, ColorScheme["sub"], delay);
-                    jQuery('#title-contact').css('top', '-120px');
-                    jQuery('.subsubmenuInbox').css('opacity', '0').css('visibility', 'hidden');
-                }
-            },0)
-        },function(){
-            clearAllTimeouts();
-        })
+        if(jQuery(window).width() > 900) {
+            var hexagons = findSquareOfHexagonsAround(row, column);
+            hexagons.hover(function () {
+
+                inbox = setTimeout(function () {
+                    if (menu) {
+                        threatStarted(row, column, ColorScheme["sub"], delay);
+                        jQuery('#title-contact').css('top', '-120px');
+                        jQuery('.subsubmenuInbox').css('opacity', '0').css('visibility', 'hidden');
+                    }
+                }, 0)
+            }, function () {
+                clearAllTimeouts();
+            })
+        }
     }
 
     function loadSubSubMenu(){
@@ -776,8 +807,26 @@
         });
     }
 
+    function appendTitles() {
+        var cat = "<div id=\"title-categories\" class=\"subtitles\">Topics</div>";
+        var con = "<div id=\"title-contact\" class=\"subtitles\">Contact</div>";
+        var sea = "<div id=\"title-search\" class=\"subtitles\">Search</div>";
+        var arc = "<div id=\"title-archive\" class=\"subtitles\">Archive</div>";
+        var hom = "<div id=\"title-home\" class=\"subtitles\">Home</div>";
+        var men = "<div id=\"title-menu\" class=\"subtitles\">Menu</div>";
+        var cod = "<div id=\"title-code\" class=\"subtitles subsubtitles\">Programming in Scala</div>";
+        var lea = "<div id=\"title-learn\" class=\"subtitles subsubtitles\">Learning to Code</div>";
+        var dat = "<div id=\"title-data\" class=\"subtitles subsubtitles\">Data Analytics</div>";
+        var ran = "<div id=\"title-random\" class=\"subtitles subsubtitles\">Random</div>";
+        var eve = "<div id=\"title-everreach\" class=\"subtitles subsubtitles\">+44 20 3582 1468</div>";
+        var bet = "<div id=\"archive-beta\">Coming Soon!</div>";
+        jQuery('#ernestrc-menu-bar').append(cat).append(con).append(sea).append(arc).append(hom).append(men).append(cod).append(lea)
+            .append(dat).append(ran).append(eve).append(bet);
+    }
+
     function loadSubMenu() {
         if(jQuery(window).width() > 900){
+            appendTitles();
             appendSearchButton(2,7);
             appendHomeButton(2,5);
             appendTagsButton(2,3);
@@ -786,10 +835,10 @@
             jQuery('#secondary').css('visibility','visible');
         } else if (jQuery(window).width() > 675) {
             appendSearchButton(2,7);
-            appendHomeButton(1,6);
-            appendTagsButton(2,5);
-            appendArchiveButton(1,7);
-            appendInboxButton(2,9);
+            appendHomeButton(2,5);
+            appendTagsButton(1,6);
+            appendArchiveButton(2,9);
+            appendInboxButton(1,7);
         } else {
           appendSearchButton(2,7);
           appendHomeButton(2,6);
@@ -808,6 +857,7 @@
         jQuery('#row4column7').hover(function(){
             menuOn();
         }).click(function(){
+
             jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
             if(lockedMenu){
                 threatStarted(4,7,ColorScheme["main"],delay);
@@ -819,6 +869,15 @@
                 jQuery('.fa-lock').css('opacity','50');
                 lockedMenu=true
             }
+            var name = "row4column7";
+            var actualColor = jQuery("#"+name).data("color");
+            changeHexagonColor(name,"white");
+            jQuery("#square-"+name).css("transition", "all 0.3s");
+            jQuery("#top-"+name).css("transition", "all 0.3s");
+            jQuery("#bottom-"+name).css("transition", "all 0.3s");
+            setTimeout(function(){
+                changeHexagonColor(name,actualColor);
+            },100)
         });
         var down = new Triangle("4","7",false);
         var color = jQuery('#square-row4column7').css('background-color');
