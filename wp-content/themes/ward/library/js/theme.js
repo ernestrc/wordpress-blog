@@ -820,13 +820,12 @@
     function appendNecesaryTitles(){
         var arc = "<div id=\"title-archive\" class=\"subtitles\">Archive</div>";
         var bet = "<div id=\"archive-beta\">Coming Soon!</div>";
-        var sea = "<div id=\"title-search\" class=\"subtitles\">Search</div>";
-
-        jQuery('#ernestrc-menu-bar').append(bet).append(sea).append(arc)
+        jQuery('#ernestrc-menu-bar').append(bet).append(arc)
     }
 
 
     function appendTitles() {
+        var sea = "<div id=\"title-search\" class=\"subtitles\">Search</div>";
         var cat = "<div id=\"title-categories\" class=\"subtitles\">Topics</div>";
         var con = "<div id=\"title-contact\" class=\"subtitles\">Contact</div>";
         var hom = "<div id=\"title-home\" class=\"subtitles\">Home</div>";
@@ -838,7 +837,7 @@
         var eve = "<div id=\"title-everreach\" class=\"subtitles subsubtitles\">+44 20 3582 1468</div>";
 
         jQuery('#ernestrc-menu-bar').append(cat).append(con).append(hom).append(men).append(cod).append(lea)
-            .append(dat).append(ran).append(eve);
+            .append(dat).append(ran).append(eve).append(sea);
     }
 
     function loadSubMenu() {
