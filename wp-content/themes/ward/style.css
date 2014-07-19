@@ -7741,12 +7741,12 @@ a [class*=" ernestrc-"] {
     left:11px;
     position:absolute;
     top:-8px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 2px #fff;
     /*text-shadow:0 -1px 0 #D3D3D3;*/
 }
 
 .ernestrc-everreach:before {
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 2px #fff;
     content: "\f2929";
     text-decoration:none;
     font-size:30px;
@@ -8368,7 +8368,6 @@ i{
 #blog-title{
     padding:40px;
     color:#FFFFFF;
-    /*text-shadow:1px 1px 4px #282828;*/
     -webkit-transition: color 0.5s;
     -moz-transition: color 0.5s;
     -ms-transition: color 0.5s;
@@ -8450,11 +8449,11 @@ i{
 
 
 .fa-bolt{
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
-    -ms-transition: all 0.25s;
-    -o-transition: all 0.25s;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    -webkit-transition: all 0.75s;
+    -moz-transition: all 0.75s;
+    -ms-transition: all 0.75s;
+    -o-transition: all 0.75s;
+    text-shadow: 0 0 5px #FFF;
     cursor:pointer;
     position:absolute;
     color:white;
@@ -8465,7 +8464,7 @@ i{
 }
 
 #search-form{
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 3px #FFF;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -8496,9 +8495,6 @@ i{
     font-size:35px;
     text-align:center;
 
-}
-.fa{
-    /*text-shadow:0 -1px 0 #D3D3D3;*/
 }
 #blog-title{
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -9319,7 +9315,6 @@ i.fa-lock{
     top:5px;
     left:34px;
     opacity:0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;

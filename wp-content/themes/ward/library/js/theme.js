@@ -527,7 +527,6 @@
                     jQuery('#beta').css('opacity','100').css('visibility','visible');
                     jQuery('#subtitle').css('opacity','100').css('visibility','visible');
                 },300);
-
             }
         }
     }
@@ -921,13 +920,24 @@
         jQuery('#row4column7').append("<i class=\"fa fa-bolt\"></i>").append(down)
     }
 
+    function bolt(item,start){
+        setTimeout(function(){
+            if(start % 2) {
+                jQuery(item).css('text-shadow','0 0 10px #FFF')
+            } else {
+                jQuery(item).css('text-shadow',"0 1px 2px rgba(0, 0, 0, 0.6)")
+            }
+           start = start + 1;
+                bolt(item, start)
+        },750);
+    }
 
     jQuery( document ).ready(function() {
+        boltning = bolt('.fa-bolt',0);
         loadMainMenu();
         loadSubMenu();
         loadSubSubMenu();
         jQuery('[id=icons-menu]').css('background','transparent !important');
-
         outdatedBrowser({
             bgColor: '#f25648',
             color: '#ffffff',
