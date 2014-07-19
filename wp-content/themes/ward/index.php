@@ -26,7 +26,7 @@ get_header(); ?>
                     bavotasan_pagination();
                 else :
                     ?>
-                    <article id="post-0" class="post no-results not-found">
+                    <article id="post-0" class="post no-results not-found" style="">
 
                         <?php if ( current_user_can( 'edit_posts' ) ) :
                             // Show a different message to a logged-in user who can add posts.
