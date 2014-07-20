@@ -9119,10 +9119,10 @@ i{
 
 .hexagonal-cell {
     /*cursor:pointer;*/
-    /*-webkit-transition: all 0.5s;*/
-    /*-moz-transition: all 0.5s;*/
-    /*-ms-transition: all 0.5s;*/
-    /*-o-transition: all 0.5s;*/
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
     left:50%;
     z-index:10;
     width: 100px;
@@ -9131,10 +9131,10 @@ i{
     position: absolute;
 }
 .triangle-top {
-    /*-webkit-transition: all 0.5s;*/
-    /*-moz-transition: all 0.5s;*/
-    /*-ms-transition: all 0.5s;*/
-    /*-o-transition: all 0.5s;*/
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
     left:0;
     position: absolute;
     width: 0;
@@ -9145,10 +9145,10 @@ i{
 }
 
 .triangle-bottom {
-    /*-webkit-transition: all 0.5s;*/
-    /*-moz-transition: all 0.5s;*/
-    /*-ms-transition: all 0.5s;*/
-    /*-o-transition: all 0.5s;*/
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
     left:0;
     content:"";
     position: absolute;

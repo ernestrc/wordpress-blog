@@ -286,15 +286,130 @@
         "row4" : ["#A06265","#94595E","#794950","#734B51","#7B5759","#A18274","#A68E79","#A6967D","#A89E80","#A19F80","#92967A","#889377","#929F7F","#A2AD89","#B3BD95"]
     };
 
+    var hash6B29BA = {
+        "row0" : ["#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA"],
+        "row1" : ["#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA"],
+        "row2" : ["#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA"],
+        "row3" : ["#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA"],
+        "row4" : ["#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA","#6B29BA"]
+    };
+
+    var hash23DC71 = {
+        "row0" : ["#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71"],
+        "row1" : ["#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71"],
+        "row2" : ["#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71"],
+        "row3" : ["#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71"],
+        "row4" : ["#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71","#23DC71"]
+    };
+
+    var hashECBF08 = {
+        "row0" : ["#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08"],
+        "row1" : ["#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08"],
+        "row2" : ["#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08"],
+        "row3" : ["#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08"],
+        "row4" : ["#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08","#ECBF08"]
+    };
+
+    var hashE73D51 = {
+        "row0" : ["#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51"],
+        "row1" : ["#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51"],
+        "row2" : ["#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51"],
+        "row3" : ["#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51"],
+        "row4" : ["#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51","#E73D51"]
+    };
+
+    var hash292E39 = {
+        "row0" : ["#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39"],
+        "row1" : ["#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39"],
+        "row2" : ["#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39"],
+        "row3" : ["#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39"],
+        "row4" : ["#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39","#292E39"]
+    };
+
+
+    var hashD0D8DE = {
+        "row0" : ["#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE"],
+        "row1" : ["#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE"],
+        "row2" : ["#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE"],
+        "row3" : ["#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE"],
+        "row4" : ["#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE","#D0D8DE"]
+    };
+
+    var hash8D7E7A = {
+        "row0" : ["#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A"],
+        "row1" : ["#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A"],
+        "row2" : ["#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A"],
+        "row3" : ["#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A"],
+        "row4" : ["#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A","#8D7E7A"]
+    };
+
+    var hashAD454C = {
+        "row0" : ["#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C"],
+        "row1" : ["#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C"],
+        "row2" : ["#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C"],
+        "row3" : ["#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C"],
+        "row4" : ["#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C","#AD454C"]
+    };
+
+    var hashCCA975 = {
+        "row0" : ["#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975"],
+        "row1" : ["#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975"],
+        "row2" : ["#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975"],
+        "row3" : ["#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975"],
+        "row4" : ["#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975","#CCA975"]
+    };
+
+    var hashC5D27F = {
+        "row0" : ["#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F"],
+        "row1" : ["#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F"],
+        "row2" : ["#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F"],
+        "row3" : ["#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F"],
+        "row4" : ["#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F","#C5D27F"]
+    };
+
+    var hashE8D984 = {
+        "row0" : ["#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984"],
+        "row1" : ["#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984"],
+        "row2" : ["#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984"],
+        "row3" : ["#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984"],
+        "row4" : ["#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984","#E8D984"]
+    };
+
+    var hash7D996C = {
+        "row0" : ["#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C"],
+        "row1" : ["#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C"],
+        "row2" : ["#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C"],
+        "row3" : ["#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C"],
+        "row4" : ["#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C","#7D996C"]
+    };
+
+
+    var hash00CAFF = {
+        "row0" : ["#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF"],
+        "row1" : ["#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF"],
+        "row2" : ["#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF"],
+        "row3" : ["#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF"],
+        "row4" : ["#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF","#00CAFF"]
+    };
+
+
+    var hashF28809 = {
+        "row0" : ["#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809"],
+        "row1" : ["#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809"],
+        "row2" : ["#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809"],
+        "row3" : ["#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809"],
+        "row4" : ["#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809","#F28809"]
+    };
+
 
     var ColorScheme = {
-        "main" : backgroundBW,
-        "sub": backgroundSepia,
-        "tags":background1,
-        "home":background1,
-        "search":background1,
-        "archive":background1,
-        "inbox":background1
+        "main" :hash6B29BA,
+        "sub":hashECBF08,
+        "tags":hash23DC71,
+        "home":hashE73D51,
+        "search":hash292E39,
+        "archive":hashF28809,
+        "inbox":hash00CAFF
     };
 
 
@@ -512,8 +627,8 @@
     function menuOff(){
         if(lockedMenu==false){
             if(menu==true){
+                jQuery('#archive-beta').css('opacity',"0");
                 jQuery('.submenu').css('visibility','hidden');
-                jQuery('#search-comment').css('opacity',"50");
                 jQuery('.submenu').css('opacity',"0");
                 threatStarted(4,7,ColorScheme["main"],delay);
                 jQuery('.subtitles').css('top','-120px');
@@ -589,12 +704,27 @@
         var touchDelay = 0;
     }
 
+    function hideAllTitles(){
+
+        jQuery('#title-search').css('top', '-120px');
+        jQuery('#search-form').css('visibility', 'hidden').css('opacity', '0');
+        jQuery('#title-home').css('top', '-120px');
+        jQuery('#title-categories').css('top', '-120px');
+        jQuery('.subsubmenuTag').css('opacity', '0').css('visibility', 'hidden');
+        jQuery('#archive-beta').css('opacity', '0');
+        jQuery('#title-archive').css('top', '-120px');
+        jQuery('#title-contact').css('top', '-120px');
+        jQuery('.subsubmenuInbox').css('opacity', '0').css('visibility', 'hidden');
+
+    }
+
     function appendSearchButton(row,column){
         var div = "<i id=\"search-menu\" class=\"fa fa-search submenu\"></i>"
         jQuery('#row'+row+'column'+column).append(div).css('z-index','99').hover(function(){
 
             search = setTimeout(function(){
                 if(menu){
+                    hideAllTitles();
                     jQuery('#search-form').css('visibility','visible').css('opacity','100');
                     jQuery('#title-search').css('top','0px');
                     if(!is_touch_device) {
@@ -611,10 +741,10 @@
                 search = setTimeout(function () {
                     if (menu) {
 
-                        threatStarted(row, column, ColorScheme["sub"], delay);
+//                        threatStarted(row, column, ColorScheme["sub"], delay);
 
-                        jQuery('#title-search').css('top', '-120px');
-                        jQuery('#search-form').css('visibility', 'hidden').css('opacity', '0')
+//                        jQuery('#title-search').css('top', '-120px');
+//                        jQuery('#search-form').css('visibility', 'hidden').css('opacity', '0')
                     }
                 }, 0)
             }, function () {
@@ -629,6 +759,7 @@
 
             home = setTimeout(function(){
             if(menu){
+                hideAllTitles();
                 jQuery('#title-home').css('top','0px');
                 if(!is_touch_device) {
                     threatStarted(row, column, ColorScheme["home"], delay);
@@ -639,8 +770,8 @@
 
             home = setTimeout(function() {
                 if (menu) {
-                    threatStarted(row, column, ColorScheme["sub"], delay);
-                    jQuery('#title-home').css('top', '-120px');
+//                    threatStarted(row, column, ColorScheme["sub"], delay);
+//                    jQuery('#title-home').css('top', '-120px');
                 }
             },0)
         });
@@ -673,6 +804,7 @@
 
                 tags = setTimeout(function () {
                     if (menu) {
+                        hideAllTitles();
                         jQuery('#title-categories').css('top', '0px');
                         jQuery('.subsubmenuTag').css('opacity', '100').css('visibility', 'visible');
                         if(!is_touch_device) {
@@ -686,9 +818,9 @@
             hexagons.hover(function () {
                 tags = setTimeout(function () {
                     if (menu) {
-                        threatStarted(row, column, ColorScheme["sub"], delay);
-                        jQuery('#title-categories').css('top', '-120px');
-                        jQuery('.subsubmenuTag').css('opacity', '0').css('visibility', 'hidden');
+//                        threatStarted(row, column, ColorScheme["sub"], delay);
+//                        jQuery('#title-categories').css('top', '-120px');
+//                        jQuery('.subsubmenuTag').css('opacity', '0').css('visibility', 'hidden');
                     }
                 }, 0)
             }, function () {
@@ -702,7 +834,8 @@
         jQuery('#row'+row+'column'+column).append(div).hover(function(){
             if (menu) {
                 archive = setTimeout(function () {
-                    threatStarted(row, column, ColorScheme["main"], delay);
+                    hideAllTitles();
+                    threatStarted(row, column, ColorScheme["archive"], delay);
                     jQuery('#title-archive').css('top', '0px');
                     jQuery('#archive-beta').css('opacity', '100');
                 },touchDelay);
@@ -711,9 +844,9 @@
             clearTimeout(archive);
             archive = setTimeout(function() {
                 if (menu) {
-                    jQuery('#archive-beta').css('opacity', '0');
-                    threatStarted(row, column, ColorScheme["sub"], delay);
-                    jQuery('#title-archive').css('top', '-120px');
+//                    jQuery('#archive-beta').css('opacity', '0');
+//                    threatStarted(row, column, ColorScheme["sub"], delay);
+//                    jQuery('#title-archive').css('top', '-120px');
                 }
             },0)
         });
@@ -741,6 +874,7 @@
 
             inbox = setTimeout(function() {
                 if (menu) {
+                    hideAllTitles();
                     jQuery('.subsubmenuInbox').css('opacity', '100').css('visibility', 'visible');
                     threatStarted(row, column, ColorScheme["inbox"], delay);
                     jQuery('#title-contact').css('top', '0px');
@@ -754,9 +888,9 @@
 
                 inbox = setTimeout(function () {
                     if (menu) {
-                        threatStarted(row, column, ColorScheme["sub"], delay);
-                        jQuery('#title-contact').css('top', '-120px');
-                        jQuery('.subsubmenuInbox').css('opacity', '0').css('visibility', 'hidden');
+//                        threatStarted(row, column, ColorScheme["sub"], delay);
+//                        jQuery('#title-contact').css('top', '-120px');
+//                        jQuery('.subsubmenuInbox').css('opacity', '0').css('visibility', 'hidden');
                     }
                 }, 0)
             }, function () {
@@ -932,8 +1066,39 @@
         },750);
     }
 
+    function changeTransition(rowcolumn){
+        jQuery('#square-'+rowcolumn).css('transition','all 0.3s');
+        jQuery('#bottom-'+rowcolumn).css('transition','all 0.3s');
+        jQuery('#top-'+rowcolumn).css('transition','all 0.3s');
+    }
+
+    function preClicks(){
+        changeTransition('row3column3');
+        changeTransition('row4column2');
+        changeTransition('row1column4');
+        changeTransition('row0column1');
+        changeTransition('row0column3');
+        changeTransition('row0column6');
+        changeTransition('row0column9');
+        changeTransition('row1column4');
+        changeTransition('row1column2');
+        changeTransition('row1column4');
+        changeTransition('row4column2');
+        changeTransition('row4column5');
+        changeTransition('row4column8');
+        changeTransition('row3column7');
+        changeTransition('row4column7');
+        changeTransition('row2column7');
+        changeTransition('row2column2');
+        changeTransition('row2column9');
+        changeTransition('row2column12');
+        changeTransition('row4column11');
+        changeTransition('row3column10');
+        changeTransition('row0column13');
+    }
+
     jQuery( document ).ready(function() {
-        boltning = bolt('.fa-bolt',0);
+        bolt('.fa-bolt',0);
         loadMainMenu();
         loadSubMenu();
         loadSubSubMenu();
@@ -943,6 +1108,7 @@
             color: '#ffffff',
             lowerThan: 'transform'
         })
+        preClicks()
     })
 
 } )( jQuery );
