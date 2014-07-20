@@ -1108,7 +1108,7 @@
             color: '#ffffff',
             lowerThan: 'transform'
         })
-        preClicks()
+//        preClicks();
     })
 
 } )( jQuery );
