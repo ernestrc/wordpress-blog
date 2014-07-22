@@ -453,6 +453,23 @@
         return div
     }
 
+    function tickHexAnimation(row,column,delay){
+        var name = "row"+row+"column"+column;
+        setTimeout(function(){
+            var actualColor = jQuery("#"+name).data("color");
+            changeHexagonColor(name,"white");
+            jQuery("#square-"+name).css("transition", "all 0.3s");
+            jQuery("#top-"+name).css("transition", "all 0.3s");
+            jQuery("#bottom-"+name).css("transition", "all 0.3s");
+            setTimeout(function(){
+                changeHexagonColor(name,actualColor);
+                jQuery("#square-"+name).css("transition", "all 1s");
+                jQuery("#top-"+name).css("transition", "all 1s");
+                jQuery("#bottom-"+name).css("transition", "all 1s");
+            },90);
+        },delay)
+    }
+
     function Hexagon(row,column,color,yAxis,xAxis,lastRow){
         var name = "row"+row+"column"+column;
         if(lastRow){
@@ -469,14 +486,7 @@
                 .append(core).append(up);
             jQuery('.sticky-bar').append(div);
             jQuery(div).click(function(){
-                var actualColor = jQuery("#"+name).data("color");
-                changeHexagonColor(name,"white");
-                jQuery("#square-"+name).css("transition", "all 0.3s");
-                jQuery("#top-"+name).css("transition", "all 0.3s");
-                jQuery("#bottom-"+name).css("transition", "all 0.3s");
-                setTimeout(function(){
-                    changeHexagonColor(name,actualColor);
-                },100)
+                tickHexAnimation(row,column,0);
             })
         } else {
             var up = new Triangle(row,column,true);
@@ -492,14 +502,7 @@
                 .append(down).append(core).append(up);
             jQuery('#ernestrc-menu-bar').append(div);
             jQuery(div).click(function(){
-                var actualColor = jQuery("#"+name).data("color");
-                changeHexagonColor(name,"white");
-                jQuery("#square-"+name).css("transition", "all 0.3s");
-                jQuery("#top-"+name).css("transition", "all 0.3s");
-                jQuery("#bottom-"+name).css("transition", "all 0.3s");
-                setTimeout(function(){
-                    changeHexagonColor(name,actualColor);
-                },100)
+                tickHexAnimation(row,column,0);
             })
         }
         changeHexagonColor(name,color);
@@ -625,8 +628,10 @@
     var title;
 
     function menuOff(){
+        clearTimeout(rain);
         if(lockedMenu==false){
             if(menu==true){
+                rainAnimation(0);
                 jQuery('#archive-beta').css('opacity',"0");
                 jQuery('.submenu').css('visibility','hidden');
                 jQuery('.submenu').css('opacity',"0");
@@ -647,6 +652,7 @@
     }
 
     function menuOn(){
+        clearTimeout(rain);
         if(menu == false && lockedMenu == false){
           jQuery('.submenu').css('visibility','visible');
             menu = true;
@@ -933,6 +939,33 @@
         jQuery('#top-'+rowcolumn).css('transition','all 0.3s');
     }
 
+
+
+    var rain;
+    function rainAnimation(bias){
+        var timeBias = bias*333;
+        tickHexAnimation(bias+3,bias+2,0+timeBias);
+        tickHexAnimation(bias+1,bias+2,1500+timeBias);
+        tickHexAnimation(bias+1,bias+4,3000+timeBias);
+        tickHexAnimation(bias+2,bias+1,3500+timeBias);
+        tickHexAnimation(0,bias+6,3750+timeBias);
+        tickHexAnimation(4,bias+11,4500+timeBias);
+        tickHexAnimation(bias+1,bias+9,6600+timeBias);
+        tickHexAnimation(bias+2,bias+12,7000+timeBias);
+        tickHexAnimation(bias+3,bias+5,7300+timeBias);
+        tickHexAnimation(bias+2,bias+7,7100+timeBias);
+        tickHexAnimation(bias+2,bias+4,7400+timeBias);
+        tickHexAnimation(bias+1,bias+2,8500+timeBias);
+        tickHexAnimation(4,bias+7,8600+timeBias);
+        tickHexAnimation(bias+2,bias+9,8650+timeBias);
+        tickHexAnimation(4,bias+11,8770+timeBias);
+        tickHexAnimation(bias+3,13,8772+timeBias);
+        tickHexAnimation(bias+2,bias+9,8774);
+        rain = setTimeout(function(){
+                rainAnimation(bias)
+        },10000);
+    }
+
     function preClicks(){
         changeTransition('row3column3');
         changeTransition('row4column2');
@@ -969,6 +1002,7 @@
             lowerThan: 'transform'
         });
 //        preClicks();
+        rainAnimation(0);
     })
 
 } )( jQuery );
