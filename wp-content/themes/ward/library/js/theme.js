@@ -693,20 +693,37 @@
         var twelve= '#row'+(row-2)+'column'+(column+1);
         return jQuery(one+","+two+","+three+","+four+","+five+","+six+","+seven+","+eight+","+nine+","+ten+","+eleven+","+twelve);
     }
-    var home;
-    var tags;
-    var archive;
-    var inbox;
-    var search;
+
+    function Buttons(){
+        this.home = 0;
+        this.tags = 0;
+        this.archive = 0;
+        this.inbox = 0;
+        this.search = 0;
+        this.subTagScala = 0;
+        this.subTagRandom = 0;
+        this.subTagData = 0;
+        this.subTagLearn = 0;
+        this.subInboxEverreach = 0;
+        this.subInboxTwitter = 0;
+        this.subInboxLinkedin = 0;
+        this.subInboxMail = 0;
+    };
+    var buttons = new Buttons();
+
     if(is_touch_device) {
         var touchDelay = 150;
     } else {
-        var touchDelay = 0;
+        var touchDelay = 101;
     }
 
     function hideAllTitles(){
 
         jQuery('#title-search').css('top', '-120px');
+        jQuery('#title-code').css('top', '-120px');
+        jQuery('#title-learn').css('top', '-120px');
+        jQuery('#title-data').css('top', '-120px');
+        jQuery('#title-random').css('top', '-120px');
         jQuery('#search-form').css('visibility', 'hidden').css('opacity', '0');
         jQuery('#title-home').css('top', '-120px');
         jQuery('#title-categories').css('top', '-120px');
@@ -718,238 +735,58 @@
 
     }
 
-    function appendSearchButton(row,column){
-        var div = "<i id=\"search-menu\" class=\"fa fa-search submenu\"></i>"
-        jQuery('#row'+row+'column'+column).append(div).css('z-index','99').hover(function(){
+    function MenuButton(row,column,name,iconId,icon,itemsToHide,itemsToTop,colorScheme){
+        this.row = row;
+        this.column = column;
+        this.name = name;
+        this.itemsToHide = itemsToHide;
+        this.itemsToTop = itemsToTop;
+        this.$ = jQuery('#row'+row+'column'+column);
+        this.hide = function() {
+            jQuery(iconId).css('opacity','0');
+            setTimeout(function(){
+                jQuery(iconId).css('visibility','hidden')
+            },100)
+        };
+        this.hideOtherButtons = function(){ //TODO fer que samaguin, reposicinin correctament amb la cela,
+            //TODO fer que cambin de tamany i apareguin mes coses? Dividr tasques i despres fer una gran
+            var customButtons = jQuery.extend({},buttons);
+            console.log(customButtons.toString());
+            delete customButtons[name];
+            console.log(customButtons.toString());
+            for (var property in customButtons) {
+                console.log("deleting ...." +customButtons[property].toString());
+                if (customButtons.hasOwnProperty(property)) {
+                    customButtons[property].hide();
+                }
+            }
+        };
 
-            search = setTimeout(function(){
+        this.$.append(icon).css('z-index','99').click(function(){
+            setTimeout(function(){
                 if(menu){
                     hideAllTitles();
-                    jQuery('#search-form').css('visibility','visible').css('opacity','100');
-                    jQuery('#title-search').css('top','0px');
+                    var i;
+                    var hide = itemsToHide.length;
+                    if (hide > 0){
+                        for(i = 0;i < hide;i ++){
+                            jQuery(itemsToHide[i]).css('visibility','visible').css('opacity','100')
+                        }
+                    }
+                    var top = itemsToTop.length;
+                    var e;
+                    if (top > 0){
+                        for(e = 0; e < top; e++){
+                            jQuery(itemsToTop[e]).css('top','0px')
+                        }
+                    }
                     if(!is_touch_device) {
-                        threatStarted(row, column, ColorScheme["search"], delay);
+                        threatStarted(row, column, ColorScheme[colorScheme], delay);
                     }
                 }
             },touchDelay)
         });
-        if(jQuery(window).width() > 900) {
-            var hexagons = findAllHexagons(row, column);
-            hexagons.hover(function () {
-
-                clearTimeout(search);
-                search = setTimeout(function () {
-                    if (menu) {
-
-//                        threatStarted(row, column, ColorScheme["sub"], delay);
-
-//                        jQuery('#title-search').css('top', '-120px');
-//                        jQuery('#search-form').css('visibility', 'hidden').css('opacity', '0')
-                    }
-                }, 0)
-            }, function () {
-//            clearAllTimeouts();
-            })
-        }
-    }
-
-    function appendHomeButton(row,column){
-        var div = "<a href=\"http://unstable.build\"><i id=\"home-menu\" class=\"fa fa-home submenu\"></i></a>"
-        jQuery('#row'+row+'column'+column).append(div).css('z-index','99').hover(function(){
-
-            home = setTimeout(function(){
-            if(menu){
-                hideAllTitles();
-                jQuery('#title-home').css('top','0px');
-                if(!is_touch_device) {
-                    threatStarted(row, column, ColorScheme["home"], delay);
-                }
-            }
-        },0)
-        },function(){
-
-            home = setTimeout(function() {
-                if (menu) {
-//                    threatStarted(row, column, ColorScheme["sub"], delay);
-//                    jQuery('#title-home').css('top', '-120px');
-                }
-            },0)
-        });
-    }
-
-    function appendSubTag(row,column,tag,section){
-        if(jQuery(window).width() > 900) {
-            var cell = '#row' + (row) + 'column' + (column);
-            var div = "<a href=\"http://unstable.build/topics/" + section + "/\"><i id=\"" + tag + "-menu\" class=\"fa fa-" + tag + " subsubmenuTag\"></i></a>"
-            jQuery(cell).append(div)
-        }
-    }
-
-    function appendSubInbox(row,column,tag,url){
-        if(jQuery(window).width() > 900) {
-            var cell = '#row' + (row) + 'column' + (column);
-            var div = "<a href=\"" + url + "/\" target=\"_blank\"><i id=\"" + tag + "-menu\" class=\"fa fa-" + tag + " subsubmenuInbox\"></i></a>";
-            jQuery(cell).append(div)
-        }
-    }
-
-
-    function appendTagsButton(row,column){
-        var div = "<a href=\"http://unstable.build/topics/\"><i id=\"tags-menu\" class=\"fa fa-tags submenu\"></i></a>";
-            appendSubTag(row + 1, column - 1, "code", "programming");
-            appendSubTag(row + 1, column, "graduation-cap", "learn");
-            appendSubTag(row - 1, column - 1, "rebel", "random");
-            appendSubTag(row - 1, column, "database", "data");
-            jQuery('#row' + row + 'column' + column).append(div).hover(function () {
-
-                tags = setTimeout(function () {
-                    if (menu) {
-                        hideAllTitles();
-                        jQuery('#title-categories').css('top', '0px');
-                        jQuery('.subsubmenuTag').css('opacity', '100').css('visibility', 'visible');
-                        if(!is_touch_device) {
-                            threatStarted(row, column, ColorScheme["tags"], delay);
-                        }
-                    }
-                }, 0)
-            });
-        if(jQuery(window).width() > 900) {
-            var hexagons = findSquareOfHexagonsAround(row, column);
-            hexagons.hover(function () {
-                tags = setTimeout(function () {
-                    if (menu) {
-//                        threatStarted(row, column, ColorScheme["sub"], delay);
-//                        jQuery('#title-categories').css('top', '-120px');
-//                        jQuery('.subsubmenuTag').css('opacity', '0').css('visibility', 'hidden');
-                    }
-                }, 0)
-            }, function () {
-                clearAllTimeouts();
-            })
-        }
-    }
-
-    function appendArchiveButton(row,column){
-        var div = "<i id=\"archive-menu\" class=\"fa fa-archive submenu\"></i>"
-        jQuery('#row'+row+'column'+column).append(div).hover(function(){
-            if (menu) {
-                archive = setTimeout(function () {
-                    hideAllTitles();
-                    threatStarted(row, column, ColorScheme["archive"], delay);
-                    jQuery('#title-archive').css('top', '0px');
-                    jQuery('#archive-beta').css('opacity', '100');
-                },touchDelay);
-            }
-        },function(){
-            clearTimeout(archive);
-            archive = setTimeout(function() {
-                if (menu) {
-//                    jQuery('#archive-beta').css('opacity', '0');
-//                    threatStarted(row, column, ColorScheme["sub"], delay);
-//                    jQuery('#title-archive').css('top', '-120px');
-                }
-            },0)
-        });
-    }
-
-    function clearAllTimeouts(){
-        clearTimeout(tags);
-        clearTimeout(home);
-        clearTimeout(archive);
-        clearTimeout(search);
-        clearTimeout(inbox);
-    }
-
-    function appendInboxButton(row,column){
-        var div = "<a href=\"http://unstable.build/contact/\"><i id=\"inbox-menu\" class=\"ernestrc-face submenu\"></i></a>"
-        appendSubInbox(row+1,column-1,"twitter","http://twitter.com/ernestrc_");
-        appendSubInbox(row+1,column,"linkedin","http://uk.linkedin.com/in/ernestromero");
-        appendSubInbox(row-1,column-1,"envelope","mailto:info@unstable.build?Subject=Hello%20again\" target=\"_top");
-        if(jQuery(window).width() > 900) {
-            var everreachCell = '#row' + (row - 1) + 'column' + (column);
-            var everreach = "<a href=\"http://www.everreach.co.uk\"><i id=\"everreach-menu\" class=\"ernestrc-everreach subsubmenuInbox\"></i></a>"
-            jQuery(everreachCell).append(everreach);
-        }
-        jQuery('#row'+row+'column'+column).append(div).hover(function(){
-
-            inbox = setTimeout(function() {
-                if (menu) {
-                    hideAllTitles();
-                    jQuery('.subsubmenuInbox').css('opacity', '100').css('visibility', 'visible');
-                    threatStarted(row, column, ColorScheme["inbox"], delay);
-                    jQuery('#title-contact').css('top', '0px');
-                }
-            },0)
-        });
-
-        if(jQuery(window).width() > 900) {
-            var hexagons = findSquareOfHexagonsAround(row, column);
-            hexagons.hover(function () {
-
-                inbox = setTimeout(function () {
-                    if (menu) {
-//                        threatStarted(row, column, ColorScheme["sub"], delay);
-//                        jQuery('#title-contact').css('top', '-120px');
-//                        jQuery('.subsubmenuInbox').css('opacity', '0').css('visibility', 'hidden');
-                    }
-                }, 0)
-            }, function () {
-                clearAllTimeouts();
-            })
-        }
-    }
-
-    function loadSubSubMenu(){
-        jQuery('#rebel-menu').hover(function(){
-            if(menu){
-                jQuery('#title-random').css('top','60px');
-            }
-        },function(){
-            if(menu){
-                jQuery('#title-random').css('top','-120px');
-                jQuery('#title-categories').css('top','0px');
-            }
-        });
-        jQuery('#graduation-cap-menu').hover(function(){
-            if(menu){
-            jQuery('#title-learn').css('top','60px');
-            }
-        },function(){
-            if(menu){
-            jQuery('#title-learn').css('top','-120px');
-            jQuery('#title-categories').css('top','0px');
-            }
-        });
-        jQuery('#code-menu').hover(function(){
-            if(menu){
-            jQuery('#title-code').css('top','60px');
-            }
-        },function(){
-            if(menu){
-            jQuery('#title-code').css('top','-120px');
-            jQuery('#title-categories').css('top','0px');
-            }
-        });
-        jQuery('#database-menu').hover(function(){
-            if(menu){
-            jQuery('#title-data').css('top','60px');
-            }
-        },function(){
-            if(menu){
-            jQuery('#title-data').css('top','-120px');
-            jQuery('#title-categories').css('top','0px');
-            }
-        });
-        jQuery('#everreach-menu').hover(function(){
-            if(menu){
-            jQuery('#title-everreach').css('top','60px');
-            }
-        },function(){
-            if(menu){
-            jQuery('#title-everreach').css('top','-120px');
-            jQuery('#title-contact').css('top','0px');
-            }
-        });
+        return this
     }
 
     function appendNecesaryTitles(){
@@ -976,29 +813,53 @@
     }
 
     function loadSubMenu() {
+        var inboxIcon = "<i id=\"inbox-menu\" class=\"ernestrc-face submenu\"></i>";
+        var searchIcon = "<i id=\"search-menu\" class=\"fa fa-search submenu\"></i>";
+        var homeIcon = "<i id=\"home-menu\" class=\"fa fa-home submenu\"></i>";
+        var tagsIcon = "<i id=\"tags-menu\" class=\"fa fa-tags submenu\"></i>";
+        var archiveIcon = "<i id=\"archive-menu\" class=\"fa fa-archive submenu\"></i>";
+        var subTagScalaIcon = "<a href=\"http://unstable.build/topics/programming/\"><i id=\"code-menu\" class=\"fa fa-code subsubmenuTag\"></i></a>";
+        var subTagDataIcon = "<a href=\"http://unstable.build/topics/data/\"><i id=\"database-menu\" class=\"fa fa-database subsubmenuTag\"></i></a>";
+        var subTagLearnIcon = "<a href=\"http://unstable.build/topics/learn/\"><i id=\"graduation-cap-menu\" class=\"fa fa-graduation-cap subsubmenuTag\"></i></a>";
+        var subTagRandomIcon = "<a href=\"http://unstable.build/topics/random/\"><i id=\"rebel-menu\" class=\"fa fa-rebel subsubmenuTag\"></i></a>";
+        var subInboxTwitterIcon = "<a href=\"http://twitter.com/ernestrc_/\" target=\"_blank\"><i id=\"twitter-menu\" class=\"fa fa-twitter subsubmenuInbox\"></i></a>";
+        var subInboxLinkedinIcon = "<a href=\"http://uk.linkedin.com/in/ernestromero\" target=\"_blank\"><i id=\"linkedin-menu\" class=\"fa fa-linkedin subsubmenuInbox\"></i></a>";
+        var subInboxEverreachIcon = "<a href=\"http://www.everreach.co.uk\"><i id=\"everreach-menu\" class=\"ernestrc-everreach subsubmenuInbox\"></i></a>";
+        var subInboxMailIcon = "<a href=\"mailto:info@unstable.build?Subject=Hello%20again\" target=\"_top\"><i id=\"envelope-menu\" class=\"fa fa-envelope subsubmenuInbox\"></i></a>";
+
+
         if(jQuery(window).width() > 900){
             appendTitles();
             appendNecesaryTitles();
-            appendSearchButton(2,7);
-            appendHomeButton(2,5);
-            appendTagsButton(2,3);
-            appendArchiveButton(2,9);
-            appendInboxButton(2,11);
+            buttons.search = new MenuButton(2,7,"search","#search-menu",searchIcon,['#search-form'],['#title-search'],'search');
+            buttons.home = new MenuButton(2,5,"home","#home-menu",homeIcon,[],['#title-home'],'home');
+            buttons.tags = new MenuButton(2,3,"tags","#tags-menu",tagsIcon,['.subsubmenuTag'],['#title-categories'],'tags');
+                buttons.subTagScala = new MenuButton(3,2,"#code-menu","tagScala",subTagScalaIcon,[],['#title-code'],'tags');
+                buttons.subTagRandom = new MenuButton(3,3,"#rebel-menu","tagRandom",subTagRandomIcon,[],['#title-random'],'tags');
+                buttons.subTagLearn = new MenuButton(1,2,"tagLearn","#graduation-cap-menu",subTagLearnIcon,[],['#title-learn'],'tags');
+                buttons.subTagData = new MenuButton(1,3,"tagData","#database-menu",subTagDataIcon,[],['#title-data'],'tags');
+            buttons.inbox = new MenuButton(2,11,"inbox","#inbox-menu",inboxIcon,['.subsubmenuInbox'],['#title-contact'],'inbox');
+                buttons.subInboxTwitter = new MenuButton(3,10,"inboxTwitter","#twitter-menu",subInboxTwitterIcon,[],[],'inbox');
+                buttons.subInboxLinkedin = new MenuButton(3,11,"inboxLinkedin","#linkedin-menu",subInboxLinkedinIcon,[],[],'inbox');
+                buttons.subInboxEverreach = new MenuButton(1,10,"inboxEverreach","#everreach-menu",subInboxEverreachIcon,[],[],'inbox');
+                buttons.subInboxMail = new MenuButton(1,11,"inboxMail","#envelope-menu",subInboxMailIcon,[],[],'inbox');
+            buttons.archive = new MenuButton(2,9,"archive","#archive-menu",archiveIcon,['#archive-beta'],['#title-archive'],'archive');
             jQuery('#secondary').css('visibility','visible');
+            buttons.archive.$.click(function(){buttons.archive.hideOtherButtons()})
         } else if (jQuery(window).width() > 675) {
-            appendNecesaryTitles();
-            appendSearchButton(2,7);
-            appendHomeButton(2,5);
-            appendTagsButton(1,6);
-            appendArchiveButton(2,9);
-            appendInboxButton(1,7);
+//            appendNecesaryTitles();
+//            appendSearchButton(2,7);
+//            appendHomeButton(2,5);
+//            appendTagsButton(1,6);
+//            appendArchiveButton(2,9);
+//            appendInboxButton(1,7);
         } else {
-            appendNecesaryTitles();
-          appendSearchButton(2,7);
-          appendHomeButton(2,6);
-          appendTagsButton(3,6);
-          appendArchiveButton(2,8);
-          appendInboxButton(3,7);
+//            appendNecesaryTitles();
+//          appendSearchButton(2,7);
+//          appendHomeButton(2,6);
+//          appendTagsButton(3,6);
+//          appendArchiveButton(2,8);
+//          appendInboxButton(3,7);
         }
 
     }
@@ -1101,13 +962,12 @@
         bolt('.fa-bolt',0);
         loadMainMenu();
         loadSubMenu();
-        loadSubSubMenu();
         jQuery('[id=icons-menu]').css('background','transparent !important');
         outdatedBrowser({
             bgColor: '#f25648',
             color: '#ffffff',
             lowerThan: 'transform'
-        })
+        });
 //        preClicks();
     })
 
