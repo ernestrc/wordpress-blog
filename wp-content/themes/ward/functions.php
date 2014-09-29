@@ -622,8 +622,8 @@ function bavotasan_jumbotron() {
                 <div class="row">
                     <div class="home-jumbotron jumbotron col-lg-10 col-lg-offset-1 col-sm-12">
                         <div id="blog-title">
-                                <h1 id="title" style="z-index:100;position:relative;">Unstable Build <span id="beta">BETA</span></h1>
-                                <p id="subtitle" class="lead">Make it work, then make it better</p>
+                                <h1 id="title" style="z-index:100;position:relative;">Unstable Build</h1>
+                                <p id="subtitle" class="lead">Version 0.1</p>
                         </div>
 
                     </div>

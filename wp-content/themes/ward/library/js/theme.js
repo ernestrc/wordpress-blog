@@ -104,135 +104,6 @@
         return String(width) + "px"
     }
 
-//    jQuery('#ernestrc-menu-bar').css('background-size',getWidthOfDiv(jQuery('#ernestrc-menu-bar'),1)+' '+getHeightOfDiv(jQuery('#ernestrc-menu-bar'),1));
-
-//    jQuery('.fa-folder-o').css("top",getHeightOfDiv(jQuery('.home-top'),3));
-
-
-
-//    function changeHexagonBackground(className,color){
-//        jQuery(className).css('background',color);
-//        jQuery('#main')
-//            .append("<style>" + className + ":before{border-bottom:30px solid "+ color +" !important;}</style>")
-//            .append("<style>"+ className + ":after{border-top:30px solid "+ color +" !important;}</style>");
-//    }
-
-//    var colorConfig = {
-//        'backgroundTitle':'#FFFFFF',
-//        'backgroundMenu':'#FFFFFF'
-//    };
-//    /**
-//     * Menu Commons
-//     */
-//
-//    /**
-//     * Search Cell
-//     */
-//    jQuery('#search-cell').hover(function(){
-//        threatStarted(jQuery('#row2column7'),background1);
-//        setTimeout(function(){
-//            jQuery('#search-form').css('opacity','100');
-//        },300);
-//    },function(){
-//        changeHexagonColor(".middle-circle","#D58381");
-//        threatStarted(jQuery('#row2column7'),background2);
-//    });
-//
-//    /**
-//     * Home Cell
-//     */
-//    jQuery('#home-cell').hover(function(){
-//        changeHexagonColor(".middle-circle","#D281CD");
-//        jQuery('#background-rightD').css('opacity','100');
-//        jQuery('#background-leftD').css('opacity','100');
-//        jQuery('#sticky-background-leftD').css('opacity','100');
-//        jQuery('#sticky-background-rightD').css('opacity','100');
-//
-//    },function(){
-//        changeHexagonColor(".middle-circle","#D58381");
-//        jQuery('#background-rightD').css('opacity','0');
-//        jQuery('#background-leftD').css('opacity','0');
-//        jQuery('#sticky-background-leftD').css('opacity','0');
-//        jQuery('#sticky-background-rightD').css('opacity','0');
-//    });
-//
-//    /**
-//     * Tags Cell
-//     */
-//    jQuery('#tags-cell').hover(function(){
-//        changeHexagonColor(".middle-circle","#AFD18C");
-//        jQuery('#background-rightF').css('opacity','100');
-//        jQuery('#background-leftF').css('opacity','100');
-//        jQuery('#sticky-background-leftF').css('opacity','100');
-//        jQuery('#sticky-background-rightF').css('opacity','100');
-//        setTimeout(function(){
-//            jQuery('#tags-cell1').css('opacity','100');
-//            jQuery('#tags-cell2').css('opacity','100');
-//            jQuery('#tags-cell3').css('opacity','100');
-//            jQuery('#tags-cell4').css('opacity','100');
-//        },300);
-//    },function(){
-//        changeHexagonColor(".middle-circle","#D58381");
-//        jQuery('#background-rightF').css('opacity','0');
-//        jQuery('#background-leftF').css('opacity','0');
-//        jQuery('#sticky-background-leftF').css('opacity','0');
-//        jQuery('#sticky-background-rightF').css('opacity','0');
-//    });
-//
-//    /**
-//     * Archive Cell
-//     */
-//    function colorLoop(elem,newCounter){
-//        var counter = newCounter;
-//        if(counter % 2){
-//            changeHexagonColor(elem,"#D9F6FA");
-//        } else {
-//            changeHexagonColor(elem,"#A3E7F0");
-//        }
-//            counter = counter + 1;
-//        archive = setTimeout(function(){
-//            colorLoop(elem,counter)
-//        },750);
-//    }
-//    var archive;
-//    jQuery('#archive-cell').hover(function(){
-//        changeHexagonColor(".middle-circle","#7CD1D3");
-//        jQuery('#background-rightC').css('opacity','100');
-//        jQuery('#background-leftC').css('opacity','100');
-//        jQuery('#sticky-background-leftC').css('opacity','100');
-//        jQuery('#sticky-background-rightC').css('opacity','100');
-//    },function(){
-//        changeHexagonColor(".middle-circle","#D58381");
-//        jQuery('#background-rightC').css('opacity','0');
-//        jQuery('#background-leftC').css('opacity','0');
-//        jQuery('#sticky-background-leftC').css('opacity','0');
-//        jQuery('#sticky-background-rightC').css('opacity','0');
-//        changeHexagonColor("#archive-cell","transparent");
-//    });
-//
-//    /**
-//     * Inbox Cell
-//     */
-//    jQuery('#inbox-cell').hover(function(){
-//        changeHexagonColor(".middle-circle","#A683CE");
-//        jQuery('#background-rightG').css('opacity','100');
-//        jQuery('#background-leftG').css('opacity','100');
-//        jQuery('#sticky-background-leftG').css('opacity','100');
-//        jQuery('#sticky-background-rightG').css('opacity','100');
-//        setTimeout(function(){
-//            jQuery('#inbox-cell1').css('opacity','100');
-//            jQuery('#inbox-cell2').css('opacity','100');
-//            jQuery('#inbox-cell3').css('opacity','100');
-//            jQuery('#inbox-cell4').css('opacity','100');
-//        },300);
-//    },function(){
-//        changeHexagonColor(".middle-circle","#D58381");
-//        jQuery('#background-rightG').css('opacity','0');
-//        jQuery('#background-leftG').css('opacity','0');
-//        jQuery('#sticky-background-leftG').css('opacity','0');
-//        jQuery('#sticky-background-rightG').css('opacity','0');
-//    });
-
     var background1 = {
         "row0" : ["#D25E52","#D27255","#CC7D58","#D69D6D","#E1BC7B","#E7CF84","#E8D984","#E3DA82","#DBD880","#CFD47C","#C5D27F","#C2D384","#C7D78A","#CBDB8E","#CBDC8D"],
         "row1" : ["#C1514E","#BF6151","#BC6E58","#CE996E","#D8B377","#DBC37D","#DACD7E","#D6D17D","#CDCF7B","#BCC77A","#B1C479","#B7CA80","#C0D488","#C1D78A"],
@@ -487,7 +358,7 @@
             jQuery('.sticky-bar').append(div);
             jQuery(div).click(function(){
                 tickHexAnimation(row,column,0);
-            })
+            });
         } else {
             var up = new Triangle(row,column,true);
             var core = new Square(row,column);
@@ -515,7 +386,7 @@
             jQuery("#square-"+className).css('background',color)
         }
         function changeTriangleColor(className,top,color){
-            if(top == true){
+            if(top){
                 jQuery("#top-"+className).css('border-bottom','29px solid '+color)
             }else {
                 jQuery("#bottom-"+className).css('border-top','29px solid '+color)
@@ -631,7 +502,7 @@
         clearTimeout(rain);
         if(lockedMenu==false){
             if(menu==true){
-                rainAnimation(0);
+                // rainAnimation(0);
                 jQuery('#archive-beta').css('opacity',"0");
                 jQuery('.submenu').css('visibility','hidden');
                 jQuery('.submenu').css('opacity',"0");
@@ -718,13 +589,16 @@
     var buttons = new Buttons();
 
     if(is_touch_device) {
-        var touchDelay = 150;
+        var touchDelay = 250;
     } else {
-        var touchDelay = 101;
+        var touchDelay = 100;
     }
 
     function hideAllTitles(){
-
+        jQuery('#title-twitter').css('top', '-120px');
+        jQuery('#title-linkedin').css('top', '-120px');
+        jQuery('#title-mail').css('top', '-120px');
+        jQuery('#title-inbox').css('top', '-120px');
         jQuery('#title-search').css('top', '-120px');
         jQuery('#title-code').css('top', '-120px');
         jQuery('#title-learn').css('top', '-120px');
@@ -738,24 +612,23 @@
         jQuery('#title-archive').css('top', '-120px');
         jQuery('#title-contact').css('top', '-120px');
         jQuery('.subsubmenuInbox').css('opacity', '0').css('visibility', 'hidden');
-
     }
 
-    function MenuButton(row,column,name,iconId,icon,itemsToHide,itemsToTop,colorScheme){
+    function MenuButton(row,column,name,iconId,icon,itemsToHide,itemsToTop,colorScheme,clickFunctionality){
         this.row = row;
         this.column = column;
         this.name = name;
         this.itemsToHide = itemsToHide;
         this.itemsToTop = itemsToTop;
-        this.$ = jQuery('#row'+row+'column'+column);
+        this.item = '#row'+row+'column'+column;
+        this.$ = jQuery(this.item);
         this.hide = function() {
             jQuery(iconId).css('opacity','0');
             setTimeout(function(){
                 jQuery(iconId).css('visibility','hidden')
             },100)
         };
-        this.hideOtherButtons = function(){ //TODO fer que samaguin, reposicinin correctament amb la cela,
-            //TODO fer que cambin de tamany i apareguin mes coses? Dividr tasques i despres fer una gran
+        this.hideOtherButtons = function(){
             var customButtons = jQuery.extend({},buttons);
             console.log(customButtons.toString());
             delete customButtons[name];
@@ -767,10 +640,15 @@
                 }
             }
         };
+        this.$.click(function(){
+            if(typeof clickFunctionality != 'undefined'){
+                clickFunctionality()
+            }
+        });
 
-        this.$.append(icon).css('z-index','99').click(function(){
+        this.$.append(icon).css('z-index','99').hover(function(){
             setTimeout(function(){
-                if(menu){
+                if(menu && jQuery(window).width() > 850){
                     hideAllTitles();
                     var i;
                     var hide = itemsToHide.length;
@@ -803,19 +681,43 @@
 
 
     function appendTitles() {
-        var sea = "<div id=\"title-search\" class=\"subtitles\">Search</div>";
-        var cat = "<div id=\"title-categories\" class=\"subtitles\">Topics</div>";
-        var con = "<div id=\"title-contact\" class=\"subtitles\">Contact</div>";
-        var hom = "<div id=\"title-home\" class=\"subtitles\">Home</div>";
-        var men = "<div id=\"title-menu\" class=\"subtitles\">Menu</div>";
-        var cod = "<div id=\"title-code\" class=\"subtitles subsubtitles\">Programming in Scala</div>";
-        var lea = "<div id=\"title-learn\" class=\"subtitles subsubtitles\">Learning to Code</div>";
-        var dat = "<div id=\"title-data\" class=\"subtitles subsubtitles\">Data Analytics</div>";
-        var ran = "<div id=\"title-random\" class=\"subtitles subsubtitles\">Random</div>";
-        var eve = "<div id=\"title-everreach\" class=\"subtitles subsubtitles\">+44 20 3582 1468</div>";
+        var titles = [
+        "<div id=\"title-twitter\" class=\"subtitles subsubtitles\">Twitter</div>",
+        "<div id=\"title-linkedin\" class=\"subtitles subsubtitles\">Linkedin</div>",
+        "<div id=\"title-inbox\" class=\"subtitles subsubtitles\">+44 20 3582 1468</div>",
+        "<div id=\"title-mail\" class=\"subtitles subsubtitles\">info@unstable.build</div>",
+        "<div id=\"title-search\" class=\"subtitles\">Search</div>",
+        "<div id=\"title-categories\" class=\"subtitles\">Topics</div>",
+        "<div id=\"title-contact\" class=\"subtitles\">Contact</div>",
+        "<div id=\"title-home\" class=\"subtitles\">Home</div>",
+        "<div id=\"title-menu\" class=\"subtitles\">Menu</div>",
+        "<div id=\"title-code\" class=\"subtitles subsubtitles\">Programming in Scala</div>",
+        "<div id=\"title-learn\" class=\"subtitles subsubtitles\">Learning to Code</div>",
+        "<div id=\"title-data\" class=\"subtitles subsubtitles\">Data Analytics</div>",
+        "<div id=\"title-random\" class=\"subtitles subsubtitles\">Random</div>",
+        "<div id=\"title-everreach\" class=\"subtitles subsubtitles\">+44 20 3582 1468</div>"];
 
-        jQuery('#ernestrc-menu-bar').append(cat).append(con).append(hom).append(men).append(cod).append(lea)
-            .append(dat).append(ran).append(eve).append(sea);
+        var appender = jQuery('#ernestrc-menu-bar');
+
+        titles.forEach(function(element,index,array){
+            appender.append(element)
+        });
+    }
+
+    function redirectTo(url){
+        window.location.href = url
+    }
+
+    function searchButtonSmallScreen(){
+        jQuery("#search-form").css('visibility','visible').css('opacity','100').css('margin-top','178px');
+        jQuery("#archive-beta").css('visibility','hidden').css('opacity','0').css('margin-top','0');
+        threatStarted(2,7, ColorScheme['home'], delay);
+    }
+
+    function archiveButtonFunctionality(){
+        jQuery("#search-form").css('visibility','hidden').css('opacity','0').css('margin-top','0');
+        jQuery("#archive-beta").css('visibility','visible').css('opacity','100').css('margin-top','213px');
+        threatStarted(2,8, ColorScheme['tags'], delay);
     }
 
     function loadSubMenu() {
@@ -834,40 +736,35 @@
         var subInboxMailIcon = "<a href=\"mailto:info@unstable.build?Subject=Hello%20again\" target=\"_top\"><i id=\"envelope-menu\" class=\"fa fa-envelope subsubmenuInbox\"></i></a>";
 
 
-        if(jQuery(window).width() > 900){
+        if(jQuery(window).width() > 850){
             appendTitles();
             appendNecesaryTitles();
             buttons.search = new MenuButton(2,7,"search","#search-menu",searchIcon,['#search-form'],['#title-search'],'search');
-            buttons.home = new MenuButton(2,5,"home","#home-menu",homeIcon,[],['#title-home'],'home');
-            buttons.tags = new MenuButton(2,3,"tags","#tags-menu",tagsIcon,['.subsubmenuTag'],['#title-categories'],'tags');
-                buttons.subTagScala = new MenuButton(3,2,"#code-menu","tagScala",subTagScalaIcon,[],['#title-code'],'tags');
-                buttons.subTagRandom = new MenuButton(3,3,"#rebel-menu","tagRandom",subTagRandomIcon,[],['#title-random'],'tags');
-                buttons.subTagLearn = new MenuButton(1,2,"tagLearn","#graduation-cap-menu",subTagLearnIcon,[],['#title-learn'],'tags');
-                buttons.subTagData = new MenuButton(1,3,"tagData","#database-menu",subTagDataIcon,[],['#title-data'],'tags');
-            buttons.inbox = new MenuButton(2,11,"inbox","#inbox-menu",inboxIcon,['.subsubmenuInbox'],['#title-contact'],'inbox');
-                buttons.subInboxTwitter = new MenuButton(3,10,"inboxTwitter","#twitter-menu",subInboxTwitterIcon,[],[],'inbox');
-                buttons.subInboxLinkedin = new MenuButton(3,11,"inboxLinkedin","#linkedin-menu",subInboxLinkedinIcon,[],[],'inbox');
-                buttons.subInboxEverreach = new MenuButton(1,10,"inboxEverreach","#everreach-menu",subInboxEverreachIcon,[],[],'inbox');
-                buttons.subInboxMail = new MenuButton(1,11,"inboxMail","#envelope-menu",subInboxMailIcon,[],[],'inbox');
+            buttons.home = new MenuButton(2,5,"home","#home-menu",homeIcon,[],['#title-home'],'home',function(){redirectTo("/")});
+            buttons.tags = new MenuButton(2,3,"tags","#tags-menu",tagsIcon,['.subsubmenuTag'],['#title-categories'],'tags',function(){redirectTo("/topics")});
+                buttons.subTagScala = new MenuButton(3,2,"tagScala","#code-menu",subTagScalaIcon,['.subsubmenuTag'],['#title-code'],'tags');
+                buttons.subTagRandom = new MenuButton(3,3,"tagRandom","#rebel-menu",subTagRandomIcon,['.subsubmenuTag'],['#title-random'],'tags');
+                buttons.subTagLearn = new MenuButton(1,2,"tagLearn","#graduation-cap-menu",subTagLearnIcon,['.subsubmenuTag'],['#title-learn'],'tags');
+                buttons.subTagData = new MenuButton(1,3,"tagData","#database-menu",subTagDataIcon,['.subsubmenuTag'],['#title-data'],'tags');
+            buttons.inbox = new MenuButton(2,11,"inbox","#inbox-menu",inboxIcon,['.subsubmenuInbox'],['#title-contact'],'inbox',function(){redirectTo("/contact")});
+                buttons.subInboxTwitter = new MenuButton(3,10,"inboxTwitter","#twitter-menu",subInboxTwitterIcon,['.subsubmenuInbox'],['#title-twitter'],'inbox');
+                buttons.subInboxLinkedin = new MenuButton(3,11,"inboxLinkedin","#linkedin-menu",subInboxLinkedinIcon,['.subsubmenuInbox'],['#title-linkedin'],'inbox');
+                buttons.subInboxEverreach = new MenuButton(1,10,"inboxEverreach","#everreach-menu",subInboxEverreachIcon,['.subsubmenuInbox'],['#title-inbox'],'inbox');
+                buttons.subInboxMail = new MenuButton(1,11,"inboxMail","#envelope-menu",subInboxMailIcon,['.subsubmenuInbox'],['#title-mail'],'inbox');
             buttons.archive = new MenuButton(2,9,"archive","#archive-menu",archiveIcon,['#archive-beta'],['#title-archive'],'archive');
             jQuery('#secondary').css('visibility','visible');
-            buttons.archive.$.click(function(){buttons.archive.hideOtherButtons()})
-        } else if (jQuery(window).width() > 675) {
-//            appendNecesaryTitles();
-//            appendSearchButton(2,7);
-//            appendHomeButton(2,5);
-//            appendTagsButton(1,6);
-//            appendArchiveButton(2,9);
-//            appendInboxButton(1,7);
+            preClicks(['row2column3','row2column5','row2column7','row2column9','row2column11']);
         } else {
-//            appendNecesaryTitles();
-//          appendSearchButton(2,7);
-//          appendHomeButton(2,6);
-//          appendTagsButton(3,6);
-//          appendArchiveButton(2,8);
-//          appendInboxButton(3,7);
+            appendTitles();
+            appendNecesaryTitles();
+            buttons.search = new MenuButton(2,7,"search","#search-menu",searchIcon,['#search-form'],['#title-search'],'search',function(){searchButtonSmallScreen()});
+            buttons.home = new MenuButton(2,6,"home","#home-menu",homeIcon,[],['#title-home'],'home',function(){redirectTo("/")});
+            buttons.tags = new MenuButton(1,7,"tags","#tags-menu",tagsIcon,['.subsubmenuTag'],['#title-categories'],'tags',function(){redirectTo("/topics")});
+            buttons.inbox = new MenuButton(1,6,"inbox","#inbox-menu",inboxIcon,['.subsubmenuInbox'],['#title-contact'],'inbox',function(){redirectTo("/contact")});
+            buttons.archive = new MenuButton(2,8,"archive","#archive-menu",archiveIcon,['#archive-beta'],['#title-archive'],'archive',function(){archiveButtonFunctionality()});
+            jQuery('#secondary').css('visibility','visible');
+            preClicks(['row2column7','row2column6','row1column7','row1column6','row2column8']);
         }
-
     }
 
     function loadMainMenu() {
@@ -902,7 +799,7 @@
                 menuOn();
                 threatStarted(4,7,ColorScheme["sub"],delay);
                 clearTimeout(timer);
-                jQuery('.fa-lock').css('opacity','50');
+                jQuery('.fa-lock').css('opacity','0');
                 lockedMenu=true
             }
             var name = "row4column7";
@@ -922,7 +819,7 @@
     }
 
     function bolt(item,start){
-        setTimeout(function(){
+        var pointer = setTimeout(function(){
             if(start % 2) {
                 jQuery(item).css('text-shadow','0 0 5px #FFF')
             } else {
@@ -931,12 +828,19 @@
            start = start + 1;
                 bolt(item, start)
         },750);
+        return pointer;
     }
 
     function changeTransition(rowcolumn){
         jQuery('#square-'+rowcolumn).css('transition','all 0.3s');
         jQuery('#bottom-'+rowcolumn).css('transition','all 0.3s');
         jQuery('#top-'+rowcolumn).css('transition','all 0.3s');
+    }
+
+    function changeTransitionToLong(rowcolumn){
+        jQuery('#square-'+rowcolumn).css('transition','all 1s');
+        jQuery('#bottom-'+rowcolumn).css('transition','all 1s');
+        jQuery('#top-'+rowcolumn).css('transition','all 1s');
     }
 
 
@@ -966,29 +870,10 @@
         },10000);
     }
 
-    function preClicks(){
-        changeTransition('row3column3');
-        changeTransition('row4column2');
-        changeTransition('row1column4');
-        changeTransition('row0column1');
-        changeTransition('row0column3');
-        changeTransition('row0column6');
-        changeTransition('row0column9');
-        changeTransition('row1column4');
-        changeTransition('row1column2');
-        changeTransition('row1column4');
-        changeTransition('row4column2');
-        changeTransition('row4column5');
-        changeTransition('row4column8');
-        changeTransition('row3column7');
-        changeTransition('row4column7');
-        changeTransition('row2column7');
-        changeTransition('row2column2');
-        changeTransition('row2column9');
-        changeTransition('row2column12');
-        changeTransition('row4column11');
-        changeTransition('row3column10');
-        changeTransition('row0column13');
+    function preClicks(items){
+        items.forEach(function(element,index,array){
+            changeTransition(element)
+        });
     }
 
     jQuery( document ).ready(function() {
@@ -1001,8 +886,7 @@
             color: '#ffffff',
             lowerThan: 'transform'
         });
-//        preClicks();
-        rainAnimation(0);
+        // rainAnimation(0);
     })
 
 } )( jQuery );

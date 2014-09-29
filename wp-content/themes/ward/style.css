@@ -9398,7 +9398,19 @@ i.fa-lock{
     margin-left:-120px;
 }
 #title-random{
-    margin-left:-50px;
+    margin-left:-43px;
+}
+#title-linkedin{
+    margin-left:-45px;
+}
+#title-twitter{
+    margin-left:-43px;
+}
+#title-mail{
+    margin-left:-106px;
+}
+#title-inbox{
+    margin-left:-105px;
 }
 #title-code{
     margin-left:-115px;
