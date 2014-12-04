@@ -417,7 +417,7 @@ p {
 
 @media (min-width: 768px) {
   .lead {
-    font-size: 21px;
+    font-size: 16px;
   }
 
 
@@ -568,17 +568,17 @@ h6 .small {
 
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 30px;
 }
 
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 24px;
 }
 
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 h4,
@@ -588,12 +588,12 @@ h4,
 
 h5,
 .h5 {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h6,
 .h6 {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .page-header {
@@ -6765,7 +6765,7 @@ article .time {
 	/*}*/
 /*}*/
 .entry-title {
-  font-size: 50px;
+  font-size: 40px;
   margin: 0;
 }
 @media (max-width: 480px) {
@@ -6823,7 +6823,7 @@ body.page .entry-title {
 
 .entry-content {
   position: relative;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -9494,4 +9494,18 @@ i.fa-lock{
 
 #post-0{
     padding-top:100px;
+}
+
+.syntax{
+    padding:10px;
+    border:1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+code{
+    font-family: Menlo, Consolas, Monaco;
+    border: 1px solid #E1E1E8;
+    background-color: #F5F5F5;
+    padding: 4px 4px;
+    color:#333333 !important;
 }
