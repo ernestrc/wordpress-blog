@@ -429,7 +429,7 @@
         return this.length !== 0;
     };
 
-    var delay = 40;
+    var DELAY = 40;
     var VIRUZ = [];
 
 
@@ -506,7 +506,7 @@
                 jQuery('#archive-beta').css('opacity',"0");
                 jQuery('.submenu').css('visibility','hidden');
                 jQuery('.submenu').css('opacity',"0");
-                threatStarted(4,7,ColorScheme["main"],delay);
+                threatStarted(4,7,ColorScheme["main"],DELAY);
                 jQuery('.subtitles').css('top','-120px');
                 jQuery('.subsubtitles').css('top','-120px');
                 jQuery('#search-form').css('visibility','hidden').css('opacity','0');
@@ -531,7 +531,7 @@
             jQuery('#title').css('opacity','0').css('visibility','hidden');
             jQuery('#beta').css('opacity','0').css('visibility','hidden');
             jQuery('#subtitle').css('opacity','0').css('visibility','hidden');
-            threatStarted(4,7,ColorScheme["sub"],delay);
+            threatStarted(4,7,ColorScheme["sub"],DELAY);
             jQuery('.submenu').css('opacity',"100");
         }
     }
@@ -665,7 +665,7 @@
                         }
                     }
                     if(!is_touch_device) {
-                        threatStarted(row, column, ColorScheme[colorScheme], delay);
+                        threatStarted(row, column, ColorScheme[colorScheme], DELAY);
                     }
                 }
             },touchDelay)
@@ -711,13 +711,13 @@
     function searchButtonSmallScreen(){
         jQuery("#search-form").css('visibility','visible').css('opacity','100').css('margin-top','178px');
         jQuery("#archive-beta").css('visibility','hidden').css('opacity','0').css('margin-top','0');
-        threatStarted(2,7, ColorScheme['home'], delay);
+        threatStarted(2,7, ColorScheme['home'], DELAY);
     }
 
     function archiveButtonFunctionality(){
         jQuery("#search-form").css('visibility','hidden').css('opacity','0').css('margin-top','0');
         jQuery("#archive-beta").css('visibility','visible').css('opacity','100').css('margin-top','213px');
-        threatStarted(2,8, ColorScheme['tags'], delay);
+        threatStarted(2,8, ColorScheme['tags'], DELAY);
     }
 
     function loadSubMenu() {
@@ -753,7 +753,7 @@
                 buttons.subInboxMail = new MenuButton(1,11,"inboxMail","#envelope-menu",subInboxMailIcon,['.subsubmenuInbox'],['#title-mail'],'inbox');
             buttons.archive = new MenuButton(2,9,"archive","#archive-menu",archiveIcon,['#archive-beta'],['#title-archive'],'archive');
             jQuery('#secondary').css('visibility','visible');
-            preClicks(['row2column3','row2column5','row2column7','row2column9','row2column11']);
+            //preClicks(['row2column3','row2column5','row2column7','row2column9','row2column11']);
         } else {
             appendTitles();
             appendNecesaryTitles();
@@ -763,7 +763,7 @@
             buttons.inbox = new MenuButton(1,6,"inbox","#inbox-menu",inboxIcon,['.subsubmenuInbox'],['#title-contact'],'inbox',function(){redirectTo("/contact")});
             buttons.archive = new MenuButton(2,8,"archive","#archive-menu",archiveIcon,['#archive-beta'],['#title-archive'],'archive',function(){archiveButtonFunctionality()});
             jQuery('#secondary').css('visibility','visible');
-            preClicks(['row2column7','row2column6','row1column7','row1column6','row2column8']);
+            //preClicks(['row2column7','row2column6','row1column7','row1column6','row2column8']);
         }
     }
 
@@ -780,7 +780,7 @@
                 jQuery('.submenu').css('visibility','hidden');
                 jQuery('#search-comment').css('opacity',"50");
                 jQuery('.submenu').css('opacity',"0");
-                threatStarted(4,7,ColorScheme["main"],delay);
+                //threatStarted(4,7,ColorScheme["main"],DELAY);
                 jQuery('.subtitles').css('top','-120px');
                 jQuery('.subsubtitles').css('top','-120px');
                 jQuery('#search-form').css('visibility','hidden').css('opacity','0');
@@ -792,19 +792,19 @@
                     jQuery('#beta').css('opacity','100').css('visibility','visible');
                     jQuery('#subtitle').css('opacity','100').css('visibility','visible');
                 },300);
-                threatStarted(4,7,ColorScheme["main"],delay);
-                lockedMenu=false
+                threatStarted(4,7,ColorScheme["main"],DELAY);
+                lockedMenu=false;
                 jQuery('.fa-lock').css('opacity','0');
             } else {
                 menuOn();
-                threatStarted(4,7,ColorScheme["sub"],delay);
+                //threatStarted(4,7,ColorScheme["sub"],DELAY);
                 clearTimeout(timer);
                 jQuery('.fa-lock').css('opacity','0');
                 lockedMenu=true
             }
             var name = "row4column7";
             var actualColor = jQuery("#"+name).data("color");
-            changeHexagonColor(name,"white");
+            //changeHexagonColor(name,"white");
             jQuery("#square-"+name).css("transition", "all 0.3s");
             jQuery("#top-"+name).css("transition", "all 0.3s");
             jQuery("#bottom-"+name).css("transition", "all 0.3s");
@@ -832,9 +832,9 @@
     }
 
     function changeTransition(rowcolumn){
-        jQuery('#square-'+rowcolumn).css('transition','all 0.3s');
-        jQuery('#bottom-'+rowcolumn).css('transition','all 0.3s');
-        jQuery('#top-'+rowcolumn).css('transition','all 0.3s');
+        jQuery('#square-'+rowcolumn).css('transition','all 0.7s');
+        jQuery('#bottom-'+rowcolumn).css('transition','all 0.7s');
+        jQuery('#top-'+rowcolumn).css('transition','all 0.7s');
     }
 
     function changeTransitionToLong(rowcolumn){
@@ -886,7 +886,7 @@
             color: '#ffffff',
             lowerThan: 'transform'
         });
-        // rainAnimation(0);
+        //rainAnimation(0);
     })
 
 } )( jQuery );
